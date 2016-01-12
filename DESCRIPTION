@@ -1,0 +1,17 @@
+Package: ktc11
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1
+Date: 2015-11-19
+Author: Who wrote it
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: More about what it does (maybe more than one line)
+License: What license is it under?
+Imports:
+    readr,
+    dplyr,
+    Bchron,
+    MCMCpack,
+    BEST
+LazyData: TRUE
+RoxygenNote: 5.0.1

@@ -1,0 +1,457 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+            <title>Archaeology Data Service:  myADS</title>
+
+            <link href="http://archaeologydataservice.ac.uk/css/utilities.css" rel="stylesheet" type="text/css" />
+            <link href="http://archaeologydataservice.ac.uk/css/layout.css" rel="stylesheet" type="text/css" />
+            <link href="http://archaeologydataservice.ac.uk/css/type.css" rel="stylesheet" type="text/css" />
+            <link href="http://archaeologydataservice.ac.uk/css/background.css" rel="stylesheet" type="text/css" />
+            <link href="http://archaeologydataservice.ac.uk/css/colour.css" rel="stylesheet" type="text/css" />
+
+            <!--[if IE]>
+            <link href="/css/ie.css" rel="stylesheet" type="text/css" />
+            <![endif]-->
+            <!--[if IE 6]>
+            <link href="/css/ie6.css" rel="stylesheet" type="text/css" />
+            <![endif]-->
+            <!--[if IE 7]>
+            <link href="/css/ie7.css" rel="stylesheet" type="text/css" />
+            <![endif]-->
+
+            <link rel="alternate" type="application/xml" title="RSS ADS News" href="http://archaeologydataservice.ac.uk/rss/ads.rdf" />
+
+            <script src="http://archaeologydataservice.ac.uk/javascript/jquery-1.3.2.min.js" type="text/javascript"></script>
+                <link href="/css/myads.css" rel="stylesheet" type="text/css" />
+                <style type="text/css">
+                </style>
+
+            <script src="http://archaeologydataservice.ac.uk/javascript/myAdsToolbox.js" type="text/javascript"></script>
+
+            <link href="http://archaeologydataservice.ac.uk/myads/theme.css?section=8" rel="stylesheet" type="text/css" />
+
+            <script type="text/javascript">
+                var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+                //if navigator,cookieEnabled is not supported by a browser
+                if (!cookieEnabled) {
+                    document.cookie = "testcookie";
+                    cookieEnabled = (document.cookie.indexOf("testcookie") != -1) ? true : false;
+                    alert('Your browser currently set to block Cookies, please enable cookies.');
+                }
+            </script>
+
+            <script type="text/javascript">
+                window.onload = function() {
+                    originValue = document.getElementById("wpage").href;
+                    page = window.location.pathname;
+                    n = page.lastIndexOf('/');
+                    if (n >= 0) {
+                        page = page.substring(n + 1);
+                    }
+                    var links = document.getElementById("wpage")
+                    links.href = originValue + page;
+                }
+            </script>
+
+            <script type="text/javascript">
+                window.onload = function urlVar(){
+                    var url = window.location.href;
+                    var id = url.substring(url.indexOf("=") + 1, url.length);
+                    document.getElementById('shareSearchForm:sid').value= id;
+                }
+            </script>
+        </head>
+        <body>
+            <div id="page">
+<!-- Insert Banner -->
+<div id="banner"><a href="http://archaeologydataservice.ac.uk/" title="Home">
+    <img id="logo" src="http://archaeologydataservice.ac.uk/images/ads_logo_white.png" alt="Archaeology Data Service logo"/>
+</a>
+
+
+    <form id="siteSearchForm" method="post" action="http://archaeologydataservice.ac.uk/search">
+<div id="siteSearch">
+        <input id="siteSearchBox" type="text" name="query" value="" size="20" title="Search this web site" />
+        <a onclick='$("#siteSearchForm").submit();' href="#" id="siteSearchBut" title="Search this web site">SEARCH</a>
+  </div>
+    </form>
+
+
+<div id="crumbs" class="clear" >
+
+</div>
+</div>
+
+<!-- Insert Menu -->
+<div id="menu">
+
+<div id="userLogin">
+    <a href="/login.jsf?from=${pageContext.request.requestURI}" id="loginTab">LOGIN</a>
+</div>
+
+<ul id="menuList">
+	<li class="menuitem" id="homeTab">
+      <a href="/" title="Home">HOME</a>
+    </li>
+	<li class="menuitem" id="archsearchTab">
+      <a href="/archsearch" title="Search over 1m archaeological records">ARCHSEARCH</a>
+    </li>
+	<li class="menuitem" id="archivesTab">
+      <a href="/archives" title="Search all ADS archives">ARCHIVES</a>
+    </li>
+       <li class="menuitem" id="adsEasyTab">
+      <a href="/easy" title="ADS e-archiving system [BETA]">ADS-easy</a>
+    </li>           
+       <li class="menuitem" id="learningTab">
+      <a href="/learning" title="Teaching and Learning resources">LEARNING</a>
+    </li>
+       <li class="menuitem" id="adviceTab">
+      <a href="/advice" title="Advice for data depositors, tools and good practice">ADVICE</a>
+    </li>
+	<li class="menuitem" id="researchTab">
+      <a href="/research" title="ADS research projects">RESEARCH</a>
+    </li>
+       <li class="menuitem" id="aboutTab">
+      <a href="/about" title="Background information, newsletters and contacts">ABOUT US</a>
+    </li>       
+       <li class="menuitem" id="blogTab">
+      <a href="/blog" title="ADS blog">BLOG</a>
+    </li>	
+</ul>
+
+
+</div>
+<!-- No content -->
+                <div id="contentblock" class="default">
+               <div id="content">
+                    <!-- Content begin -->
+<form id="j_id10" name="j_id10" method="post" action="/myads/copyrights.jsf;jsessionid=450a60260d506f163befb44ee37c" enctype="application/x-www-form-urlencoded">
+<input type="hidden" name="j_id10" value="j_id10" />
+
+                    <input type="hidden" name="from" value="2f6172636869766544532f61726368697665446f776e6c6f61643f743d617263682d313335322d312f64697373656d696e6174696f6e2f7064662f44796665642f474c34343030342e706466" />
+                    <h2>ADS Terms of Use and Access</h2>
+                    <div id="challenge" class="info" style="margin-top:20px;">
+                        <p><font style="font-weight: bold;">Access to all ADS resources is free</font>, but you
+                            must accept the ADS Terms of Use and Access before using ADS
+                            Archsearch or Archive services.</p>
+                        <p><a href="http://archaeologydataservice.ac.uk/advice/termsOfUseAndAccess;jsessionid=450a60260d506f163befb44ee37c">Read the Terms of                                               Use and Access to ADS Resources Statements and Agreements</a></p>
+                        <div id="challengeButtons" style="margin-top:                              20px; margin-bottom: 20px;"><script type="text/javascript">
+
+	function oamSetHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		if(typeof form.elements[name]!='undefined' && form.elements[name].nodeName=='INPUT')
+		{
+			form.elements[name].value=value;
+		}
+		else
+		{
+			var newInput = document.createElement('input');
+			newInput.setAttribute('type','hidden');
+			newInput.setAttribute('id',name);
+			newInput.setAttribute('name',name);
+			newInput.setAttribute('value',value);
+			form.appendChild(newInput);
+		}
+		
+	}
+	
+	
+	function oamClearHiddenInput(formname, name, value)
+	{
+		var form = document.forms[formname];
+		var hInput = form.elements[name];
+		if(typeof hInput !='undefined')
+		{
+			form.removeChild(hInput);
+		}
+		
+	}
+	
+	function oamSubmitForm(formName, linkId, target, params)
+	{
+		
+		var clearFn = 'clearFormHiddenParams_'+formName.replace(/-/g, '\$:').replace(/:/g,'_');
+		if(typeof window[clearFn] =='function')
+		{
+			window[clearFn](formName);
+		}
+		
+		var form = document.forms[formName];
+		var oldTarget = form.target;
+		if(target != null)
+		{
+			
+			form.target=target;
+		}
+		if((typeof params!='undefined') && params != null)
+		{
+			
+			for(var i=0, param; (param = params[i]); i++)
+			{
+				oamSetHiddenInput(formName,param[0], param[1]);
+			}
+			
+		}
+		
+		oamSetHiddenInput(formName,formName +':'+'_idcl',linkId);
+		
+		if(form.onsubmit)
+		{
+			var result=form.onsubmit();
+			if((typeof result=='undefined')||result)
+			{
+				try
+				{
+					form.submit();
+				}
+				catch(e){}
+			}
+			
+		}
+		else 
+		{
+			try
+			{
+				form.submit();
+			}
+			catch(e){}
+		}
+		
+		form.target=oldTarget;
+		if((typeof params!='undefined') && params != null)
+		{
+			
+			for(var i=0, param; (param = params[i]); i++)
+			{
+				oamClearHiddenInput(formName,param[0], param[1]);
+			}
+			
+		}
+		
+		oamClearHiddenInput(formName,formName +':'+'_idcl',linkId);return false;
+	}
+	
+</script><a href="#" onclick="return oamSubmitForm('j_id10','j_id10:agreeButton');" id="j_id10:agreeButton" style="margin-right: 20px;" class="update">ACCEPT</a><a href="#" onclick="return oamSubmitForm('j_id10','j_id10:disagreeButton');" id="j_id10:disagreeButton" class="update">DECLINE</a>
+                        </div>
+                        <p>This acceptance is valid for the period of
+                            your browser session. You can make a one-time acceptance of the ADS
+                            Terms by registering for myADS. For more information read
+                            about <a href="/about/whyRegister">the benefits of registering</a>.</p>
+                        <div id="registerButton" style="margin-top:                              20px; margin-bottom: 20px;">
+                            <a href="/myads/registrationForm" class="update">Register for myADS</a>
+                        </div>
+
+                    </div><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="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" autocomplete="off" />
+</form>
+                    <!-- Content end -->
+                </div><div>
+                <div id="dialog">
+                    <form class="popupForm" id="myResource" action="#">
+                        <h3>Save Resource</h3>
+                        <div class="addthis_toolbox">
+                            <br />Please <a class="rsslink" href="/login.jsf">login or register</a> a myADS account to use this feature.
+                            <br /><br />
+                        </div>
+                    </form>
+
+                    <form class="popupForm" id="myShare" action="#">
+                        <h3>Share This Page</h3>
+                        <div class="addthis_toolbox">
+                            <br />Please <a class="rsslink" href="/login.jsf">login or register</a> a myADS account to use this feature.
+                            <br /><br />
+                        </div>
+                    </form>
+
+                    <form class="popupForm" id="myRss" action="#">
+                        <h3>Newsfeeds</h3>
+                        <div class="addthis_toolbox">
+                            <div class="two_column">
+                                <a class="rsslink" href="http://archaeologydataservice.ac.uk/rss/ads.rdf">
+                                    ADS Newsfeed
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form class="popupForm" id="myHelp" action="#">
+                        <h3>Help</h3>
+                        <div class="addthis_toolbox">
+                            <div class="two_column">
+                                <a class="helplink" href="http://archaeologydataservice.ac.uk/about/websiteHelp">
+                                    Website
+                                </a>
+                                <div class="clear"><!-- --></div><div class="top"><!-- --></div>
+                                <div class="cent"><a class="update" href="mailto:help@archaeologydataservice.ac.uk">Email Us</a></div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div></div>
+                </div>
+<!-- Insert Footer -->
+<div id="footer">
+  <div class="clear">
+    <br/>
+  </div>
+
+<div id="base_bar">
+    <div id="footerLinks">
+        <p class="footerLink">
+        <a href="http://www.york.ac.uk/docs/disclaimer/disclaimer.htm">University of York legal statements</a> <a>|</a> <a href="http://archaeologydataservice.ac.uk/advice/termsOfUseAndAccess">ADS terms of use and access</a> <a>|</a> <a href="http://archaeologydataservice.ac.uk/about/Cookies">Cookies</a>
+      </p>
+    </div>
+    <div id="footerButtons">
+        <a class="trigger" href="https://twitter.com/ADS_Update" target="_blank" title="Archaeology Data Service on Twitter">
+            <img alt="ADS twitter icon" src="http://archaeologydataservice.ac.uk/images/myads/twitter-bird-white.png" style="border: 0px; padding: 0px;"/>
+        </a>
+        <a class="trigger" href="https://www.facebook.com/archaeology.data.service" target="_blank" title="Archaeology Data Service on Facebook">
+            <img alt="ADS facebook icon" src="http://archaeologydataservice.ac.uk/images/myads/facebook_white.png" style="border: 0px; padding: 0px;"/>
+        </a>
+        <a class="trigger" href="#" onmouseover="loadPopup('myResource')" title="Save to myADS Resources">
+            <img alt="myADS Resources icon" src="http://archaeologydataservice.ac.uk/images/myads/saveresource.png" style="border: 0px; padding: 0px;"/>
+        </a>
+        <a class="trigger" href="#" onmouseover="loadPopup('myShare')" title="Share this page">
+            <img alt="Share icon" src="http://archaeologydataservice.ac.uk/images/share.png" style="border: 0px; padding: 0px;"/>
+        </a>
+        <a class="trigger" href="#" onmouseover="loadPopup('myRss')" title="RSS Feed">
+            <img alt="Feed icon" src="http://archaeologydataservice.ac.uk/images/feed.png" style="border: 0px; padding: 0px;"/>
+        </a>
+        <a class="trigger" href="#" onmouseover="loadPopup('myHelp')" title="Help">
+            <img alt="Help icon" src="http://archaeologydataservice.ac.uk/images/help.png" style="border: 0px; padding: 0px;"/>
+        </a>
+    </div>
+    <div class="clear">
+      <!-- -->
+    </div>
+</div>
+
+<div class="clear" id="footerLogos">
+    <!-- Comment -->
+  </div>
+<img alt="University of York logo" id="yorkLogo" src="http://archaeologydataservice.ac.uk/images/york_hp.gif"/>
+<img alt="Archaeology Data Service logo" id="footerADSLogo" src="http://archaeologydataservice.ac.uk/images/ads_footer_logo.gif"/>
+
+<div class="clear">
+    <br/>
+  </div>
+
+<!-- Piwik -->
+<script type="text/javascript">
+
+  var whereFacetList = [];
+  $("ul[id*=whereFacet] li").each(function() {whereFacetList.push($(this).text().trim()) });
+  var whereQuery = whereFacetList.join('|');
+ 
+  var keyList = [];
+  $("ul[id*=keywords] li").each(function() {keyList.push($(this).text().trim()) });
+  var keyQuery = keyList.join('|');
+
+
+  var whenFacetList = [];
+  $("ul[id*=whenFacet] li").each(function() {whenFacetList.push($(this).text().trim()) });
+  var whenQuery = whenFacetList.join('|');
+
+
+  var whatFacetList = [];
+  $("ul[id*=whatFacet] li").each(function() {whatFacetList.push($(this).text().trim()) });
+  var whatQuery = whatFacetList.join('|');   
+
+  var resourceFacetList = [];
+  $("ul[id*=resourceFacet] li").each(function() {resourceFacetList.push($(this).text().trim()) });
+  var resourceQuery = resourceFacetList.join('|');
+
+
+  var facetWhenList = [];
+  $("ul[id*=facetWhen] li").each(function() {facetWhenList.push($(this).text().trim()) });
+  var queryWhen = facetWhenList.join('|');
+
+
+  var facetSubjectList = [];
+  $("ul[id*=facetSubject] li").each(function() {facetSubjectList.push($(this).text().trim()) });
+  var querySubject = facetSubjectList.join('|');
+
+  var facetWhereList = [];
+  $("ul[id*=facetWhere] li").each(function() {facetWhereList.push($(this).text().trim()) });
+  var queryWhere = facetWhereList.join('|');
+
+  var login = document.getElementById("myadsTab"); 
+
+  var visitUrl = window.location.href;
+
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.york.ac.uk/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+
+    if (keyQuery) {
+      _paq.push(['setCustomVariable','1', keyQuery, 'ArchsearchKeywordSearch']);
+      _paq.push(['trackSiteSearch', keyQuery, 'Archsearch Keyword Search', false]);
+    }
+
+    if (whereQuery) {
+      _paq.push(['setCustomVariable','2', whereQuery, 'ArchsearchWhereFacetSearch']);
+      _paq.push(['trackSiteSearch', whereQuery, 'Archsearch WhereFacet Search', false]);
+    }
+
+    if (whenQuery) {
+      _paq.push(['setCustomVariable','3', whenQuery, 'ArchsearchWhenFacetSearch']);
+      _paq.push(['trackSiteSearch', whenQuery, 'Archsearch WhenFacet Search', false]);
+    }
+
+    if (whatQuery) {
+      _paq.push(['setCustomVariable','4', whatQuery, 'ArchsearchWhatFacetSearch']);
+      _paq.push(['trackSiteSearch', whatQuery, 'Archsearch WhatFacet Search', false]);
+    }
+    if (resourceQuery) {
+      _paq.push(['setCustomVariable','5', resourceQuery, 'ArchsearchResourceFacetSearch']);
+      _paq.push(['trackSiteSearch', resourceQuery, 'Archsearch ResourceFacet Search', false]);
+    }
+
+    if (queryWhen) {
+      _paq.push(['setCustomVariable','1', queryWhen, 'ArchiveWhenFacetSearch']);
+      _paq.push(['trackSiteSearch', queryWhen, 'Archive WhenFacet Search', false]);
+    }
+
+    if (querySubject) {
+      _paq.push(['setCustomVariable','2', querySubject, 'ArchiveSubjectFacetSearch']);
+      _paq.push(['trackSiteSearch', querySubject, 'Archive SubjectFacet Search', false]);
+    }
+
+    if (queryWhere) {
+      _paq.push(['setCustomVariable','1', queryWhere, 'ArchiveWhereFacetSearch']);
+      _paq.push(['trackSiteSearch', queryWhere, 'Archive WhereFacet Search', false]);
+    }
+
+    if (login) { 
+        _paq.push(['setCustomVariable','1', visitUrl, 'RegUser']);
+    } else {
+        _paq.push(['setCustomVariable','1', visitUrl, 'GuestUser']);
+    }
+
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+  </script>
+<noscript>
+    <p>
+      <img alt="" src="//piwik.york.ac.uk/piwik.php?idsite=2" style="border:0;"/>
+    </p>
+  </noscript>
+<!-- End Piwik Code -->
+
+
+
+</div>
+
+
+            </div>
+        </body>
+</html>

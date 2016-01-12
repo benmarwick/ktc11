@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Untitled\"\nauthor: \"Ben Marwick\"\ndate: \"January 8, 2016\"\noutput: html_document\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = TRUE)\n```\n\n```{r read_in_the_data}\nlibrary(ktc11)\nlibrary(knitr)\nthe_data <- read_in_the_data()\n# while the data was collected we stored it here: https://catalyst.uw.edu/gopost/conversation/bmarwick/628803/post/2229534#2229534 and https://docs.google.com/spreadsheets/d/1_a20envyJUBA69NfSyLu0JniVUxnyKzAePUwQFrkS64/edit?pref=2&pli=1#gid=0\n```\n\n\n```{r icp_aes_data_summary}\nicp_aes_data <- icp_aes_data_summary(the_data$ktc11_raw_ICP_data)\n\n# subset elements related to human occupation and environmental events\n \nkable(icp_aes_data)\n\n# correlation matrix of elements of interest\nicp_aes_data_subset_cor <- round(cor(icp_aes_data),2)\nkable(icp_aes_data_subset_cor)\n\n# icp_aes_data_subset_cor_long <- long_corr_matrix(icp_aes_data_subset)\n# interesting_pos <- icp_aes_data_subset_cor_long %>% filter(cor > 0.8 & p < 0.05)\n# interesting_neg <- icp_aes_data_subset_cor_long %>% filter(cor < 0 & p < 1)\n\n# cluster analysis of contexts useing elemental data\nd <- dist(icp_aes_data, method = \"euclidean\") # distance matrix\n#\n# Then do the cluster analysis and plot dendrogram\nplot(hclust(d, method=\"ward.D2\"))\n#\n```",
+    "created" : 1452214748981.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3220767841",
+    "id" : "D137D8D",
+    "lastKnownWriteTime" : 1452215436,
+    "last_content_update" : 1452215436392,
+    "path" : "G:/My Documents/My Papers/Journal of Archaeological Science/Marwick, Conrad, et al. 2015/ktc11/analysis/paper/tmp.Rmd",
+    "project_path" : "analysis/paper/tmp.Rmd",
+    "properties" : {
+        "tempName" : "Untitled2"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

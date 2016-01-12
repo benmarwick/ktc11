@@ -1,0 +1,62 @@
+---
+title: "Supplementary Information for 'Adaptations to sea level change and the transition to agriculture in tropical monsoonal Peninsula Thailand'"
+author: 
+- "Ben Marwick"
+- "Cyler Conrad"
+- "Rasmi Shoocongdej"
+- "Cholawit Thongcharoenchaikit"
+- "Hannah Van Vlack"
+- "Seungki Kwak"
+
+date: "`r Sys.Date()`"
+<!-- bibliography: ktc_11.bib -->
+ 
+  
+output:
+  word_document:  
+    reference_docx: "templates/template.docx"
+---
+
+### Faunal analysis methods
+
+Zooarchaeological analyses were performed on all faunal material excavated from the southwest unit of Trench A. Mammalian, reptilian, and piscean taxa were identified using standard zooarchaeological reference manuals (Lekagul and McNeely, 1977; Auetrakulvit, 2004; France, 2009 and Ankel-Simons, 2000). Molluscan taxa were identified using the comparative collections of the National Science Museum of Thailand and additional mollusk references manuals (Swennen et al., 2001; Jiwaluk et al., 2007 and Sucharit and Panha, 2008). The identification processes were hampered by the lack of comparative skeletal material for mammalian, reptilian, and piscean taxa. As such, identification of the former was generally broad based in order to limit identification error and provide a basis for future analysis. Avian taxa were absent from this unit of the KTC assemblage. Number of identified specimen (NISP) counts were used to record the abundance of faunal taxa per stratigraphic unit (Lyman, 2008).
+
+A digital palm scale was used to record the mass of identified elements to the nearest 0.1 gram. Standard inter-landmark dimensions were taken in millimeters, when applicable. In addition, identification of cutmarks and burning were noted for both mollusk and vertebrate remains.  Photographs of complete mollusk specimens were taken using a Canon EOS60D digital camera. All archaeofaunal specimens are deposited at the Department of Archaeology, Silpakorn University, Bangkok, Thailand.   
+
+
+
+## References
+
+Vinh, B. (1991). [TRANSITIONS TO AGRICULTURE IN THE EASTERN OLD WORLD] The Da But Culture in the Stone Age of Viet Nam. Bulletin of the Indo-Pacific Prehistory Association, 10, 127-131.
+
+
+
+ # this is pretty sensitive, and may need to run several times
+  # before it can complete without an error.
+
+  result <- try(ages_HDR <- capture.output(summary(ages)))
+  while(class(result) == "try-error") {result <- try(ages_HDR <- capture.output(summary(ages)))}
+
+  length(ages_HDR)
+
+  # each date is six items, so split them into each date
+  ages_HDR_list <-  split(ages_HDR, ceiling(seq_along(ages_HDR)/6))
+
+  # 95 HDR upper and lower is 4th item of each date
+  ages_HDR_values <- sapply(ages_HDR_list, function(i) i[4])
+
+  # remove 95% and NAs
+  removal <- c("95%", "NA")
+  ages_HDR_values <-  gsub(paste(removal, collapse = "|"), "", ages_HDR_values)
+
+  # 95 HDR is the first numeric (after 95%) and the last numeric
+  df <- data.frame(upper = 1:length(ages_HDR_values),
+                   lower = 1:length(ages_HDR_values))
+  for(i in 1:length(ages_HDR_values)){
+    tmp_1 <- strsplit(ages_HDR_values[i], split=" ")[[1]]
+    tmp_2 <- tmp_1[tmp_1 != ""]
+    tmp_upper <- as.numeric(tmp_2[length(tmp_2)])
+    tmp_lower <- as.numeric(tmp_2[1])
+    df[i,] <- c(tmp_upper, tmp_lower)
+  }
+
