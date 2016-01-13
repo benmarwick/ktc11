@@ -652,7 +652,7 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
   ktc11_summary_ceramics_lithics_units_depths$age <- calibrated_dates$age(d)
 
   # stop ceramics over 10k BP from showing as we believe these are not in situ
-  ktc11_summary_ceramics_lithics_units_depths$ceramic_mass <- ifelse(ktc11_summary_ceramics_lithics_units_depths$age > 10000, ktc11_summary_ceramics_lithics_units_depths$ceramic_mass <- 0, ktc11_summary_ceramics_lithics_units_depths$ceramic_mass)
+  ktc11_summary_ceramics_lithics_units_depths$ceramic_mass <- ifelse(ktc11_summary_ceramics_lithics_units_depths$age > 10000, (ktc11_summary_ceramics_lithics_units_depths$ceramic_mass == NA), ktc11_summary_ceramics_lithics_units_depths$ceramic_mass)
 
 
 

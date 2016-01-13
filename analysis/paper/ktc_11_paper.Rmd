@@ -252,7 +252,7 @@ significant_correlations <- all_data_corr[all_data_corr$cor > 0.7 | all_data_cor
 ```
 
 ```{r artefacts_plot}
-# plot ceramic and stone artefact mass together
+# plot ceramic and stone artefact mass together, by age
 plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
 
 ```
