@@ -127,7 +127,10 @@ calibrate_the_dates <- function(dates) {
   # function to interpolate age from charcoal dates
   age <- function(d){slp * d + intcp }
 
-  return(dates_table)
+  return(list(dates_table = dates_table,
+              intcp = intcp,
+              slp = slp,
+              age = age))
 }
 
 
@@ -591,7 +594,7 @@ table_ceramics_lithics <- function(lithics, ceramics){
 #' @export
 #'
 #'
-plot_ceramic_and_stone_artefact_mass <- function(the_data, mean_difference_offset_output){
+plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
 
   # summarise by excavation unit
   li <- the_data$ktc11_lithic_data
@@ -639,21 +642,28 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, mean_difference_offse
                        27 1.60
                        ")
 
+
+
   ktc11_summary_ceramics_lithics_units_depths <- full_join(depths, ktc11_summary_ceramics_lithics_units, by = "Unit")
 
-  dates_interp <- mean_difference_offset_output$charcoal_dates_interp
-  dates_interp$Depth_rounded <- my_trunc(dates_interp$Depth, prec = 2)
+  slp <-  calibrated_dates$slp
+  intcp  <- calibrated_dates$intcp
+  d <- ktc11_summary_ceramics_lithics_units_depths$depth
+  ktc11_summary_ceramics_lithics_units_depths$age <- calibrated_dates$age(d)
 
-  ktc11_summary_ceramics_lithics_units_depths_ages <- left_join(ktc11_summary_ceramics_lithics_units_depths, dates_interp, by = c("depth" = "Depth_rounded"))
+  # stop ceramics over 10k BP from showing as we believe these are not in situ
+  ktc11_summary_ceramics_lithics_units_depths$ceramic_mass <- ifelse(ktc11_summary_ceramics_lithics_units_depths$age > 10000, ktc11_summary_ceramics_lithics_units_depths$ceramic_mass <- 0, ktc11_summary_ceramics_lithics_units_depths$ceramic_mass)
 
-  plot_artefact_over_time <- ktc11_summary_ceramics_lithics_units_depths_ages %>%
-    select(midpoint, lithic_mass, ceramic_mass) %>%
-  gather(artefact, mass, -midpoint)
+
+
+  plot_artefact_over_time <- ktc11_summary_ceramics_lithics_units_depths %>%
+    select(age, lithic_mass, ceramic_mass) %>%
+  gather(artefact, mass, -age)
 
   # rename to make better plot labels
   plot_artefact_over_time$artefact <- ifelse(plot_artefact_over_time$artefact == "lithic_mass", "Stone artefacts", "Ceramics")
 
-  ggplot(plot_artefact_over_time, aes(midpoint, mass)) +
+  ggplot(plot_artefact_over_time, aes(age, mass)) +
     geom_bar(stat = "identity") +
     xlab("years cal. BP") +
     ylab("mass (g)") +

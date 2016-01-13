@@ -102,7 +102,7 @@ the_data <- read_in_the_data()
 calibrated_dates <-  calibrate_the_dates(the_data$ktc11_radiocarbon_dates)
 
 # show the table
-kable(calibrated_dates[, -ncol(calibrated_dates)])
+kable(calibrated_dates$dates_table[, -ncol(calibrated_dates$dates_table) ])
 ```
 
 `r tab_n(name = "dates_tab", caption = "Summary of radiocarbon dates from Khao Toh Chong")`
@@ -253,7 +253,7 @@ significant_correlations <- all_data_corr[all_data_corr$cor > 0.7 | all_data_cor
 
 ```{r artefacts_plot}
 # plot ceramic and stone artefact mass together
-plot_ceramic_and_stone_artefact_mass(ktc11_summary_ceramics_lithics)
+plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
 
 ```
 

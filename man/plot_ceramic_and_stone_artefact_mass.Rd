@@ -4,7 +4,7 @@
 \alias{plot_ceramic_and_stone_artefact_mass}
 \title{plot_ceramic_and_stone_artefact_mass}
 \usage{
-plot_ceramic_and_stone_artefact_mass(the_data, mean_difference_offset_output)
+plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
 }
 \description{
 plot_ceramic_and_stone_artefact_mass
