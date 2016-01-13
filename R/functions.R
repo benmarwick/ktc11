@@ -35,7 +35,7 @@ read_in_the_data <- function(){
  # assuming we are in the /analysis/paper directory...
 
  # read in the c14 data
- ktc11_radiocarbon_dates <- read_csv("../data/ktc11_radiocarbon_dates.csv")
+ ktc11_radiocarbon_dates <- read.csv("../data/ktc11_radiocarbon_dates.csv")
 
  # read in the summary geoarch data
  ktc11_summary_geoarch_data <- read_csv("../data/ktc11_summary_geoarch_data.csv")
@@ -105,17 +105,27 @@ calibrate_the_dates <- function(dates) {
 
 
   # for our table we want
-  dates_table <- dates[, c("DAMS_Sample_code",  "RCAge", "RCAge_1s_error",      "Material", "spit", "depth_below_surface")]
+  dates_table <- dates[, c("DAMS_Sample_code",  "RCAge", "RCAge_1s_error",  "Material", "spit", "context", "depth_below_surface")]
   # add on calibrated ranges
   # date 2 had a problem so let's do it by hand (from OxCal website)
   df_ <- rbind( df[1,], c(291, 0), df[ 2:nrow(df),] )
   dates_table <- cbind(dates_table, df_[,-1])
 
   # change column names
-  names(dates_table) <- c("Sample code", "Age in years BP", "1 sd error", "Material dated", "Excavation unit", "Depth below surface (m)", "Calibrated upper 95%", "Calibrated lower 95%")
+  names(dates_table) <- c("Sample code", "Age in years BP", "1 sd error", "Material dated", "Excavation unit", "Context", "Depth below surface (m)", "Calibrated upper 95%", "Calibrated lower 95%")
 
   # add a midpoint of calibrated dates for plotting
   dates_table$midpoint <- with(dates_table, (`Calibrated upper 95%` - `Calibrated lower 95%`)/2 + `Calibrated lower 95%`)
+
+  # use basic linear regression on ages
+  charcoal_midpoints <- dates_table[dates_table$`Material dated` == 'charcoal', ]
+
+  summary_lm <- summary(lm(charcoal_midpoints$midpoint ~ charcoal_midpoints$`Depth below surface (m)`))
+  #intercept
+  intcp <- coef(summary_lm)[1]
+  slp <-  coef(summary_lm)[2]
+  # function to interpolate age from charcoal dates
+  age <- function(d){slp * d + intcp }
 
   return(dates_table)
 }
@@ -174,8 +184,15 @@ mean_difference_offset <- function(dates) {
   # compute the difference
   mean_difference <- mean(shell_charcoal_offset$`50%.x` - shell_charcoal_offset$`50%.y`)
 
+  # get a table of interpolated ages from the charcoal dates that we can use later
+  charcoal_dates_interp <- summary(calibrated_dates_charcoal)
+  # compute a mid-point of the 97.5% range
+  charcoal_dates_interp$midpoint <- charcoal_dates_interp$`2.5%` + ((charcoal_dates_interp$`97.5%` - charcoal_dates_interp$`2.5%`) / 2 )
 
-return(mean_difference)
+
+
+return(list(mean_difference = mean_difference,
+            charcoal_dates_interp = charcoal_dates_interp))
 
 }
 
@@ -565,6 +582,87 @@ table_ceramics_lithics <- function(lithics, ceramics){
 
 }
 
+#' plot_ceramic_and_stone_artefact_mass
+#'
+#'
+#'
+#' @importFrom dplyr group_by %>% summarise full_join left_join select
+#' @importFrom tidyr gather
+#' @export
+#'
+#'
+plot_ceramic_and_stone_artefact_mass <- function(the_data, mean_difference_offset_output){
+
+  # summarise by excavation unit
+  li <- the_data$ktc11_lithic_data
+  ce <- the_data$ktc11_ceramic_data
+
+  li_mass <- li %>%
+    group_by(Unit) %>%
+    dplyr::summarise(lithic_counts = sum(Counts),
+                     lithic_mass = sum(Mass))
+
+  ce_mass <- ce %>%
+    group_by(Unit) %>%
+    dplyr::summarise(ceramic_counts = sum(Counts),
+                     ceramic_mass = sum(Mass))
+
+  ktc11_summary_ceramics_lithics_units <-  full_join(li_mass, ce_mass, by  = "Unit")
+
+  depths <- read.table(header = TRUE, text = " Unit  depth
+                     1	0.0
+                       2	0.1
+                       3	0.15
+                       4	0.2
+                       5	0.3
+                       6	0.4
+                       7	0.5
+                       8	0.6
+                       9	0.65
+                       10	0.7
+                       11	0.75
+                       12	0.8
+                       13	0.85
+                       14	0.9
+                       15	0.95
+                       16	1
+                       17	1.05
+                       18	1.1
+                       19	1.15
+                       20	1.25
+                       21 1.30
+                       22 1.35
+                       23 1.40
+                       24 1.45
+                       25 1.50
+                       26 1.55
+                       27 1.60
+                       ")
+
+  ktc11_summary_ceramics_lithics_units_depths <- full_join(depths, ktc11_summary_ceramics_lithics_units, by = "Unit")
+
+  dates_interp <- mean_difference_offset_output$charcoal_dates_interp
+  dates_interp$Depth_rounded <- my_trunc(dates_interp$Depth, prec = 2)
+
+  ktc11_summary_ceramics_lithics_units_depths_ages <- left_join(ktc11_summary_ceramics_lithics_units_depths, dates_interp, by = c("depth" = "Depth_rounded"))
+
+  plot_artefact_over_time <- ktc11_summary_ceramics_lithics_units_depths_ages %>%
+    select(midpoint, lithic_mass, ceramic_mass) %>%
+  gather(artefact, mass, -midpoint)
+
+  # rename to make better plot labels
+  plot_artefact_over_time$artefact <- ifelse(plot_artefact_over_time$artefact == "lithic_mass", "Stone artefacts", "Ceramics")
+
+  ggplot(plot_artefact_over_time, aes(midpoint, mass)) +
+    geom_bar(stat = "identity") +
+    xlab("years cal. BP") +
+    ylab("mass (g)") +
+    theme_bw(base_size = 18) +
+    facet_grid(artefact ~ ., scales = "free_y")
+}
+
+
+
 
 
 
@@ -586,7 +684,16 @@ long_corr_matrix <- function(df) {
   data.frame(
     row = rownames(cormat)[row(cormat)[ut]],
     column = rownames(cormat)[col(cormat)[ut]],
-    cor  =(cormat)[ut],
+    cor  = (cormat)[ut],
     p = pmat[ut]
   )
+}
+
+#' my_trunc
+#'
+#' from http://stackoverflow.com/a/23158178/1036500
+#'
+#' @export
+my_trunc <- function(x, ..., prec = 0) {
+  base::trunc(x * 10^prec, ...) / 10^prec
 }
