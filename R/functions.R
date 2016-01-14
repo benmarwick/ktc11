@@ -786,8 +786,39 @@ table_fauna_and_molluscs <- function(the_data){
 
 
   return(list(bones_NISP_MNI_total = bones_NISP_MNI_total,
-              shells_NISP_MNI_total = shells_NISP_MNI_total))
+              shells_NISP_MNI_total = shells_NISP_MNI_total,
+              bones_num = bones_num,
+              bones_MNI_num = bones_MNI_num,
+              shells_num = shells_num,
+              shells_MNI_num = shells_MNI_num))
 }
+
+#' mni_log_nisp
+#'
+#' @export
+mni_log_nisp <- function(fauna_and_molluscs_table){
+
+   mni_nisp <- data.frame(
+   nisp = colSums(fauna_and_molluscs_table$bones_num[, -1]) +
+          colSums(fauna_and_molluscs_table$shells_num[, -1]),
+   mni = colSums(fauna_and_molluscs_table$bones_MNI_num[, -1]) +
+         colSums(fauna_and_molluscs_table$shells_MNI_num[, -1])[1:9]
+  )
+    # can't take a log of zero...
+    mni_nisp[mni_nisp == 0] <- 1
+
+  summary_lm <- summary(lm(log(nisp, 10) ~ mni, data = mni_nisp))
+  corr_output <- with(mni_nisp, cor.test(log(nisp, 10), mni))
+
+
+  return(list(summary_lm = summary_lm,
+              corr_output = corr_output,
+              mni_nisp = mni_nisp))
+
+}
+
+
+
 
 
 #'  long_corr_matrix

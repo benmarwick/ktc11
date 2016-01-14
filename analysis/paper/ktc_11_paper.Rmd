@@ -95,7 +95,7 @@ All excavated materials are currently stored at the Silpakorn University Faculty
 ```{r read_in_the_data, cache = FALSE}
 library(ktc11)
 the_data <- read_in_the_data()
-# While the data was collected we stored it here : https://catalyst.uw.edu/gopost/conversation/bmarwick/628803/post/2229534#2229534 and https://docs.google.com/spreadsheets/d/1_a20envyJUBA69NfSyLu0JniVUxnyKzAePUwQFrkS64/edit?pref=2&pli=1#gid=0
+# While the data was collected we stored it here: https://catalyst.uw.edu/gopost/conversation/bmarwick/628803/post/2229534#2229534 and https://docs.google.com/spreadsheets/d/1_a20envyJUBA69NfSyLu0JniVUxnyKzAePUwQFrkS64/edit?pref=2&pli=1#gid=0
 ```
 
 ### Chronology
@@ -275,7 +275,7 @@ Despite this possibility of disturbance, we can make some observations from the 
 ```{r faunal_table}
 # Mammals, reptiles, etc.
 fauna_and_molluscs_table <- table_fauna_and_molluscs(the_data)
-# show the tables
+# show the tables 
 kable(fauna_and_molluscs_table$bones_NISP_MNI_total)
 ```
 
@@ -287,11 +287,20 @@ kable(fauna_and_molluscs_table$shells_NISP_MNI_total)
 
 `r tab_n(name = "table_of_shells", caption = "NISP of mollusk remains recovered from Khao Toh Chong (MNI values in parentheses).")`
 
-Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (`r tab_n(name = "table_of_fauna", display = "cite")`). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008).
+```{r mni_log_nisp}
+mni_log_nisp_output <- mni_log_nisp(fauna_and_molluscs_table)
+r_value <- round(mni_log_nisp_output$corr_output$estimate, 3)
+df <- mni_log_nisp_output$corr_output$parameter
+p_value <- round(mni_log_nisp_output$corr_output$p.value, 3)
+```
+
+Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (`r tab_n(name = "table_of_fauna", display = "cite")`). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008). 
 
 The values for species richness per context, of the mammalian, reptilian, and piscean taxa appears to be driven primarily by the presence or absence of carapace elements belonging to the Order Testudines, likely representing species of the turtle Family Trionychidae and Emydidae, based upon comparable faunal analyses at Lang Rongrien Rockshelter (Mudar and Anderson, 2007). Identification of abundant _Varanus_ sp., and a moderate representation of _Macaca_ sp., occurred in abundance with Testundines elements. Overall the presence of vertebrate remains, in comparison with invertebrate remains, was low at the rockshelter. Artiodactyl remains are notably restricted to the terminal Pleistocene and early Holocene deposits.
 
 Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy (`r tab_n(name = "table_of_shells", display = "cite")`). Mollusk species richness varies between 0-11 species throughout the unit with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene (Figure 11). When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
+
+For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that fragmentation is constant over time. 
 
 ## Discussion
 
