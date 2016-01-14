@@ -57,6 +57,7 @@ read_in_the_data <- function(){
 
  ktc11_fauna_nonmollusc_MNI_data <- read.csv("../data/ktc11_summary_faunal_nonmollusc_data_MNI.csv")
  ktc11_mollusc_MNI_data <- read.csv("../data/ktc11_summary_mollusc_data_MNI.csv")
+ ktc11_fauna_ntaxa_data <- read.csv("../data/ktc11_faunal_ntaxa_data.csv")
 
 
  # return a list of data frames
@@ -71,7 +72,8 @@ read_in_the_data <- function(){
              ktc11_fauna_nonmollusc_data = ktc11_fauna_nonmollusc_data,
              ktc11_mollusc_data = ktc11_mollusc_data,
              ktc11_fauna_nonmollusc_MNI_data = ktc11_fauna_nonmollusc_MNI_data,
-             ktc11_mollusc_MNI_data = ktc11_mollusc_MNI_data))
+             ktc11_mollusc_MNI_data = ktc11_mollusc_MNI_data,
+             ktc11_fauna_ntaxa_data = ktc11_fauna_ntaxa_data))
 }
 
 
@@ -684,6 +686,7 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
 #'
 table_fauna_and_molluscs <- function(the_data){
 
+  ntaxa <- the_data$ktc11_fauna_ntaxa_data
   bones <- the_data$ktc11_fauna_nonmollusc_data
   shells <- the_data$ktc11_mollusc_data
 
@@ -790,7 +793,8 @@ table_fauna_and_molluscs <- function(the_data){
               bones_num = bones_num,
               bones_MNI_num = bones_MNI_num,
               shells_num = shells_num,
-              shells_MNI_num = shells_MNI_num))
+              shells_MNI_num = shells_MNI_num,
+              ntaxa = ntaxa))
 }
 
 #' mni_log_nisp
@@ -817,8 +821,36 @@ mni_log_nisp <- function(fauna_and_molluscs_table){
 
 }
 
+#' ecological_indices
+#'
+#' @importFrom vegan diversity specnumber
+#' @export
+#'
+ecological_indices <- function(fauna_and_molluscs_table){
 
+  # combine bones and shell
+  fauna <- rbind(fauna_and_molluscs_table$bones_MNI_num, fauna_and_molluscs_table$shells_MNI_num[,-ncol(fauna_and_molluscs_table$shells_MNI_num)])
 
+  mni <- t(fauna[, -1])
+  # simpson's diversity per context
+  simp <- diversity(mni, "simpson")
+  H <- diversity(mni)
+
+  ## Species richness (S) and Pielou's evenness (J):
+  S <- specnumber(mni) ## rowSums(BCI > 0) does the same...
+  J <- H/log(S)
+
+  ecological_indices <- data.frame(Context = row.names(mni),
+             NTAXA = S,
+             Simpson = round(simp, 3),
+             #`Shannon-Weaver` = round(H, 3),
+             Pielou = round(J, 3) ,
+             row.names = NULL,
+             check.names = FALSE)
+
+  return(ecological_indices)
+
+}
 
 
 #'  long_corr_matrix

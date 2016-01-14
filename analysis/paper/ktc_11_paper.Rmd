@@ -292,7 +292,13 @@ mni_log_nisp_output <- mni_log_nisp(fauna_and_molluscs_table)
 r_value <- round(mni_log_nisp_output$corr_output$estimate, 3)
 df <- mni_log_nisp_output$corr_output$parameter
 p_value <- round(mni_log_nisp_output$corr_output$p.value, 3)
+
+# ecological indices
+ecological_indices_table <- ecological_indices(fauna_and_molluscs_table)
+kable(ecological_indices_table)
 ```
+
+`r tab_n(name = "ecological_indices_table", caption = "Ecological indices of diversity and eveness for the faunal assemblage recovered from Khao Toh Chong. Pielou's index is also known as the Shannon index of evenness")`
 
 Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (`r tab_n(name = "table_of_fauna", display = "cite")`). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008). 
 
@@ -300,13 +306,15 @@ The values for species richness per context, of the mammalian, reptilian, and pi
 
 Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy (`r tab_n(name = "table_of_shells", display = "cite")`). Mollusk species richness varies between 0-11 species throughout the unit with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene (Figure 11). When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
 
-For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that fragmentation is constant over time. 
+For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that fragmentation is constant over time. Ecological indices of taxonomic diversity and evenness vary over time, suggesting complex variations in forager behaviour over time (`r tab_n(name = "ecological_indices_table", display = "cite")`). Generally, these indices have low values, indicating both low diversity and the dominance of a small number of taxa in the assemblage. This is largely controlled by the abundance of _Neoradina prasongi_, which dominate the assemblage in the lower levels, despite a greater number of other taxa present. In the upper levels where _Neoradina prasongi_ is absent, the diversity and evenness indices increase.
 
 ## Discussion
 
 ### Geoarchaeology
 
-The general picture indicated by the geoarchaeoloical data is one of subtle, uncoordinated changes in the variables we measured. This could be interpreted as indicative of either relatively constant conditions of deposition, or resulting from a high degree of bioturbation that has averaged out any major changes in the deposit. The sediment texture suggests a mixture of aeolian, colluvial and fluvial inputs, typical of cave and rockshelter deposts in the tropics (Westaway et al. 2009). The composition of the sediments varies little over time, as indicated by the measurements of organic matter, carbonates and pH in the bulk samples, and the ICP-AES data. The XRD data show variation in the proportion of Kaolinite throughout the deposit. The Kaolinite is probably derived from the weathering of feldspars and other silicate minerals, and may relate to changes in weathering on the landscape around the site. Substantial changes in surface geochemistry are unlikely, due to the uncoordinated changes in magnetic susceptibility, which, if coordinated, might suggest episodes of soil formation on the landscape surrounding the site. The Carbon isotope values indicate a consistent dominence of C3 plants in the site environment through time, similar to the present-day environment. The small monotonic decrease in Carbon isotope values towards the present suggests that the deposit has some stratigraphic integrity, despite the anomously low finds of ceramics. Thus, we can credibly interpret the geoarchaeological data as indicating generally constant conditions over time, rather than resulting from massive large scale bioturbation.  
+The general picture indicated by the geoarchaeoloical data is one of subtle, uncoordinated changes in the variables we measured. This could be interpreted as indicative of either relatively constant conditions of deposition, or resulting from a high degree of bioturbation that has averaged out any major changes in the deposit. The sediment texture suggests a mixture of aeolian, colluvial and fluvial inputs, typical of cave and rockshelter deposts in the tropics (Westaway et al. 2009). The composition of the sediments varies little over time, as indicated by the measurements of organic matter, carbonates and pH in the bulk samples, and the ICP-AES data. 
+
+The XRD data show variation in the proportion of Kaolinite throughout the deposit. The Kaolinite is probably derived from the weathering of feldspars and other silicate minerals, and may relate to changes in weathering on the landscape around the site. Substantial changes in surface geochemistry are unlikely, due to the uncoordinated changes in magnetic susceptibility, which, if coordinated, might suggest episodes of soil formation on the landscape surrounding the site. The Carbon isotope values indicate a consistent dominence of C3 plants in the site environment through time, similar to the present-day environment. The small monotonic decrease in Carbon isotope values towards the present suggests that the deposit has some stratigraphic integrity, despite the anomously low finds of ceramics. Thus, we can credibly interpret the geoarchaeological data as indicating generally constant conditions over time, rather than resulting from massive large scale bioturbation.  
 
 ### Faunal assemblage
 
