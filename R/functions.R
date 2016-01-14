@@ -1,7 +1,3 @@
-#' Hello, world!
-#
-# This is an example function named 'hello'
-# which prints 'Hello, world!'.
 #
 # You can learn more about package authoring with RStudio at:
 #
@@ -13,9 +9,6 @@
 #   Check Package:             'Ctrl + Shift + E'
 #   Test Package:              'Ctrl + Shift + T'
 
-hello <- function() {
-  print("Hello, world!")
-}
 
 
 ####              ####
@@ -58,6 +51,10 @@ read_in_the_data <- function(){
  # read in the lithic data
  ktc11_lithic_data <- read_csv("../data/ktc11_lithic_data.csv")
 
+ # read in faunal data
+ ktc11_fauna_nonmollusc_data <- read_csv("../data/ktc11_summary_faunal_nonmollusc_data.csv")
+ ktc11_mollusc_data <- read_csv("../data/ktc11_summary_mollusc_data.csv")
+
  # return a list of data frames
  return(list(ktc11_radiocarbon_dates = ktc11_radiocarbon_dates,
              ktc11_summary_geoarch_data = ktc11_summary_geoarch_data,
@@ -66,7 +63,9 @@ read_in_the_data <- function(){
              ktc11_summary_xrd_data = ktc11_summary_xrd_data,
              ktc11_raw_ICP_data = ktc11_raw_ICP_data,
              ktc11_ceramic_data = ktc11_ceramic_data,
-             ktc11_lithic_data = ktc11_lithic_data ))
+             ktc11_lithic_data = ktc11_lithic_data,
+             ktc11_fauna_nonmollusc_data = ktc11_fauna_nonmollusc_data,
+             ktc11_mollusc_data = ktc11_mollusc_data))
 }
 
 
@@ -672,8 +671,26 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
 }
 
 
+#' table_fauna_and_molluscs
+#'
+#'
+#' @export
+#'
+table_fauna_and_molluscs <- function(the_data){
 
+  bones <- the_data$ktc11_fauna_nonmollusc_data
+  shells <- the_data$ktc11_mollusc_data
 
+  names(bones)[1] <- "Taxon"
+  names(shells)[1] <- "Taxon"
+
+  bones_num <-  data.frame(sapply(bones[,2:ncol(bones)], as.numeric))
+  bones_num[is.na(bones_num)] <- 0
+  bones_num$taxon <- bones[,1]
+  bones_num <- bones_num[,c(ncol(bones_num), 2:(ncol(bones_num) - 1))]
+  bones_num[]
+  names(bones_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
+}
 
 
 #'  long_corr_matrix
