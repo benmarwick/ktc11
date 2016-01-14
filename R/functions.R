@@ -52,8 +52,12 @@ read_in_the_data <- function(){
  ktc11_lithic_data <- read_csv("../data/ktc11_lithic_data.csv")
 
  # read in faunal data
- ktc11_fauna_nonmollusc_data <- read_csv("../data/ktc11_summary_faunal_nonmollusc_data.csv")
- ktc11_mollusc_data <- read_csv("../data/ktc11_summary_mollusc_data.csv")
+ ktc11_fauna_nonmollusc_data <- read.csv("../data/ktc11_summary_faunal_nonmollusc_data.csv")
+ ktc11_mollusc_data <- read.csv("../data/ktc11_summary_mollusc_data.csv")
+
+ ktc11_fauna_nonmollusc_MNI_data <- read.csv("../data/ktc11_summary_faunal_nonmollusc_data_MNI.csv")
+ ktc11_mollusc_MNI_data <- read.csv("../data/ktc11_summary_mollusc_data_MNI.csv")
+
 
  # return a list of data frames
  return(list(ktc11_radiocarbon_dates = ktc11_radiocarbon_dates,
@@ -65,7 +69,9 @@ read_in_the_data <- function(){
              ktc11_ceramic_data = ktc11_ceramic_data,
              ktc11_lithic_data = ktc11_lithic_data,
              ktc11_fauna_nonmollusc_data = ktc11_fauna_nonmollusc_data,
-             ktc11_mollusc_data = ktc11_mollusc_data))
+             ktc11_mollusc_data = ktc11_mollusc_data,
+             ktc11_fauna_nonmollusc_MNI_data = ktc11_fauna_nonmollusc_MNI_data,
+             ktc11_mollusc_MNI_data = ktc11_mollusc_MNI_data))
 }
 
 
@@ -681,15 +687,28 @@ table_fauna_and_molluscs <- function(the_data){
   bones <- the_data$ktc11_fauna_nonmollusc_data
   shells <- the_data$ktc11_mollusc_data
 
+  bones_MNI <- the_data$ktc11_fauna_nonmollusc_MNI_data
+  shell_MNI <- the_data$ktc11_mollusc_MNI_data
+
   names(bones)[1] <- "Taxon"
   names(shells)[1] <- "Taxon"
 
-  bones_num <-  data.frame(sapply(bones[,2:ncol(bones)], as.numeric))
+  # clean up a bit
+  bones_num <-  data.frame(sapply(bones[,2:ncol(bones)], function(i) as.numeric(as.character(i))))
+  # change NA to zero
   bones_num[is.na(bones_num)] <- 0
+  # get taxon names
   bones_num$taxon <- bones[,1]
-  bones_num <- bones_num[,c(ncol(bones_num), 2:(ncol(bones_num) - 1))]
-  bones_num[]
+  # insert a col for context 1
+  bones_num
+  bones_num <- bones_num[, c(ncol(bones_num), 2:(ncol(bones_num) - 1))]
+
   names(bones_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
+
+
+
+
+
 }
 
 

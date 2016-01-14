@@ -32,10 +32,13 @@ output:
   word_document: default -->
 ---
 
-```{r}
+```{r setup, include=FALSE, cache = FALSE}
 library(knitr)
 opts_chunk$set(fig.path='../figures/',
-                      echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE)
+              echo=FALSE, 
+              warning=FALSE, 
+              message=FALSE, 
+              cache=TRUE)
 library(captioner)
 tab_n <- captioner(prefix = "Table")
 fig_n <- captioner(prefix = "Figure")
@@ -89,7 +92,7 @@ They key findings of our excavations were a faunal assemblage in a deposit with 
  
 All excavated materials are currently stored at the Silpakorn University Faculty of Archaeology's Phetchaburi campus. The raw data and code used to generate the results presented here are online at ***DOI***.  
 
-```{r read_in_the_data}
+```{r read_in_the_data, cache = FALSE}
 library(ktc11)
 the_data <- read_in_the_data()
 # While the data was collected we stored it here : https://catalyst.uw.edu/gopost/conversation/bmarwick/628803/post/2229534#2229534 and https://docs.google.com/spreadsheets/d/1_a20envyJUBA69NfSyLu0JniVUxnyKzAePUwQFrkS64/edit?pref=2&pli=1#gid=0
@@ -110,7 +113,7 @@ kable(calibrated_dates$dates_table[, -ncol(calibrated_dates$dates_table) ])
 ```{r plot_of_calibrated_dates}
 # show the plot
 library(ggplot2)
-ggplot(calibrated_dates, aes(midpoint, `Depth below surface (m)`, group = `Material dated`)) +
+ggplot(calibrated_dates$dates_table, aes(midpoint, `Depth below surface (m)`, group = `Material dated`)) +
   geom_point(aes(shape = `Material dated`), size = 5) +
   geom_smooth(method = "lm", se = FALSE) +
   xlab("calibrated years BP") +
@@ -232,13 +235,13 @@ plot(as.dendrogram(hclust(d, method="ward.D2")))
 
 `r fig_n(name = "dendro_elements", caption = "Dendrogram of samples based on ICP-AES results")`
 
-Results from ICP-AES analyses are presented in `r tab_n("tab_elements", display = "cite")`, with the concentrations of elements of interest to geogenic and anthropogenic sources including Si, Ca, Sr, Mn, Fe, Zn, Na, K, Mg, and Ti (Araujo et al. 2008; Arroyo-Kalin et al., in press, Cook, 1965, Costa and Kern, 1999, Eidt, 1985, Knudson et al., 2004, Middleton, 2004, Middleton and Price, 1996, Woods, 1984 and Woods and Glaser, 2004). The majority of these elements are strongly positively correlated (`r tab_n("tab_elements_corr", display = "cite")`), and there are no signficant negative correlations. These relationships suggest a single source for the sediments throughout the entire period of deposition. Cluster analysis of the contexts using the elemental data suggests low-level groupings resulting from minor variration. The cluster containing B1, A4, A7U and A7L is notable because they are relatively enriched with Ca and Mg, but this is not correlated with carbonates measured by loss on ignition. Overall, the element distributions suggest low variation over time, and homogenieity in the composition of the deposit with a single source of sediment.  
+Results from ICP-AES analyses are presented in `r tab_n("tab_elements", display = "cite")`, with the concentrations of elements of interest to geogenic and anthropogenic sources including Si, Ca, Sr, Mn, Fe, Zn, Na, K, Mg, and Ti (Araujo et al. 2008; Arroyo-Kalin et al., in press, Cook, 1965, Costa and Kern, 1999, Eidt, 1985, Knudson et al., 2004, Middleton, 2004, Middleton and Price, 1996, Woods, 1984 and Woods and Glaser, 2004). The majority of these elements are strongly positively correlated (`r tab_n("tab_elements_corr", display = "cite")`), and there are no signficant negative correlations. These relationships suggest a single source for the sediments throughout the entire period of deposition. Cluster analysis of the contexts using the elemental data suggests low-level groupings resulting from minor variration (`r fig_n("dendro_elements", display = "cite")`). The cluster containing B1, A4, A7U and A7L is notable because they are relatively enriched with Ca and Mg, but this is not correlated with carbonates measured by loss on ignition. Overall, the element distributions suggest low variation over time, and homogenieity in the composition of the deposit with a single source of sediment.  
 
 ### Archaeology
 
-![artefact photo](../figures/ceramic_and_lithics/composite_lithic_ceramic.png "artefact photo")
+![](../figures/ceramic_and_lithics/composite_lithic_ceramic.png)
 
-`r fig_n(name = "ceramic_and_stone_artefact_photo", caption = "Examples of ceramics, ground and flaked stone artefacts from Khao Toh Chong")`
+`r fig_n(name = "artefact_photo", caption = "Examples of ceramics, ground and flaked stone artefacts from Khao Toh Chong")`
 
 ```{r table_of_lithics_and_ceramics}
 ktc11_summary_ceramics_lithics <- table_ceramics_lithics(the_data$ktc11_lithic_data, the_data$ktc11_ceramic_data)
@@ -260,13 +263,13 @@ significant_correlations <- all_data_corr[all_data_corr$cor > 0.7 | all_data_cor
 ```{r artefacts_plot}
 # plot ceramic and stone artefact mass together, by age
 plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
-
 ```
 
-`r fig_n(name = "plot_ceramic_and_stone_artefact_mass", caption = "Distribution of ceramics and stone artefacts over time at Khao Toh Chong. Ages older than 13,000 cal BP have been extrapolated using a regression function described in the supplementary information.")`
+
+`r fig_n(name = "artefacts_plot", caption = "Distribution of ceramics and stone artefacts over time at Khao Toh Chong. Ages older than 13,000 cal BP have been extrapolated using a regression function described in the supplementary information.")`
 
 
-The archaeological materials consist mostly of small broken pieces of earthenware and flaked stone artefacts (`r tab_n("table_of_lithics_and_ceramics", display = "cite")`, `r fig_n(ceramic_and_stone_artefact_photo, display = "cite")`). Two complete polished adzes were foudn in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacture. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised lines. There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Overall, the assemblage is small and unremarkable. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termite. Future work on thermoluminescence of these ceramics will help to determine if they have been displaced downwards.  
+The archaeological materials consist mostly of small broken pieces of earthenware and flaked stone artefacts (`r tab_n("table_of_lithics_and_ceramics", display = "cite")`, `r fig_n("artefact_photo", display = "cite")`, `r fig_n("artefacts_plot", display = "cite")`). Two complete polished adzes were found in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacture. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised lines. There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Overall, the assemblage is small and unremarkable. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termite. Future work on thermoluminescence of these ceramics will help to determine if they have been displaced downwards.  
 
 Despite this possibility of disturbance, we can make some observations from the archaeological sequence at KTC. The stone artefact technology changed from polished adze flakes made from fine-grained sedimentary rock in the upper levels to large flaked cores and flakes made from coarse-grain metamorphic rock in the lower levels. The ceramic assemblage also changes from black sherds in the upper levels to thicker, red sherds with frequent incised decorations in the lower levels. However, the small number of artefacts in the deposit overall limits the degree to which we can distinguish these changes as part of a major regional trend or idiosyncratic use of this site. 
 
