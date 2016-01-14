@@ -688,7 +688,7 @@ table_fauna_and_molluscs <- function(the_data){
   shells <- the_data$ktc11_mollusc_data
 
   bones_MNI <- the_data$ktc11_fauna_nonmollusc_MNI_data
-  shell_MNI <- the_data$ktc11_mollusc_MNI_data
+  shells_MNI <- the_data$ktc11_mollusc_MNI_data
 
   names(bones)[1] <- "Taxon"
   names(shells)[1] <- "Taxon"
@@ -698,7 +698,7 @@ table_fauna_and_molluscs <- function(the_data){
   bones_num <-  data.frame(sapply(bones[,2:ncol(bones)], function(i) as.numeric(as.character(i))))
   # change NA to zero
   bones_num[is.na(bones_num)] <- 0
-  bones_rowsums <- c(0, rowSums(bones_num))
+  bones_rowsums <- c(rowSums(bones_num))
   bones_colsums <- c(0, colSums(bones_num))
   # get taxon names
   bones_num$taxon <- bones[,1]
@@ -727,10 +727,66 @@ table_fauna_and_molluscs <- function(the_data){
 
   # add on row and col totals
   col_totals <- sapply(1:length(bones_colsums), function(i) paste0(bones_colsums[i], " (", bones_MNI_colsums[i], ")"))
-  rbind(bones_NISP_MNI, c("Total", col_totals))
+  row_totals <- sapply(1:length(bones_rowsums), function(i) paste0(bones_rowsums[i], " (", bones_MNI_rowsums[i], ")"))
+  # need to have characters to rbind
+  bones_NISP_MNI <- sapply(bones_NISP_MNI, as.character)
+  bones_NISP_MNI_total <- cbind(bones_NISP_MNI, Total = row_totals)
+  bones_NISP_MNI_total <- rbind(bones_NISP_MNI_total, c("Total", col_totals, ""))
+  # fill in that last bottom corner cell
+  bones_NISP_MNI_total[nrow(bones_NISP_MNI_total), ncol(bones_NISP_MNI_total)] <- paste0(sum(bones_num[,-1]), " (", sum(bones_MNI_num[,-1]), ")")
 
-  # Shell
+############
+  # Shells, NISP with MNI in parentheses
+  # clean up a bit, NISP first
+  shells_num <-  data.frame(sapply(shells[,2:ncol(shells)], function(i) as.numeric(as.character(i))))
+  # change NA to zero
+  shells_num[is.na(shells_num)] <- 0
+  shells_rowsums <- c(rowSums(shells_num))
+  shells_colsums <- c(0, colSums(shells_num)) # because no context 1
+  # get taxon names
+  shells_num$taxon <- shells[,1]
+  # insert a col of zeros for context 1
+  shells_num$one <-  rep(0, nrow(shells_num))
+  shells_num <- shells_num[, c(ncol(shells_num)-1, ncol(shells_num), 3:ncol(shells_num)-2) ]
+  names(shells_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
+  # now MNI
+  shells_MNI_num <-  data.frame(sapply(shells_MNI[,2:ncol(shells_MNI)], function(i) as.numeric(as.character(i))))
+  # change NA to zero
+  shells_MNI_num[is.na(shells_MNI_num)] <- 0
+  shells_MNI_rowsums <- rowSums(shells_MNI_num)
+  shells_MNI_colsums <- colSums(shells_MNI_num)
+  # get taxon names
+  shells_MNI_num$taxon <- shells_MNI[,1]
+  # reorder
+  shells_MNI_num <- shells_MNI_num[, c( (ncol(shells_MNI_num)), 1:(ncol(shells_MNI_num)-1) ) ]
+  names(shells_MNI_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
+
+  # now combine into compact table
+  # they don't have the same taxa in both tables
+  shells_num <- shells_num[order(shells_num$Taxon),]
+  shells_MNI_num <- shells_MNI_num[order(shells_MNI_num$Taxon),]
+
+  shells_NISP_MNI <- as.data.frame(do.call(cbind, lapply(2:ncol(shells_num), function(i) paste0(shells_num[ , i], " (", shells_MNI_num[ , i], ")"  ) )))
+  # put taxa back on
+  shells_NISP_MNI <- cbind(shells_num$Taxon, shells_NISP_MNI)
+  names(shells_NISP_MNI) <- names(shells_num)
+
+  # add on row and col totals
+  col_totals <- sapply(1:length(shells_colsums), function(i) paste0(shells_colsums[i], " (", shells_MNI_colsums[i], ")"))
+  row_totals <- sapply(1:length(shells_rowsums), function(i) paste0(shells_rowsums[i], " (", shells_MNI_rowsums[i], ")"))
+  # need to have characters to rbind
+  shells_NISP_MNI <- sapply(shells_NISP_MNI, as.character)
+  shells_NISP_MNI_total <- cbind(shells_NISP_MNI, Total = row_totals)
+  shells_NISP_MNI_total <- rbind(shells_NISP_MNI_total, c("Total", col_totals, ""))
+  # fill in that last bottom corner cell
+  shells_NISP_MNI_total[nrow(shells_NISP_MNI_total), ncol(shells_NISP_MNI_total)] <- paste0(sum(shells_num[,-1]), " (", sum(shells_MNI_num[,-1]), ")")
+
+
+
+
+  return(list(bones_NISP_MNI_total = bones_NISP_MNI_total,
+              shells_NISP_MNI_total = shells_NISP_MNI_total))
 }
 
 

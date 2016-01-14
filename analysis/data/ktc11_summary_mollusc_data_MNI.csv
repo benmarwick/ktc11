@@ -1,24 +1,23 @@
-Taxon,1 (Surface),2,3,4,5,6,7H,8,7L,MNI Totals
- Neritidae gen. indet. ,-,-,1,-,-,-,-,-,-,1
-Nerita balteata,-,-,-,-,2,-,-,-,-,2
-Cyclophorus sp.,-,-,-,-,-,7,-,-,-,7
-Cyclophorus cf. saturnus ,-,-,-,-,-,-,-,1,-,1
-Cyclophorus malayanus,-,-,-,-,9,1,-,1,-,11
- Cyclophoridae gen. indet.,-,2,3,2,1,28,5,30,-,71
-Rhiostoma jalorensis,-,-,2,2,10,9,2,2,-,27
-Rhiostoma sp. ,-,-,-,-,-,6,3,2,-,11
-Filopaludina sp. ,-,-,2,-,-,-,-,-,-,2
- Viviparidae gen. indet.,-,1,-,-,-,-,-,-,-,1
-Pila sp. ,-,-,-,-,-,2,4,-,-,6
- Ampullariidae gen. indet. ,-,-,-,-,-,3,-,3,-,6
- Neoradina prasongi,-,8,134,52,82,1584,2215,771,-,4846
-Telescopium telescopium ,-,-,3,2,3,4,2,-,-,14
- Muricidae gen. indet.  ,-,1,4,-,1,-,-,-,-,6
-Plectopylis degerbolae,-,-,1,-,1,2,3,5,-,12
-Amphidromus atricallosus ,-,-,1,-,1,1,-,-,-,2
+Taxon,1 (Surface),2,3,4,5,6,7H,8,7L,
+Neritidae gen. indet. ,-,-,-,1,-,-,-,-,-,-
+Nerita balteata,-,-,-,-,-,2,-,-,-,-
+Cyclophorus sp.,-,-,-,-,-,-,7,-,-,-
+Cyclophorus cf. saturnus ,-,-,-,-,-,-,-,-,1,-
+Cyclophorus malayanus,-,-,-,-,-,9,1,-,1,-
+Cyclophoridae gen. indet.,-,-,2,3,2,1,28,5,30,-
+Rhiostoma jalorensis,-,-,-,2,2,10,9,2,2,-
+Rhiostoma sp. ,-,-,-,-,-,-,6,3,2,-
+Filopaludina sp. ,-,-,-,2,-,-,-,-,-,-
+Viviparidae gen. indet.,-,-,1,-,-,-,-,-,-,-
+Pila sp. ,-,-,-,-,-,-,2,4,-,-
+Ampullariidae gen. indet. ,-,-,-,-,-,-,3,-,3,-
+Neoradina prasongi,-,-,8,134,52,82,1584,2215,771,-
+Telescopium telescopium ,-,-,-,3,2,3,4,2,-,-
+Muricidae gen. indet.  ,-,-,1,4,-,1,-,-,-,-
+Plectopylis degerbolae,-,-,-,1,-,1,2,3,5,-
+Amphidromus atricallosus ,-,-,-,1,-,1,1,-,-,-
 Anadara sp. ,-,-,-,-,-,-,-,-,-,-
- Arcidae gen. indet. ,-,-,-,-,-,-,-,-,-,-
+Arcidae gen. indet. ,-,-,-,-,-,-,-,-,-,-
 Pseudodon sp.,-,-,-,-,-,-,-,-,-,-
- Amblemidae gen. indet.,-,-,-,-,-,-,-,-,-,-
- Corbiculidae gen. indet. ,-,-,-,-,-,-,-,-,-,-
-MNI context,0,12,151,58,110,1647,2234,815,0,
+Amblemidae gen. indet.,-,-,-,-,-,-,-,-,-,-
+Corbiculidae gen. indet. ,-,-,-,-,-,-,-,-,-,-

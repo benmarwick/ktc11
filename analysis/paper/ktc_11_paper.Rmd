@@ -209,7 +209,6 @@ kable(ktc11_summary_xrd_data)
 The XRD analysis showed quartz and calcite present in all samples. Kaolinite was identified in samples in A-2, A-3, and A-6, suggesting a greater contribution of more intensely weathered sediment during the formation of those deposits. An alternative possibility is that the Kaolinite derives from ceramics found in those contexts. The proportions of Calcite in each sample support the loss on ignition results for carbonates, showing low varition throughout the sequence. Small amounts of Periclase were observed, indicating metamorphosis of the local limestone. 
 
 #### Inductively coupled plasma-atomic emission spectrometry 
-
 ```{r icp_aes_data_summary}
 icp_aes_data <- icp_aes_data_summary(the_data$ktc11_raw_ICP_data)
 # table of elements
@@ -265,9 +264,7 @@ significant_correlations <- all_data_corr[all_data_corr$cor > 0.7 | all_data_cor
 plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
 ```
 
-
 `r fig_n(name = "artefacts_plot", caption = "Distribution of ceramics and stone artefacts over time at Khao Toh Chong. Ages older than 13,000 cal BP have been extrapolated using a regression function described in the supplementary information.")`
-
 
 The archaeological materials consist mostly of small broken pieces of earthenware and flaked stone artefacts (`r tab_n("table_of_lithics_and_ceramics", display = "cite")`, `r fig_n("artefact_photo", display = "cite")`, `r fig_n("artefacts_plot", display = "cite")`). Two complete polished adzes were found in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacture. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised lines. There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Overall, the assemblage is small and unremarkable. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termite. Future work on thermoluminescence of these ceramics will help to determine if they have been displaced downwards.  
 
@@ -275,16 +272,26 @@ Despite this possibility of disturbance, we can make some observations from the 
 
 ### Faunal assemblage
 
-```{r faunal_tables}
-
+```{r faunal_table}
+# Mammals, reptiles, etc.
+fauna_and_molluscs_table <- table_fauna_and_molluscs(the_data)
+# show the tables
+kable(fauna_and_molluscs_table$bones_NISP_MNI_total)
 ```
 
+`r tab_n(name = "table_of_fauna", caption = "NISP of mammal, reptile and fish remains recovered from Khao Toh Chong (MNI values in parentheses). ")`
 
-Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (Tables XX). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008).
+```{r shell_table}
+kable(fauna_and_molluscs_table$shells_NISP_MNI_total)
+```
+
+`r tab_n(name = "table_of_shells", caption = "NISP of mollusk remains recovered from Khao Toh Chong (MNI values in parentheses).")`
+
+Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (`r tab_n(name = "table_of_fauna", display = "cite")`). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008).
 
 The values for species richness per context, of the mammalian, reptilian, and piscean taxa appears to be driven primarily by the presence or absence of carapace elements belonging to the Order Testudines, likely representing species of the turtle Family Trionychidae and Emydidae, based upon comparable faunal analyses at Lang Rongrien Rockshelter (Mudar and Anderson, 2007). Identification of abundant _Varanus_ sp., and a moderate representation of _Macaca_ sp., occurred in abundance with Testundines elements. Overall the presence of vertebrate remains, in comparison with invertebrate remains, was low at the rockshelter. Artiodactyl remains are notably restricted to the terminal Pleistocene and early Holocene deposits.
 
-Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy. Mollusk species richness varies between 0-11 species throughout the unit with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene (Figure 11). When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
+Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy (`r tab_n(name = "table_of_shells", display = "cite")`). Mollusk species richness varies between 0-11 species throughout the unit with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene (Figure 11). When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
 
 ## Discussion
 
