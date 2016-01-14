@@ -693,21 +693,43 @@ table_fauna_and_molluscs <- function(the_data){
   names(bones)[1] <- "Taxon"
   names(shells)[1] <- "Taxon"
 
-  # clean up a bit
+  # Bones, NISP with MNI in parentheses
+  # clean up a bit, NISP first
   bones_num <-  data.frame(sapply(bones[,2:ncol(bones)], function(i) as.numeric(as.character(i))))
   # change NA to zero
   bones_num[is.na(bones_num)] <- 0
+  bones_rowsums <- c(0, rowSums(bones_num))
+  bones_colsums <- c(0, colSums(bones_num))
   # get taxon names
   bones_num$taxon <- bones[,1]
-  # insert a col for context 1
-  bones_num
-  bones_num <- bones_num[, c(ncol(bones_num), 2:(ncol(bones_num) - 1))]
-
+  # insert a col of zeros for context 1
+  bones_num$one <-  rep(0, nrow(bones_num))
+  bones_num <- bones_num[, c(ncol(bones_num)-1, ncol(bones_num), 3:ncol(bones_num)-2) ]
   names(bones_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
+  # now MNI
+  bones_MNI_num <-  data.frame(sapply(bones_MNI[,2:ncol(bones_MNI)], function(i) as.numeric(as.character(i))))
+  # change NA to zero
+  bones_MNI_num[is.na(bones_MNI_num)] <- 0
+  bones_MNI_rowsums <- rowSums(bones_MNI_num)
+  bones_MNI_colsums <- colSums(bones_MNI_num)
+  # get taxon names
+  bones_MNI_num$taxon <- bones_MNI[,1]
+  # reorder
+  bones_MNI_num <- bones_MNI_num[, c( (ncol(bones_MNI_num)), 1:(ncol(bones_MNI_num)-1) ) ]
+  names(bones_MNI_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
+  # now combine into compact table
+  bones_NISP_MNI <- as.data.frame(do.call(cbind, lapply(2:ncol(bones_num), function(i) paste0(bones_num[ , i], " (", bones_MNI_num[ , i], ")"  ) )))
+  # put taxa back on
+  bones_NISP_MNI <- cbind(bones_num$Taxon, bones_NISP_MNI)
+  names(bones_NISP_MNI) <- names(bones_num)
 
+  # add on row and col totals
+  col_totals <- sapply(1:length(bones_colsums), function(i) paste0(bones_colsums[i], " (", bones_MNI_colsums[i], ")"))
+  rbind(bones_NISP_MNI, c("Total", col_totals))
 
+  # Shell
 
 }
 
