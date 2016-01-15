@@ -135,6 +135,7 @@ calibrate_the_dates <- function(dates) {
   age <- function(d){slp * d + intcp }
 
   return(list(dates_table = dates_table,
+              summary_lm = summary_lm,
               intcp = intcp,
               slp = slp,
               age = age))
