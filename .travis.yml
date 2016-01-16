@@ -10,4 +10,5 @@ r_binary_packages:
  - reshape2
  - tidyr
  - stringr
+ - knitr
 
