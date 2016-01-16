@@ -1,0 +1,24 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t benmarwick/ktc11  https://raw.githubusercontent.com/benmarwick/ktc11/master/Dockerfile
+test:
+  override:
+    - docker run -d -p 8787:8787 benmarwick/ktc11; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:8787
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push benmarwick/ktc11
+
+
+
+
+

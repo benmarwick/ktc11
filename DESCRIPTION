@@ -10,8 +10,12 @@ License: What license is it under?
 Imports:
     readr,
     dplyr,
+	tidyr,
     Bchron,
-    MCMCpack,
-    BEST
+	stringr,
+	G2Sd,
+	reshape2,
+	vegan,
+	Hmisc
 LazyData: TRUE
 RoxygenNote: 5.0.1
