@@ -4,6 +4,8 @@ language: r
 sudo: required
 
 # System dependencies for HTTP calling
+apt_packages:
+ - openjdk-7-jre
 
 r_binary_packages:
  - dplyr
