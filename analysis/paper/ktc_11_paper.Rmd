@@ -1,6 +1,5 @@
 ---
-title: Adaptations to sea level change and the transition to agriculture in tropical
-  monsoonal Peninsula Thailand
+title: Adaptations to sea level change and transitions to agriculture at Khao Toh Chong, Krabi, tropical monsoonal Peninsula Thailand
 author:
 - Ben Marwick (University of Washington, University of Wollongong)
 - Hannah Van Vlack (San Jose State University)
@@ -65,7 +64,7 @@ To investigate the gap in the archaeological record between the shift from rocks
 
 `r fig_n(name = "sea_level", caption = "Holocene sea level curve for Thailand, redrawn from Sinsakul (1992). Data points are radiocarbon ages of geological specimens from beach and tidal locations.")`
 
-Previous research into archaeological correlates of these sea level changes in peninsula Thailand have been summarized by Anderson (2005). He describes faunal evidence from Lang Rongrien that has increases in marine shellfish around 7500 BP and between 4000 and 2500 BP. Anderson proposes that the increases in marine shellfish at the site are probably related to increases in sea levels. A small number of other sites have been previously investigated in several provinces of peninsula Thailand (Charoenwongsa et al. 1989). For example, Moh Khiew in in Krabi with its 25,000 year old human remains (Pookajorn 1994, Auetrakulvit, 1995, Matsumara and Pookajorn 2005, Chikament 2007), Tham Khao Khi Chan in Surat Thani Province has occupation layers dating from 6060 BP to 4250 BP (Srisuchat and Srisuchat 1992). Buang Bap, also in Surat Thani, has faunal remains including marine shellfish dating between 6000 and 5000 BP (Srisuchat and Srisuchat 1992). Pak Om has a dense and diverse archaeological deposit, but its two dates of 9350 and 3010 BP come from the same layer, so the chronology is uncertain (Srisuchat 1997). Khao Tau in Pang Nga is a site complex with deep stratification and abundant cultural materials dating to 4750 and 5250 BP (Srisuchat and Srisuchat 1992), Finally, there is the Tham Sua shell midden in Krabi that is a deposit of marine shell greater than one meter deep and with a basal date of 6440 BP (Anderson 2005). 
+Previous research into archaeological correlates of these sea level changes in peninsula Thailand have been summarized by Anderson (2005). He describes faunal evidence from Lang Rongrien that has increases in marine shellfish around 7500 BP and between 4000 and 2500 BP. Anderson proposes that the increases in marine shellfish at the site are probably related to increases in sea levels. A small number of other sites have been previously investigated in several provinces of peninsula Thailand. For example, Moh Khiew in in Krabi with its 25,000 year old human remains (Pookajorn 1994, Auetrakulvit et al. 2012, Matsumara and Pookajorn 2005, Chitkament 2007), Tham Khao Khi Chan in Surat Thani Province has occupation layers dating from 6060 BP to 4250 BP (Srisuchat and Srisuchat 1992). Buang Bap, also in Surat Thani, has faunal remains including marine shellfish dating between 6000 and 5000 BP (Srisuchat and Srisuchat 1992). Pak Om has a dense and diverse archaeological deposit, but its two dates of 9350 and 3010 BP come from the same layer, so the chronology is uncertain (Srisuchat 1997). Khao Tau in Pang Nga is a site complex with deep stratification and abundant cultural materials dating to 4750 and 5250 BP (Srisuchat and Srisuchat 1992), Finally, there is the Tham Sua shell midden in Krabi that is a deposit of marine shell greater than one meter deep and with a basal date of 6440 BP (Anderson 2005). 
 
 These previous excavations demonstrate human occupation at several sites in peninsular Thailand during the critical time of sea level changes in the Holocene. However, the level of available detail does not give a clear picture of stratigraphic integrity or the subsistence strategies represented at the sites. The goal of our work at Khao Toh Chong was to build on this previous work, not only by collecting an assemblage spanning the Holocene, but also by conducting geoarchaeological analyses at the site to assess stratigraphic integrity and provide local environmental context to the human occupation. 
 
@@ -85,7 +84,7 @@ Samples for organic Carbon isotope analysis consisted of a 2 g sub-sample dried 
 
 For XRD analysis, samples were scanned on a Bruker D8 Focus X-Ray Diffractometer with a Cu radiation source. Following McGrath et al. (2008) we sub-sampled 2 g of >2 mm sediment and ground it to a fine powder. Next 20 ml of 30% H2O2 was used to remove organic matter. After effervescence it was removed and dried for another 60°C for 24 hours. After a final grinding, samples were loaded onto trays and scanned on a Bruker D8 Focus X-ray Diffractometer from 5° to 75° 2θ with a Cu radiation source at resolution 0.02° steps per second with 40 kV and 40 mA power output. MDI Jade 9 software was used to identify minerals. 
 
-Samples were prepared for compositional analysis by ICP-AES as follows. A 1 g sub-sample was added to 10ml of HNO3 and heated at 90°C for 15 minutes (Misarti et al. 2011). Another 5ml of HNO3 was next added and heated at 90°C for 60 minutes to drive the reaction. Next, deionized water and 30% H2O2 were added for increased oxidization and 10ml HCl was added and heated for chloride formation. The samples were diluted with deionized water and filtered before being measured and placed into Falcon tubes for ICP-AES analysis. This acid digest provides a broad spectrum of elements in a known volumetric concentration, as required for ICP-AES analysis (Balcerzak, 2002; Carter, 1993; Hunt, 2012). The samples were analyzed in a Perkin Elmer Optima 8300DV in the University of Washington Chemistry Department.
+Samples were prepared for compositional analysis by ICP-AES as follows. A 1 g sub-sample was added to 10ml of HNO3 and heated at 90°C for 15 minutes (Misarti et al. 2011). Another 5ml of HNO3 was next added and heated at 90°C for 60 minutes to drive the reaction. Next, deionized water and 30% H2O2 were added for increased oxidization and 10ml HCl was added and heated for chloride formation. The samples were diluted with deionized water and filtered before being measured and placed into Falcon tubes for ICP-AES analysis. This acid digest provides a broad spectrum of elements in a known volumetric concentration, as required for ICP-AES analysis (Balcerzak, 2002; Carter, 1993). The samples were analyzed in a Perkin Elmer Optima 8300DV in the University of Washington Chemistry Department.
 
 We were unable to extract quantifiable amounts of pollen or phytoliths from the sediment samples (further details are reported in Van Vlack 2014). This is likely due to the frequent wetting and drying of the rockshelter deposit which creates poor conditions for microflora preservation. 
 
@@ -144,7 +143,7 @@ mean_difference_offset_output <- mean_difference_offset(the_data$ktc11_radiocarb
 mean_difference_offset_value <- round(mean_difference_offset_output$mean_difference,0)
 ```
 
-Charcoal and shell samples were dated using AMS methods by Direct AMS. Radiocarbon ages were calibrated to 95% ranges using Bchron 4.1.1 with the IntCal 13 curve (Haslett and Parnell 2008; Bronk Ramsey 2009). Five charcoal samples and five shell samples returned radiocarbon age determinations. The shell's ages are offset from the charcoal ages by an average of `r mean_difference_offset_value` years, indicating a substantial reservoir effect. Considering only the charcoal dates, the excavated deposit spans about 13,500 cal. BP through to about 150 cal. BP.
+Charcoal and shell samples were dated using AMS methods by Direct AMS. Radiocarbon ages were calibrated to 95% ranges using Bchron 4.1.1 with the IntCal13 curve (Haslett and Parnell 2008; Parnell et al. 2008; Reimer et al. 2011). Five charcoal samples and five shell samples returned radiocarbon age determinations. The shell's ages are offset from the charcoal ages by an average of `r mean_difference_offset_value` years, indicating a substantial reservoir effect. Considering only the charcoal dates, the excavated deposit spans about 13,500 cal. BP through to about 150 cal. BP.
 
 The depth-age relationship for the dated samples is strongly linear, suggesting a constant rate of sediment accumulation. Although there is nearly a meter between the lowest and second lowest charcoal samples, the linear tendency of the shell samples that span this gap suggest that the accumulation of sediment at the site has been constant through the Holocene. Using the ages of the charcoal samples, we computed a simple linear regression model to estimate the approximate ages of undated excavation units. The regression equation is age = `r formatC(round(calibrated_dates$slp, 0), big.mark=",",format="f", drop0trailing = TRUE)` * depth `r formatC(round(calibrated_dates$intcp, 0), big.mark=",",format="f", drop0trailing = TRUE)`. Using this equation, we estimate the date of the lowest excavation level to be approximately `r formatC(round((1.6 * calibrated_dates$slp + calibrated_dates$intcp),0), big.mark=",",format="f", drop0trailing = TRUE)` cal BP. 
 
@@ -209,7 +208,7 @@ The results of the basic chemical, magnetic susceptibility and particle size ana
 
 #### Carbon isotope analysis
 
-The δ13C values range between `r range_carbon_istope_data[1]` and `r range_carbon_istope_data[2]`, with values becoming increasingly negative in more recent times (XXX). This trend in δ13C values over time may be explained by isotopic fractionation and microbial activity (Lerch et al. 2011, Wynn 2007, Tieszen 1991 and Schweizer et al. 1999), rather than major vegetation change throughout this period. This indicates an overall dominance of C3 plants, suggestive of forested-grassland vegetation, including evergreen trees and shrubs, surrounding the site (DeNiro 1987; Yoneyama et al. 2010).
+The δ13C values range between `r range_carbon_istope_data[1]` and `r range_carbon_istope_data[2]`, with values becoming increasingly negative in more recent times (`r fig_n("stratplot", display = "cite")`). This trend in δ13C values over time may be explained by isotopic fractionation and microbial activity (Lerch et al. 2011, Wynn 2007, Tieszen 1991; Schweizer et al. 1999), rather than major vegetation change throughout this period. This indicates an overall dominance of C3 plants, suggestive of forested-grassland vegetation, including evergreen trees and shrubs, surrounding the site (DeNiro 1987; Yoneyama et al. 2010).
 
 #### X-ray Diffraction
 
@@ -221,7 +220,7 @@ kable(ktc11_summary_xrd_data)
 
 `r tab_n(name = "xrd_tab", caption = "Summary of X-ray diffraction data from Khao Toh Chong")`
 
-The XRD analysis showed quartz and calcite present in all samples. Kaolinite was identified in samples in A-2, A-3, and A-6, suggesting a greater contribution of more intensely weathered sediment during the formation of those deposits. An alternative possibility is that the Kaolinite derives from ceramics found in those contexts. The proportions of Calcite in each sample support the loss on ignition results for carbonates, showing low variation throughout the sequence. Small amounts of Periclase were observed, indicating metamorphosis of the local limestone. 
+The XRD analysis showed quartz and calcite present in all samples. Kaolinite was identified in samples in A-2, A-3, and A-6, suggesting a greater contribution of more intensely weathered sediment during the formation of those deposits (Alam et al. 2008). An alternative possibility is that the Kaolinite derives from ceramics found in those contexts. The proportions of Calcite in each sample support the loss on ignition results for carbonates, showing low variation throughout the sequence. Small amounts of Periclase were observed, indicating metamorphosis of the local limestone. 
 
 #### Inductively coupled plasma-atomic emission spectrometry 
 ```{r icp_aes_data_summary}
@@ -249,7 +248,7 @@ plot(as.dendrogram(hclust(d, method="ward.D2")))
 
 `r fig_n(name = "dendro_elements", caption = "Dendrogram of samples based on ICP-AES results")`
 
-Results from ICP-AES analyses are presented in `r tab_n("tab_elements", display = "cite")`, with the concentrations of elements of interest to geogenic and anthropogenic sources including Si, Ca, Sr, Mn, Fe, Zn, Na, K, Mg, and Ti (Araujo et al. 2008; Arroyo-Kalin et al., in press, Cook, 1965, Costa and Kern, 1999, Eidt, 1985, Knudson et al., 2004, Middleton, 2004, Middleton and Price, 1996, Woods, 1984 and Woods and Glaser, 2004). The majority of these elements are strongly positively correlated (`r tab_n("tab_elements_corr", display = "cite")`), and there are no significant negative correlations. These relationships suggest a single source for the sediments throughout the entire period of deposition. Cluster analysis of the contexts using the elemental data suggests low-level groupings resulting from minor variation (`r fig_n("dendro_elements", display = "cite")`). The cluster containing B1, A4, A7U and A7L is notable because they are relatively enriched with Ca and Mg, but this is not correlated with carbonates measured by loss on ignition. Overall, the element distributions suggest low variation over time, and homogeneity in the composition of the deposit with a single source of sediment.  
+Results from ICP-AES analyses are presented in `r tab_n("tab_elements", display = "cite")`, with the concentrations of elements of interest to geogenic and anthropogenic sources including Si, Ca, Sr, Mn, Fe, Zn, Na, K, Mg, and Ti (Araujo et al. 2008; Arroyo-Kalin et al. 2009; Cook, 1965, Costa and Kern, 1999, Eidt, 1985, Knudson et al., 2004, Middleton, 2004, Middleton and Price, 1996, Woods, 1984 and Woods and Glaser, 2004). The majority of these elements are strongly positively correlated (`r tab_n("tab_elements_corr", display = "cite")`), and there are no significant negative correlations. These relationships suggest a single source for the sediments throughout the entire period of deposition. Cluster analysis of the contexts using the elemental data suggests low-level groupings resulting from minor variation (`r fig_n("dendro_elements", display = "cite")`). The cluster containing B1, A4, A7U and A7L is notable because they are relatively enriched with Ca and Mg, but this is not correlated with carbonates measured by loss on ignition. Overall, the element distributions suggest low variation over time, and homogeneity in the composition of the deposit with a single source of sediment.  
 
 ### Archaeology
 
@@ -321,7 +320,7 @@ The values for species richness per context, of the mammalian, reptilian, and pi
 
 Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy (`r tab_n(name = "table_of_shells", display = "cite")`). Mollusk species richness varies between 0-11 species throughout the unit with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene. When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
 
-For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that fragmentation is constant over time. Ecological indices of taxonomic diversity and evenness vary over time, suggesting complex variations in forager behaviour over time (`r tab_n(name = "ecological_indices_table", display = "cite")`). Generally, these indices have low values, indicating both low diversity and the dominance of a small number of taxa in the assemblage. This is largely controlled by the abundance of _Neoradina prasongi_, which dominate the assemblage in the lower levels, despite a greater number of other taxa also present. In the upper levels where _Neoradina prasongi_ is absent, the diversity and evenness indices increase, but overall counts are low suggesting the site was less frequently used for subsistence activities. 
+For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that fragmentation is constant over time (Lyman 2008; Jones 2013). Ecological indices of taxonomic diversity and evenness vary over time, suggesting complex variations in forager behaviour over time (`r tab_n(name = "ecological_indices_table", display = "cite")`). Generally, these indices have low values, indicating both low diversity and the dominance of a small number of taxa in the assemblage. This is largely controlled by the abundance of _Neoradina prasongi_, which dominate the assemblage in the lower levels, despite a greater number of other taxa also present. In the upper levels where _Neoradina prasongi_ is absent, the diversity and evenness indices increase, but overall counts are low suggesting the site was less frequently used for subsistence activities. 
 
 ## Discussion
 
@@ -337,14 +336,14 @@ KTC rockshelter has a relatively undisturbed record of mammalian, reptilian, pis
 
 _Neoradina prasongi_ molluscs live in fresh-water stream habitats (Brandt 1974) . At KTC, _N. prasongi_ shells constitute the bulk of molluscan food waste in the archaeological assemblage. The period of peak discard rates for _N. prasongi_ is c. 9,000 cal BP, suggesting that the most intensive use of the rockshelter for subsistence purposes occurred during this time. Utilization of this mollusk also indicates that major freshwater stream habitats were near the rockshelter during the late-Pleistocene and early Holocene. Following their analysis of the faunal material from Lang Rongrien, Mudar and Anderson (2007) suggested that during the late-Pleistocene a drier and more open environment occurred in the Krabi region, this period was also characterized by increased monsoon seasonality. During the peak mollusk discard period of the late-Pleistocene at KTC, a drier and more open environment would have allowed forager groups to pursue large artiodactyls in the grassland-savanna habitat, alongside _N. prasongi_ in seasonally abundant fresh-water stream resources. Occurrence of abundant turtle or tortoise remains at KTC also suggests that fresh-water stream habitats were found near the site throughout the late-Pleistocene and early-Holocene. 
 
-At Lang Rongrien, the abundant Testudines elements through time provided evidence of Southeast Asian turtle and tortoise exploitation occurred at the rockshelter (Mudar and Anderson, 2007). This record also appears at KTC with the presence of abundant Testudines specimens throughout the late-Pleistocene and Holocene deposits. However, this pattern has not been found elsewhere near KTC in southern peninsular Thailand. For example, both Moh Khiew Cave and Sakai Cave had very low abundances of Testudines remains during the late-Pleistocene and Holocene (Pookajorn, 1996). Generally, Testudines elements were only identified by presence or absence at these sites. Since Lang Rongrien and KTC both provide evidence of turtle and tortoise exploitation, this represents a supports the recognition of fresh-water stream foraging pattern. It also suggests that fresh-water stream habitats were abundant during the late-Pleistocene and early Holocene, in the Krabi region. Furthermore, previously identified shifts in monsoon seasonality, and intensity, during this time suggests that precipitation may have increased during the early Holocene in Peninsular Thailand (Marwick and Gagan, 2011), matching the faunal record at KTC . 
+At Lang Rongrien, the abundant Testudines elements through time provided evidence of Southeast Asian turtle and tortoise exploitation occurred at the rockshelter (Mudar and Anderson, 2007). This record also appears at KTC with the presence of abundant Testudines specimens throughout the late-Pleistocene and Holocene deposits. However, this pattern has not been found elsewhere near KTC in southern peninsular Thailand. For example, both Moh Khiew Cave and Sakai Cave had very low abundances of Testudines remains during the late-Pleistocene and Holocene (Pookajorn, 1996). Generally, Testudines elements were only identified by presence or absence at these sites. Since Lang Rongrien and KTC both provide evidence of turtle and tortoise exploitation, this represents a supports the recognition of fresh-water stream foraging pattern. It also suggests that fresh-water stream habitats were abundant during the late-Pleistocene and early Holocene, in the Krabi region. Furthermore, previously identified shifts in monsoon seasonality, and intensity, during this time suggests that precipitation may have increased during the early Holocene in Peninsular Thailand (Marwick and Gagan, 2011), matching the faunal record at KTC. 
 
-The declining exploitation of freshwater _N. prasongi_ molluscs into the Holocene, reaching a minimum at 6000 cal BP may reflect the shift from freshwater to mangrove swamp habitats in this region, or a shift in the foraging dynamics of prehistoric groups (Shoocongdej, 2000 and 2010). The timing of the lowest amount of shells in the deposit coincides with the peak sea levels observed by Sinsakul (1992). Rising sea-levels throughout the Holocene would have shifted mangrove environments closer to the rockshelter over time, which may have influenced the abundance and distribution of locally available resources and freshwater stream environments (Anderson, 1990; Horten et al., 2005; Tjia, 1996, and Sinsakul, 1992). These initial faunal data from KTC describe a pattern of forager groups utilizing a diverse range of locally available taxa in the tropical rainforest environment, suggesting that foragers at KTC were able to effectively adapt to shifts in local environmental conditions. Additionally, our radiocarbon dates suggest that the decline in intensive harvesting of _N. prasongi_ during the middle-Holocene, may be associated with the emergence of rice agriculture and farming in mainland Southeast appears (Barker et al., 2005; Castillo, 2011, White et al., 2004). Thus, declines in mollusk utilization may reflect a pattern of rising sea-levels. The mechanism here may be a reduction in the availability of suitable mollusk procurement locations, favoring the adoption of agriculture during the mid and late-Holocene in peninsular Thailand as a response to these sea level changes. Shell exploitation picks up again at KTC at c. 3000 cal BP, coincident with the regressive phase at 3700 to 2700 BP described by Sinsakul (1992). This is also when site use changes, with more frequent visits suggested by peaks in the discard of archaeological materials.
+The declining exploitation of freshwater _N. prasongi_ molluscs into the Holocene, reaching a minimum at 6000 cal BP may reflect the shift from freshwater to mangrove swamp habitats in this region, or a shift in the foraging dynamics of prehistoric groups (Shoocongdej, 2000 and 2010). The timing of the lowest amount of shells in the deposit coincides with the peak sea levels observed by Sinsakul (1992) and Tjia (1996). Rising sea-levels throughout the Holocene would have shifted mangrove environments closer to the rockshelter over time, which may have influenced the abundance and distribution of locally available resources and freshwater stream environments (Anderson, 1990; Horten et al., 2005; Tjia, 1996, Sinsakul, 1992). These initial faunal data from KTC describe a pattern of forager groups utilizing a diverse range of locally available taxa in the tropical rainforest environment, suggesting that foragers at KTC were able to effectively adapt to shifts in local environmental conditions. Additionally, our radiocarbon dates suggest that the decline in intensive harvesting of _N. prasongi_ during the middle-Holocene, may be associated with the emergence of rice agriculture and farming in mainland Southeast appears (Castillo, 2011, Fuller 2011, White et al., 2004). Thus, declines in mollusk utilization may reflect a pattern of rising sea-levels. The mechanism here may be a reduction in the availability of suitable mollusk procurement locations, favoring the adoption of agriculture during the mid and late-Holocene in peninsular Thailand as a response to these sea level changes. Shell exploitation picks up again at KTC at c. 3000 cal BP, coincident with the regressive phase at 3700 to 2700 BP described by Sinsakul (1992). This is also when site use changes, with more frequent visits suggested by peaks in the discard of archaeological materials.
 
 
 Our data from KTC not only suggests that a subsistence change occurred at the Pleistocene-Holocene transition, but that foragers utilizing the rockshelter displayed a pattern of faunal exploitation not widely noted at archaeological sites in Thailand. Elsewhere in Thailand, large abundances of shellfish in rockshelter sites tend to date to the middle Holocene when a transition towards a broad-spectrum diet occurs, not during the terminal Pleistocene (Bulbeck 2003). The earlier peak in the molluscan assemblage at KTC suggests that a different pattern of shellfish exploitation occurred here, one that we link to local environmental conditions controlled by sea level changes. 
 
-A broader implication of these results is that the patterns at KTC may offer some support to the model proposed by Hunt and Rabett (2014) for the transition from foraging to farming. They consider widespread forest disturbance in the Early Holocene as part of a trajectory toward predominantly agricultural subsistence. Using evidence from Borneo, they propose that evidence of palynological signatures of disrupted forest successions was linked to human translocation and propagation of economically-useful plants. Unfortunately our pollen and phytolith analysis was not informative about forest disturbance at KTC. However, the decline in the use of the site for exploiting mollusks may be part of a shift towards a greater focus on plant foods. We might speculate that as shellfish became less important in the diet of the KTC's occupants, their pursuit of alternative resources initiated a distinct trajectory of economic change (Rabett, 2012). This may have involved a protracted process of wild plant food production (Harris, 1989 and Fuller et al., 2007) or cultivation without domestication (Zhao, 2011), eventually resulting in reliance on farmed crops seen at Late Holocene sites in the region.
+A broader implication of these results is that the patterns at KTC may offer some support to the model proposed by Hunt and Rabett (2014) for the transition from foraging to farming. They consider widespread forest disturbance in the Early Holocene as part of a trajectory toward predominantly agricultural subsistence. Using evidence from Borneo, they propose that evidence of palynological signatures of disrupted forest successions was linked to human translocation and propagation of economically-useful plants. Unfortunately our pollen and phytolith analysis was not informative about forest disturbance at KTC. However, the decline in the use of the site for exploiting mollusks may be part of a shift towards a greater focus on plant foods. We might speculate that as shellfish became less important in the diet of the KTC's occupants, their pursuit of alternative resources initiated a distinct trajectory of economic change (Rabett, 2012). This may have involved a protracted process of wild plant food production (Harris, 1989, Fuller et al., 2007) or cultivation without domestication (Zhao, 2011), eventually resulting in reliance on farmed crops seen at Late Holocene sites in the region.
 
 ## Conclusion
 
@@ -354,9 +353,163 @@ The results from KTC confirm the 'missing millennia' as a period of important su
 
 ## Acknowledgments
 
-Thanks to Boonyarit Chaisuwan (Fine Arts Department of Thailand) and Chawalit Khaokhiew (Silpakorn University) for assisting with access to the site. Thanks to Borisut Boriphon, Jessica Butler, Praewchompoo Chunhaurai, Anna Hopkins, Rachel Vander Houwen, Fitriwati, Kate Lim, Supalak Mheetong, Pham Thanh Son, Kim Sreang Em, Kyaw Minn Htin, and Chonchanok Samrit for helping to excavate the site and catalogue the finds. Funding was provided by an ACLS/Luce Foundation grant to Peter Lape (University of Washington) and an International Provost grant from the University of Washington Office of the Provost. 
+Thanks to Boonyarit Chaisuwan (Fine Arts Department of Thailand) and Chawalit Khaokhiew (Silpakorn University) for assisting with access to the site. Thanks to Borisut Boriphon, Jessica Butler, Praewchompoo Chunhaurai, Anna Hopkins, Rachel Vander Houwen, Fitriwati, Kate Lim, Supalak Mheetong, Pham Thanh Son, Kim Sreang Em, Kyaw Minn Htin, and Chonchanok Samrit for helping to excavate the site and catalogue the finds. Thanks to Rodrigo Solinis Casparius, Pat Goodwin, David Hunt, Julia Malakie, Heather McAuley, Sherri Middleton, Hanyu Song, and Joss Whittaker for their assistence with the geoarchaeological laboratory analysis. Funding was provided by an ACLS/Luce Foundation grant to Peter Lape (University of Washington) and an International Provost grant from the University of Washington Office of the Provost. 
 
 
 ## References
 
-Vinh, B. (1991). [TRANSITIONS TO AGRICULTURE IN THE EASTERN OLD WORLD] The Da But Culture in the Stone Age of Viet Nam. Bulletin of the Indo-Pacific Prehistory Association, 10, 127-131.
+
+Alam, A., Xie, S., Saha, D., & Chowdhury, S. (2008). Clay mineralogy of archaeological soil: an approach to paleoclimatic and environmental reconstruction of the archaeological sites of the Paharpur area, Badalgacchi upazila, Naogaon district, Bangladesh. _Environmental Geology_, 53(8), 1639-1650. 
+
+Anderson, D. D. (1990). _Lang Rongrien rockshelter: A Pleistocene, early Holocene archaeological site from Krabi, southwestern Thailand_ University of Pennsylvania Museum of Archaeology and Anthropology, University Museum Monograph, 71. Pennsylvania.
+
+Anderson, D. D. (1997). Cave archaeology in southeast Asia. _Geoarchaeology_, 12(6), 607-638.
+
+Anderson, D. (2005). The use of caves in peninsular Thailand in the Late Pleistocene and early and middle Holocene. _Asian Perspectives_, 137-153.
+
+Araujo, A. G., Feathers, J. K., Arroyo-Kalin, M., & Tizuka, M. M. (2008). Lapa das boleiras rockshelter: stratigraphy and formation processes at a paleoamerican site in Central Brazil. _Journal of Archaeological Science_, 35(12), 3186-3202.
+
+Arroyo-Kalin, M., Neves, E. G., & Woods, W. I. (2009). Anthropogenic dark earths of the Central Amazon region: remarks on their evolution and polygenetic composition. In Amazonian Dark Earths: Wim Sombroek's Vision. Springer Netherlands. pp. 99-125.
+
+Auetrakulvit, P., Forestier, H., Khaokhiew, C., & Zeitoun, V. (2012). New Excavations at Moh Khiew Site, Southern Thailand. In _Crossing Borders: Selected Papers from the 13th International Conference of the European Association of Southeast Asian Archaeologists_. NUS Press, Singapore. pp. 60-73.
+
+Balcerzak, M. (2002). Sample digestion methods for the determination of traces of precious metals by spectrometric techniques. _Analytical sciences_, 18(7), 737-750.
+
+Brandt, R.A.M. 1974. The nonmarine aquatic Mollusca of
+Tbailand. _Arch. Molluskenkunde._ 105, 1-423.
+
+Bulbeck, F. 2003. Hunter-gatherer occupation of the Malay Peninsula from the Ice Age to the Iron Age. In: J. Mercader (ed.), _Under the canopy: The archaeology of tropical rain forests_. Piscataway: Rutgers University Press.
+
+Carter, M. R. (1993). _Soil sampling and methods of analysis_. Boca Raton: Lewis Publishers.
+
+Castillo, C. (2011). Rice in Thailand: the archaeobotanical contribution. _Rice_, 4(3-4), 114-120.
+
+Chi, Z., & Hung, H. C. (2010). The emergence of agriculture in southern China. _Antiquity_, 84(323), 11-25.
+
+Chitkament, T. (2007). Lithic analysis of Moh Khiew rockshelter (Locality I) in Krabi river valley, Krabi province, southwestern Thailand. Unpublished MA thesis,  Department of Prehistory in the National Museum of Natural History, Paris, France. 
+
+Cook, S. F. (1965). _Studies on the Chemical Analysis of Archaeological Sites_. University of California Press, Berkeley.
+
+Costa, M. L. and D. C. Kern, 1999. Geochemical signatures of tropical soils with archaeological black earth in the Amazon, Brazil. _Journal of Geochemical Exploration_, 66, 369–385
+
+DeNiro, M. J. (1987). Stable Isotopy and Archaeology. _American Scientist_, 75, 2.
+
+Eidt, R. C. (1985). Theoretical and practical considerations in the analysis of anthrosols. In (ed) G. Rapp Jr., _Archaeological Geology_, Yale University Press, New Haven, pp. 155–190
+
+Forestier, H., Sophady, H., Puaud, S., Celiberti, V., Frère, S., Zeitoun, V., ... & Billault, L. (2015). The Hoabinhian from Laang Spean Cave in its stratigraphic, chronological, typo-technological and environmental context (Cambodia, Battambang province). _Journal of Archaeological Science: Reports_, 3, 194-206.
+
+Francis, C. (2008). _A Guide to the Mammals of Southeast Asia._ Princeton: Princeton University Press.
+
+Fu, X. G. 2002. The Dingsishan site and the prehistory of Guangxi, southern China. _Bull. Indo-Pacific Prehist. Assoc._ 22:63–72.
+
+Fuller, D. Q. (2011). Pathways to Asian civilizations: Tracing the origins and spread of rice and rice cultures. _Rice_, 4(3-4), 78-92.
+
+Fuller, D.Q., R.G. Allaby, C. Stevens (2007). Domestication as innovation: the entanglement of techniques, technology and chance in the domestication of cereal crops. _World Archaeology_, 42(1),. 13–28
+
+Gale, S. J., & Hoare, P. G. (1991). _Quaternary sediments: petrographic methods for the study of unlithified rocks_. New York: Belhaven Press.
+
+Gorman, C. (1972). Excavations at Spirit Cave, North Thailand: Some interim interpretations. _Asian Perspectives_, 13, 79-107. 
+
+Harris, D.R. (1989). An evolutionary continuum of people-plant interaction, In D.R. Harris, G.C. Hillman (Eds.), _Foraging and Farming: the Evolution of Plant Exploitation_, Routledge, London, pp. 11–26
+
+Hartman, G. (2011). Reconstructing Mid-Pleistocene paleovegetation and paleoclimate in the Golan Heights using the d13C values of modern vegetation and soil organic carbon of paleosols. _Journal of Human Evolution_, 60(4), 452-463.
+
+Haslett, J., & Parnell, A. (2008). A simple monotone process with application to radiocarbon‐dated depth chronologies. _Journal of the Royal Statistical Society: Series C (Applied Statistics)_, 57(4), 399-418.
+
+Higham, C. (2013). Hunter-gatherers in Southeast Asia: From prehistory to the present. _Human biology_, 85(1), 21-43.
+
+Higham, C., & Kijngam, A. (Eds.). (2011). _The Origins of the Civilization of Angkor, Volume 4: The Excavation of Ban Non Wat. Part II: the Neolithic Occupation (Vol. 4)_. Fine Arts Department of Thailand.
+
+Higham, C. F. W., & Thosarat, R. (2004)._The Excavation of Khok Phanom Di, Vol. 7: Summary and Conclusions_. London: Society of Antiquaries of London.
+
+Higham, C. , Guangmao, X., & Qiang, L. (2011). The prehistory of a Friction Zone: first farmers and hunters-gatherers in Southeast Asia. _Antiquity_, 85(328), 529-43.
+
+Horten, B.P., P.L. Gibbard, G.M. Milne, R.J. Morley and C. Purintavaragul. (2005). Holocene sea levels and palaeoenvirorunents, Malay-Thai Peninsula, southeast Asia. _The Holocene_ 15 (8): 1199-1213.
+
+Hunt, C. O., & Rabett, R. J. (2014). Holocene landscape intervention and plant food production strategies in island and mainland Southeast Asia. _Journal of Archaeological Science_, 51, 22-33.
+
+Jones, E. (2013). Subsistence Change Among the 17th-Century Diné? A Reanalysis of the Faunas from the Fruitland Data Recovery Project. _Journal of Ethnobiology_ 33(1):148-166.
+
+Knudson, K.J. , L. Frink, B.W. Hoffman, T.D. Price (2004).
+Chemical characterization of Arctic soils: activity area analysis in contemporary Yup'ik fish camps using ICP-AES
+_Journal of Archaeological Science_, 31, 443–456.
+
+Lampert, C., Glover, I., Hedges, R., Heron, C., Higham, T., Stern, B., Thompson, G. (2003). Dating resin coating on pottery: The Spirit Cave early ceramic dates revised. _Antiquity_, 77(295), 126-133. 
+
+Lerch, T. Z., Nunan, N., Dignac, M.-F., Chenu, C., & Mariotti, A. (January 01, 2011). Variations in microbial isotopic fractionation during soil organic matter decomposition. _Biogeochemistry_, 106, 1, 5-21.
+
+Lyman, R. Lee (2008). _Quantitative Paleozoology_. Cambridge, Cambridge University Press.
+
+McGrath, R. J., Boyd, W. E., & Bush, R. T. (2008). The paleohydrological context of the Iron Age floodplain sites of the Mun River Valley, Northeast Thailand. _Geoarchaeology_, 23(1), 151-172.
+
+Marwick, B., & Gagan, M. K. (2011). Late Pleistocene monsoon variability in northwest Thailand: an oxygen isotope sequence from the bivalve Margaritanopsis laosensis excavated in Mae Hong Son province. _Quaternary Science Reviews_, 30(21), 3088-3098.
+
+Matsumura, H., & Pookajorn, S. (2005). A morphometric analysis of the Late Pleistocene human skeleton from the Moh Khiew Cave in Thailand. _HOMO-Journal of Comparative Human Biology_, 56(2), 93-118.
+
+Midwood, A. J., & Boutton, T. W. (1998). Soil Carbonate Decomposition by Acid Has Little Effect on 13C of Organic Matter. _Soil Biology & Biochemistry_, 30, 1301.
+
+Middleton, W.D. (2004). Identifying chemical activity residues on prehistoric house floors: a methodology and rationale for multi-elemental characterization of a mild acid extract of anthropogenic sediments _Archaeometry_, 46, 47–65
+ 
+Middleton, W.D. and T.D. Price (1996). Identification of activity areas by multi-element characterization of sediments from modern and archaeological house floors using inductively coupled plasma-atomic emission spectroscopy _Journal of Archaeological Science_, 23, 673–687
+
+Misarti, N., Finney, B. P., & Maschner, H. (2011). Reconstructing site organization in the eastern Aleutian Islands, Alaska using multi-element chemical analysis of soils. _Journal of Archaeological Science_, 38(7), 1441-1455.
+
+Mudar, K., & Anderson, D. (2007). New evidence for southeast asian pleistocene foraging economies: Faunal remains from the early levels of Lang Rongrien rockshelter, Krabi, Thailand. _Asian Perspectives_, 46(2), 298-334. 
+
+Parnell, A. C., Haslett, J., Allen, J. R., Buck, C. E., & Huntley, B. (2008). A flexible approach to assessing synchroneity of past events using Bayesian reconstructions of sedimentation history. _Quaternary Science Reviews_, 27(19), 1872-1885.
+
+Pookajorn, S. (1996). Human activities and environmental changes during the late Pleistocene to middle Holocene in southern Thailand and Southeast Asia. In: L. Guy Straus et al. (eds.), _Humans at the End of the Ice Age_. New York,
+
+Pookajorn, S. (1994). _Final report of excavations at Moh Khiew cave, Krabi province, Sakai cave, Trang province and ethnoarchaeological research of hunter-gatherer group so-called “Sakai or Semang” at Trang province. Bangkok_, Department of Archaeology, Silpakorn University Press, Bangkok
+
+Rabett, R. J. (2012). _Human adaptation in the Asian Palaeolithic: hominin dispersal and behaviour during the Late Quaternary_. Cambridge University Press.
+
+Rabett, R., Appleby, J., Blyth, A., Farr, L., Gallou, A., Griffiths, T., & Tâń, N. C. (2011). Inland shell midden site-formation: Investigation into a late Pleistocene to early Holocene midden from Tràng An, Northern Vietnam. _Quaternary International_, 239(1), 153-169.
+
+Reimer, P. J., Bard, E., Bayliss, A., Beck, J. W., Blackwell, P. G., Bronk Ramsey, C., & Grootes, P. M. (2013). IntCal13 and Marine13 radiocarbon age calibration curves 0-50,000 years cal BP. _Radiocarbon_ 55(4), 1869-1887.
+
+Sawada, J., Thuy, N. K., & Tuan, N. A. (2011). Faunal Remains at Man Bac, in  Oxenham, M. F., & Matsumura, H. (eds) _Man Bac: the Excavation of a Neolithic Site in Northern Vietnam_. Terra Australis, 33, Australian National University E Press. pp. 105-116.
+
+Schweizer, M., Fear, J., & Cadisch, G. (J1999). Isotopic (13C) Fractionation During Plant Residue Decomposition and its Implications for Soil Organic Matter Studies. _Rapid Communications in Mass Spectrometry_ 13(13), 1284-1290.
+
+Scott-Jackson, J. E., & Walkington, H. (2005). Methodological issues raised by laser particle size analysis of deposits mapped as Clay-with-flints from the Palaeolithic site of Dickett's Field, Yarnhams Farm, Hampshire, UK. _Journal of Archaeological Science_, 32(7), 969-980.
+
+Shoocongdej, R. 2010. Subsistence-Settlement Organization during the Late Pleistocene- Early Holocene: The Case of Lang Kamnang Cave, Western Thailand. In: B. Bellina et al. (eds.), _50 Years of Southeast Asian Archaeology: Essays in Honor of Ian Glover._ River Books, Bangkok, pp. 51-66.
+
+Shoocongdej, R. (2006). Late Pleistocene activities at the Tham Lod Rockshelter in Highland Pang Mapha, Mae Hong Son Province, Northwestern Thailand. In _Uncovering Southeast Asia’s Past: Selected Papers from the 10th Annual Conference of the European Association of Southeast Asian Archaeologists_. NUS Press, Singapore. pp. 22-37
+
+Shoocongdej, R. (2000). Forager mobility organization ill
+seasonal tropical environments of western Thailand.
+_World Archaeology_. 32(1): 14-40.
+
+Sinsakul, S. (1992). Evidence of quarternary sea level changes in the coastal areas of Thailand: a review. _Journal of Southeast Asian Earth Sciences_, 7(1), 23-37.
+
+Sophady, H., Forestier, H., Zeitoun, V., Puaud, S., Frère, S., Celiberti, V., & Billault, L. (2015). Laang Spean cave (Battambang province): A tale of occupation in Cambodia from the Late Upper Pleistocene to Holocene. _Quaternary International_, doi:10.1016/j.quaint.2015.07.049 in press
+
+Srisuchat, Amara (1997). Report of archaeological excavations in response to environmental impact of the construction of the hydroelectric project Cheo Lan Dam. Bangkok: Division of Fine Arts, Archaeology Division. (In Thai.)
+
+Srisuchat, Tharapong and Amara Srisuchat (1992). Archaeological Analysis No.1: An Application of Technology and Science in Archaeological Work in Thailand. Bangkok: Division of Fine Arts, Archaeology Division.
+
+Tieszen, L. L. (1991). Natural Variations in the Carbon Isotope Values of Plants: Implications for Archaeology, Ecology, and Paleoecology. _Journal of Archaeological Science_, 18, 3, 227
+
+Tjia, H. D. (1996). Sea-level changes in the tectonically stable Malay-Thai Peninsula. _Quaternary International_, 31, 95-101.
+
+Van Vlack, H. (2014). Forager subsistence regimes in the Thai-Malay peninsula: An environmental archaeological case study of Khao Toh Chong rockshelter, Krabi, Thailand. Unpublished MA thesis, Department of Anthropology, San José State University
+
+Viet, N. (2007).  The Da But Culture: evidence for cultural development in Vietnam during the middle Holocene. Bulletin of the Indo-Pacific Prehistory Association, 25, 89-94.
+
+White, J. C. (2011). Emergence of cultural diversity in Mainland Southeast Asia: a view from prehistory. (ed) N. J. Enfield, _Dynamics of human diversity_. Canberra: Pacific Linguistics. pp. 9-46
+
+White, J. C., & Bouasisengpaseuth, B. (2008). Archaeology of the Middle Mekong: introduction to the Luang Prabang province exploratory survey. _Recherches Nouvelles Sur Le Laos. Vientiane and Paris, Études thématiques_ (18), 36-52.
+
+White, J. C., Penny, D., Kealhofer, L., & Maloney, B. (2004). Vegetation changes from the late Pleistocene through the Holocene from three areas of archaeological significance in Thailand. _Quaternary International_, 113(1), 111-132.
+
+Woods, W.I. (1984). Soil chemical investigations in Illinois archaeology: two example studies, in J.B. Lambert (Ed.), _Archaeological Chemistry III_, American Chemical Society, Washington, DC, pp. 67–77.
+
+Woods, W.I. and B. Glaser (2004). Towards an understanding of Amazonian Dark earths, in B. Glaser, W.I. Woods (Eds.), _Amazonian Dark Earths: Explorations in Space and Time_, Springer, Berlin; London (2004), pp. 1–8
+
+Wynn, J. G. (2007). Carbon isotope fractionation during decomposition of organic matter in soils and paleosols: Implications for paleoecological interpretations of paleosols. _Palaeogeography, Palaeoclimatology, Palaeoecology_, 251, 437-448.
+
+Yoneyama, T., Okada, H., & Ando, S. (2010). Seasonal variations in natural 13C abundances in C3 and C4 plants collected in Thailand and the Philippines. _Soil Science and Plant Nutrition_, 56(3), 422-426.
+
+Zhao, Z. (2011). New archaeobotanic data for the study of the origins of agriculture in China. _Current Anthropology_ 52 (S4), S295–S306
