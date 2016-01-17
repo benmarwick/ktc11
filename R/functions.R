@@ -609,18 +609,18 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
   ce <- the_data$ktc11_ceramic_data
 
   li_mass <- li %>%
-    group_by(Unit) %>%
+    group_by(EU) %>%
     dplyr::summarise(lithic_counts = sum(Counts),
                      lithic_mass = sum(Mass))
 
   ce_mass <- ce %>%
-    group_by(Unit) %>%
+    group_by(EU) %>%
     dplyr::summarise(ceramic_counts = sum(Counts),
                      ceramic_mass = sum(Mass))
 
-  ktc11_summary_ceramics_lithics_units <-  full_join(li_mass, ce_mass, by  = "Unit")
+  ktc11_summary_ceramics_lithics_units <-  full_join(li_mass, ce_mass, by  = "EU")
 
-  depths <- read.table(header = TRUE, text = " Unit  depth
+  depths <- read.table(header = TRUE, text = "EU  depth
                      1	0.0
                        2	0.1
                        3	0.15
@@ -641,18 +641,11 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
                        18	1.1
                        19	1.15
                        20	1.25
-                       21 1.30
-                       22 1.35
-                       23 1.40
-                       24 1.45
-                       25 1.50
-                       26 1.55
-                       27 1.60
                        ")
 
 
 
-  ktc11_summary_ceramics_lithics_units_depths <- full_join(depths, ktc11_summary_ceramics_lithics_units, by = "Unit")
+  ktc11_summary_ceramics_lithics_units_depths <- full_join(depths, ktc11_summary_ceramics_lithics_units, by = "EU")
 
   slp <-  calibrated_dates$slp
   intcp  <- calibrated_dates$intcp

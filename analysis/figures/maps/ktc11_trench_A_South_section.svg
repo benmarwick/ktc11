@@ -14,10 +14,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="ktc11_trench_A_South_section.svg"
-   inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_A_South_Profile.png"
-   inkscape:export-xdpi="1500"
-   inkscape:export-ydpi="1500"
+   sodipodi:docname="ktc11_trench_A_south_section.svg"
+   inkscape:export-filename="G:\My Documents\My Papers\Journal of Archaeological Science\Marwick, Conrad, et al. 2015\ktc11\analysis\figures\maps\ktc11_trench_A_south_section.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    style="display:inline">
   <defs
      id="defs4">
@@ -54,11 +54,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4795793"
-     inkscape:cx="322.17962"
-     inkscape:cy="564.29565"
+     inkscape:zoom="0.9121585"
+     inkscape:cx="304.5336"
+     inkscape:cy="638.49302"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="706"
@@ -73,7 +73,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -92,10 +92,10 @@
        inkscape:export-ydpi="599.96338" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 94.92322,566.94181 c 4.199135,15.7735 38.96596,-1.41709 48.0624,7.67935 9.82662,9.82662 18.10511,8.77233 29.8625,13.77787 12.27537,5.22607 25.82668,3.99749 43.996,0.96104 4.47719,-0.74823 21.15989,2.8939 25.4802,0.73375 4.19061,-2.09531 15.55154,-14.16149 21.4186,-11.57601 10.13376,4.46572 32.80356,10.88661 43.90986,12.88626 11.1063,1.99965 32.51153,-1.23167 45.78415,-1.49541 13.27262,-0.26375 13.14946,-9.70571 24.11414,-12.03016 10.96469,-2.32445 17.65055,1.14364 23.43445,-0.0944 15.45372,-3.30793 34.46066,15.0661 49.07974,7.32964 2.92484,-1.54783 47.01255,-18.91358 47.70285,-18.94363 12.4151,-0.54042 16.93807,8.55958 27.7824,6.17387 7.90362,-1.73877 18.72617,-4.22554 24.80943,-4.22554"
+       d="m 94.92322,566.94181 c 4.199135,15.7735 38.96596,-1.41709 48.0624,7.67935 9.82662,9.82662 17.38872,8.77233 29.14611,13.77787 12.27537,5.22607 29.40864,14.7434 47.57796,11.70695 4.47719,-0.74823 23.30908,-4.27004 27.62939,-6.43019 4.19061,-2.09531 12.68596,-8.43034 18.55302,-5.84486 10.13376,4.46572 32.80356,5.15546 43.90986,7.15511 11.1063,1.99965 33.22792,1.6339 46.50054,1.37016 13.27262,-0.26375 21.74619,3.18938 32.71087,0.86493 10.96469,-2.32445 9.05383,2.57643 34.18036,5.63675 35.03447,5.44211 67.48401,10.78275 85.32029,4.86307 11.71246,-4.15271 18.37085,-17.2306 29.21518,-19.61631 7.90362,-1.73877 6.54748,-19.9862 12.63074,-19.9862"
        id="path3088"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cssssssssssssc"
+       sodipodi:nodetypes="cssssssssccsc"
        inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
        inkscape:export-xdpi="599.96338"
        inkscape:export-ydpi="599.96338" />
@@ -175,7 +175,8 @@
        d="m 292.638,435.37012 c 0.36066,-0.0984 0.31053,0.43763 0.16349,0.59944 -0.39848,0.43849 -1.08788,0.15164 -1.36238,-0.27247 -0.49101,-0.75865 -0.0379,-1.74116 0.70843,-2.12531 1.09526,-0.56375 2.4051,0.0743 2.88824,1.1444 0.64395,1.42631 -0.18543,3.07304 -1.58035,3.65116 -1.75537,0.7275 -3.74298,-0.29603 -4.4141,-2.01631 -0.81281,-2.08349 0.4063,-4.41403 2.45227,-5.17702 2.41111,-0.89916 5.08579,0.51634 5.93996,2.88823 0.98617,2.73843 -0.62625,5.75801 -3.32419,6.70288 -3.06558,1.07362 -6.43057,-0.73605 -7.46582,-3.76015 -1.16139,-3.39258 0.84579,-7.10335 4.19611,-8.22874 3.7195,-1.2494 7.77633,0.95546 8.99168,4.63206"
        inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
        inkscape:export-xdpi="599.96338"
-       inkscape:export-ydpi="599.96338" />
+       inkscape:export-ydpi="599.96338"
+       transform="matrix(0.5,0,0,0.5,142.90603,220.78835)" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 106.26519,381.4201 c 13.31302,15.5676 -16.177184,6.47088 0,0 z"
@@ -454,15 +455,16 @@
        inkscape:export-xdpi="599.96338"
        inkscape:export-ydpi="599.96338" />
     <rect
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.98474866000000005px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;opacity:0"
        id="rect5626"
-       width="613.42865"
-       height="404.27975"
-       x="45.418392"
-       y="257.82071"
+       width="643.91034"
+       height="373.48349"
+       x="81.154099"
+       y="279.22043"
        inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
        inkscape:export-xdpi="599.96338"
-       inkscape:export-ydpi="599.96338" />
+       inkscape:export-ydpi="599.96338"
+       ry="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 207.26256,425.43394 c -1.34745,0.0699 -2.76223,0.21874 -4.26557,0.21874 -1.66589,0 -10.95845,2.54501 -6.78115,3.93744 2.40601,0.80201 24.78652,-0.23053 11.04672,-4.15618 z"
@@ -495,6 +497,42 @@
        inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
        inkscape:export-xdpi="599.96338"
        inkscape:export-ydpi="599.96338" />
+    <g
+       style="display:inline"
+       id="g5451-3-5"
+       transform="translate(-0.79982304,46.723868)"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5347-7-1-0"
+         d="m 568.43704,554.55062 c 5.06804,0 5.06804,0 5.06804,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path5347-7-78-5-9"
+         d="m 568.68226,531.17228 c 5.06804,0 5.06804,0 5.06804,0"
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4463"
+       transform="translate(0,-9.829638)">
+      <rect
+         y="644.6825"
+         x="94.766388"
+         height="2.0056379"
+         width="227.97702"
+         id="rect3669"
+         style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         y="644.68243"
+         x="322.49509"
+         height="2.0056379"
+         width="227.97702"
+         id="rect3669-7"
+         style="fill:#000000;stroke:#000000;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;display:inline" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -609,7 +647,7 @@
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
        x="334.53467"
-       y="606.25281"
+       y="610.25281"
        id="text3123-3-7"
        sodipodi:linespacing="125%"
        inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
@@ -618,7 +656,7 @@
          sodipodi:role="line"
          id="tspan3125-3-5"
          x="334.53467"
-         y="606.25281"
+         y="610.25281"
          style="font-size:10px">unexcavated</tspan></text>
     <text
        xml:space="preserve"
@@ -863,7 +901,7 @@
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
-       x="561.4173"
+       x="587.89703"
        y="294.88409"
        id="text5484-54"
        sodipodi:linespacing="125%"
@@ -872,14 +910,14 @@
        inkscape:export-ydpi="599.96338"><tspan
          sodipodi:role="line"
          id="tspan5486-86"
-         x="561.4173"
+         x="589.03961"
          y="294.88409"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow">meters below </tspan><tspan
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow">meters below </tspan><tspan
          sodipodi:role="line"
-         x="561.4173"
+         x="587.89703"
          y="307.38409"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
-         id="tspan3117">the surface</tspan></text>
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+         id="tspan3117">surface</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
@@ -905,26 +943,102 @@
        d="m 397.41026,539.37853 c 11.84957,3.70858 62.5732,9.74465 71.64199,0.67586 3.94256,-3.94256 19.71281,3.94257 23.65537,0 6.82831,-6.8283 37.46344,-6.61332 47.98662,-1.35173 2.53768,1.26884 8.07901,-0.0209 10.13801,1.35173"
        id="path3111"
        inkscape:connector-curvature="0" />
-  </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="dates">
     <text
        xml:space="preserve"
-       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
-       x="96.263474"
-       y="315.82211"
-       id="text3123-13"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="576.91046"
+       y="606.5744"
+       id="text5484-32-0"
        sodipodi:linespacing="125%"
        inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
        inkscape:export-xdpi="599.96338"
        inkscape:export-ydpi="599.96338"><tspan
          sodipodi:role="line"
-         id="tspan3125-87"
-         x="96.263474"
-         y="315.82211"
-         style="font-size:10px">D-AMS 1140 </tspan></text>
+         id="tspan5486-43-3"
+         x="576.91046"
+         y="606.5744"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow">1.20</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="92.355049"
+       y="630.94708"
+       id="text5484-32-0-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan5486-43-3-9"
+         x="92.355049"
+         y="630.94708"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow">0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="315.61313"
+       y="630.94708"
+       id="text5484-32-0-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan5486-43-3-7"
+         x="315.61313"
+         y="630.94708"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow">1.0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="542.74719"
+       y="630.94708"
+       id="text5484-32-0-81"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan5486-43-3-5"
+         x="542.74719"
+         y="630.94708"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow">2.0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="169.65805"
+       y="331.55328"
+       id="text5484-54-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         x="169.65805"
+         y="331.55328"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+         id="tspan3117-1">modern ground surface</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="324.41956"
+       y="650.4151"
+       id="text5484-54-7-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         x="324.41956"
+         y="650.4151"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:center;line-height:125%;writing-mode:lr-tb;text-anchor:middle;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+         id="tspan3117-1-6">scale (m)</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="dates"
+     sodipodi:insensitive="true">
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
@@ -1045,11 +1159,162 @@
          x="98.007072"
          y="557.15088"
          style="font-size:10px">5YR 4/3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="616.55591"
+       y="346.28009"
+       id="text3123-13-3-1-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6"
+         x="616.55591"
+         y="346.28009"
+         style="font-size:10px">142 cal BP D-AMS-1140 (c)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="616.55591"
+       y="355.02243"
+       id="text3123-13-3-1-1-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7"
+         x="616.55591"
+         y="355.02243"
+         style="font-size:10px">178 cal BP D-AMS-1141 (c)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="611.9856"
+       y="370.56494"
+       id="text3123-13-3-1-1-5-1"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-2"
+         x="611.9856"
+         y="370.56494"
+         style="font-size:10px">1930 cal BP D-AMS-1142 (c)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="611.9856"
+       y="394.22034"
+       id="text3123-13-3-1-1-5-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0"
+         x="611.9856"
+         y="394.22034"
+         style="font-size:10px">2966 cal BP D-AMS-1143 (c)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="611.9856"
+       y="416.52396"
+       id="text3123-13-3-1-1-5-0-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0-0"
+         x="611.9856"
+         y="416.52396"
+         style="font-size:10px">6424 cal BP D-AMS-1151 (s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="611.9856"
+       y="444.23453"
+       id="text3123-13-3-1-1-5-0-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0-1"
+         x="611.9856"
+         y="444.23453"
+         style="font-size:10px">7961 cal BP D-AMS-1152 (s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="605.13013"
+       y="494.92462"
+       id="text3123-13-3-1-1-5-0-77"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0-7"
+         x="605.13013"
+         y="494.92462"
+         style="font-size:10px">13,732 cal BP D-AMS-1146 (s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="605.13013"
+       y="541.58844"
+       id="text3123-13-3-1-1-5-0-77-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0-7-3"
+         x="605.13013"
+         y="541.58844"
+         style="font-size:10px">13,980 cal BP D-AMS-1149 (s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="605.13013"
+       y="586.19568"
+       id="text3123-13-3-1-1-5-0-77-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0-7-5"
+         x="605.13013"
+         y="586.19568"
+         style="font-size:10px">15,736 cal BP D-AMS-1147 (s)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Arial Narrow;-inkscape-font-specification:Arial Narrow"
+       x="605.13013"
+       y="613.23041"
+       id="text3123-13-3-1-1-5-0-77-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="F:\My Documents\My UW\Teaching\2008 482 Geoarchaeology\2012 Winter 482\2012 Winter 482 Labs\KTC_TRA_S_section.png"
+       inkscape:export-xdpi="599.96338"
+       inkscape:export-ydpi="599.96338"><tspan
+         sodipodi:role="line"
+         id="tspan3125-87-4-8-6-7-0-7-9"
+         x="605.13013"
+         y="613.23041"
+         style="font-size:10px">13,168 cal BP D-AMS-1148 (c)</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="munsell">
+     inkscape:label="munsell"
+     sodipodi:insensitive="true">
     <g
        style="display:inline"
        id="g3146"

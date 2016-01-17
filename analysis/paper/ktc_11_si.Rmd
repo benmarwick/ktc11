@@ -1,4 +1,4 @@
----
+bch---
 title: "Supplementary Information for 'Adaptations to sea level change and the transition to agriculture in tropical monsoonal Peninsula Thailand'"
 author: 
 - "Ben Marwick"
