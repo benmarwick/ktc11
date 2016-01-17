@@ -8,10 +8,19 @@ apt_packages:
  - openjdk-7-jre
 
 r_binary_packages:
- - G2Sd
+ - rJava
  - dplyr
  - reshape2
  - tidyr
  - stringr
  - knitr
+ - Hmisc
+
+r_packages:
+ - G2Sd
+ - Bchron
+ - vegan
+ - xlsx
+ - xlsxjars
+
 
