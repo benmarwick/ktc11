@@ -6,6 +6,11 @@ sudo: required
 # System dependencies for HTTP calling
 apt_packages:
  - openjdk-7-jre
+ - libcurl4-openssl-dev
+
+before_install:
+  - echo "options(repos = c(CRAN='http://cran.rstudio.com'))" >> ~/.Rprofile
+
 
 r_binary_packages:
  - rJava
