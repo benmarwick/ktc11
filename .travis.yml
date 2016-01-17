@@ -8,6 +8,7 @@ apt_packages:
  - openjdk-7-jre
 
 r_binary_packages:
+ - G2Sd
  - dplyr
  - reshape2
  - tidyr

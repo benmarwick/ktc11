@@ -11,12 +11,12 @@ License: MIT
 Imports:
     readr,
     dplyr,
-	tidyr,
+	  tidyr,
     Bchron,
-	stringr,
-	G2Sd,
-	reshape2,
-	vegan,
-	Hmisc
+	  stringr,
+	  G2Sd,
+	  reshape2,
+	  vegan,
+	  Hmisc
 LazyData: TRUE
 RoxygenNote: 5.0.1
