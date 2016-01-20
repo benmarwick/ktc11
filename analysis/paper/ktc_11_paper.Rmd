@@ -2,7 +2,7 @@
 title: Adaptations to sea level change and transitions to agriculture at Khao Toh
   Chong rockshelter, Peninsula Thailand
 author:
-- Ben Marwick (University of Washington, University of Wollongong)
+- Ben Marwick (University of Washington, University of Wollongong, bmarwick@uow.edu.au)
 - Hannah Van Vlack (San Jose State University)
 - Cyler Conrad (University of New Mexico)
 - Rasmi Shoocongdej (Silpakorn University)
