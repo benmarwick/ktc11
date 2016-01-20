@@ -10,26 +10,25 @@ author:
 - Seungki Kwak (University of Washington)
 date: '`r Sys.Date()`'
 output:
+  html_document:
+    number_sections: yes
   word_document:
     reference_docx: templates/template.docx
-  html_document: default
-abstract: |
-  Abstract  \n\n\n 
-  This study reports on an analysis of human adaptations to sea level changes
-  in the tropical monsoonal environment of Peninsula Thailand. We excavated Khao Toh
-  Chong rockshelter in Krabi and recorded archaeological deposits spanning the last
-  13,000 years. A suite of geoarchaeological methods suggest largely uninterrupted
-  deposition, against a backdrop of geological data that show major changes in sea
-  levels. Although there is  a small assemblage of mostly undiagnostic ceramics and
-  stone artefacts, there are some distinct changes in stone artefact technology and
-  ceramic fabric. There is a substantial faunal assemblage, with changes in the mammalian
-  taxa during the Pleistocene-Holocene transition, and changes in shellfish taxa that
-  correlate with local sea level changes. These assemblage provides an opportunity
-  to explore subsistence behaviours leading up to the transition to domestication.
-  We explore the implications for current debates on the prehistoric origins of agricultural
-  subsistence in mainland Southeast Asia. The data highlight the importance of importance
-  of local contingencies in understanding the mechanisms of change from foragers to
-  agriculturalists. \
+abstract: "Abstract  \\n\\n\\n \nThis study reports on an analysis of human adaptations
+  to sea level changes\nin the tropical monsoonal environment of Peninsula Thailand.
+  We excavated Khao Toh\nChong rockshelter in Krabi and recorded archaeological deposits
+  spanning the last\n13,000 years. A suite of geoarchaeological methods suggest largely
+  uninterrupted\ndeposition, against a backdrop of geological data that show major
+  changes in sea\nlevels. Although there is  a small assemblage of mostly undiagnostic
+  ceramics and\nstone artefacts, there are some distinct changes in stone artefact
+  technology and\nceramic fabric. There is a substantial faunal assemblage, with changes
+  in the mammalian\ntaxa during the Pleistocene-Holocene transition, and changes in
+  shellfish taxa that\ncorrelate with local sea level changes. These assemblage provides
+  an opportunity\nto explore subsistence behaviours leading up to the transition to
+  domestication.\nWe explore the implications for current debates on the prehistoric
+  origins of agricultural\nsubsistence in mainland Southeast Asia. The data highlight
+  the importance of importance\nof local contingencies in understanding the mechanisms
+  of change from foragers to\nagriculturalists. \\\n"
 <!-- bibliography: ktc_11.bib -->
 ---
 

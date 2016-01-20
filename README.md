@@ -43,7 +43,7 @@ If you want to re-run all the analyses in R, you can start by installing the com
 devtools::install_github("benmarwick/ktc11")
 ```
 
-And then run `knitr::knit("ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word)
+Then set the working directory to the `paper/` directory in this repository, and run `knitr::knit("ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses.
 
 ### Licenses:
 

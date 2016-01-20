@@ -44,4 +44,6 @@ output:
     reference_docx: templates/template.docx
 ```
 
-Don't forget line numbers for JAS! See here for more information: http://rmarkdown.rstudio.com/articles_docx.html
+Don't forget line numbers for JAS! Headings are boldk, underline, nothing. And Arial Narrow 10pt for tables.
+
+See here for more information: http://rmarkdown.rstudio.com/articles_docx.html
