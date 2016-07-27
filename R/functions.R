@@ -599,6 +599,7 @@ table_ceramics_lithics <- function(lithics, ceramics){
 #'
 #' @importFrom dplyr group_by %>% summarise full_join left_join select
 #' @importFrom tidyr gather
+#' @importFrom ggplot2 ggplot
 #' @export
 #'
 #'
@@ -877,4 +878,89 @@ long_corr_matrix <- function(df) {
 #' @export
 my_trunc <- function(x, ..., prec = 0) {
   base::trunc(x * 10^prec, ...) / 10^prec
+}
+
+
+
+
+#' my_maps
+#'
+#' @return saves a PNG of the map
+
+#'
+#' @importFrom ggmap    ggmap    get_googlemap
+#' @import legendMap
+#' @import maptools
+#' @importFrom gridExtra    grid.arrange
+#' @importFrom grDevices    dev.off    png
+#' @importFrom stats    aggregate    coef    lm    na.omit    quantile    reshape
+#' @importFrom utils    read.csv    read.table
+#'
+#'@export
+my_maps <- function(){
+# from https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/ggmap/ggmapCheatsheet.pdf
+# library(ggmap)
+# library(legendMap) # for scale and N arrow
+require(maptools) # to fix knit error
+require(ggplot2) # to fix knit error
+
+
+myLocation <-  c(lon = 98.883060, lat = 8.167072)
+myMap <- get_googlemap(center = myLocation,
+                       zoom = 11,
+                       scale = 2,
+                       maptype = "terrain",
+                       markers = data.frame(t(myLocation)))
+
+close_up <- ggmap(myMap)
+
+close_up <- close_up +
+  legendMap::scale_bar(lon = 98.68,
+            lat = 7.975,
+            distance_lon = 5,
+            distance_lat = 1,
+            distance_legend = 2,
+            dist_unit = "km",
+            orientation = TRUE,
+            arrow_length = 5,
+            arrow_distance = 7,
+            arrow_north_size = 5)
+
+
+# ggsave("close_up.png")
+
+myMap <- get_googlemap(center = myLocation,
+                       zoom = 5,
+                       scale = 2,
+                       maptype = "roadmap",
+                       markers = data.frame(t(myLocation)))
+
+region <- ggmap(myMap)
+
+region <- region +
+  legendMap::scale_bar(lon = 87,
+            lat = -4,
+            distance_lon = 500,
+            distance_lat = 50,
+            distance_legend = 100,
+            dist_unit = "km",
+            orientation = TRUE,
+            arrow_length = 200,
+            arrow_distance = 250,
+            arrow_north_size = 5)
+
+# ggsave("region.png")
+
+
+# library(gridExtra)
+png("../figures/location_map.png", height = 600, width = 1200)
+grid.arrange(region,
+             close_up,
+             ncol = 2)
+dev.off()
+
+# g <- arrangeGrob(region,
+#                  close_up,
+#                  nrow = 1) #generates g
+# ggsave(file="location_map.png", g) #saves g
 }

@@ -25,6 +25,6 @@ WORKDIR /home/rstudio/ktc11/analysis
 # docker build -t benmarwick/ktc11 https://raw.githubusercontent.com/benmarwick/ktc11/master/Dockerfile
 
 # to run this container:
-# docker -dp 8787:8787 benmarwick/ktc11
+# docker run -dp 8787:8787 benmarwick/ktc11
 # then open broswer at localhost:8787 or http://192.168.59.103:8787/
 

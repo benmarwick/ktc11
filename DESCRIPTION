@@ -18,6 +18,11 @@ Imports:
 	  G2Sd,
 	  reshape2,
 	  vegan,
-	  Hmisc
+	  Hmisc,
+	  ggplot2,
+	  ggmap,
+	  gridExtra,
+	  maptools,
+	  legendMap
 LazyData: TRUE
 RoxygenNote: 5.0.1
