@@ -46,10 +46,10 @@ read_in_the_data <- function(){
  ktc11_raw_ICP_data <- read.csv("../data/ktc11_raw_ICP_data.csv", header=TRUE, stringsAsFactors = FALSE)
 
  # read in the ceramic data
- ktc11_ceramic_data <- read_csv("../data/ktc11_ceramic_data.csv")
+ ktc11_ceramic_data <- read.csv("../data/ktc11_ceramic_data.csv")
 
  # read in the lithic data
- ktc11_lithic_data <- read_csv("../data/ktc11_lithic_data.csv")
+ ktc11_lithic_data <- read.csv("../data/ktc11_lithic_data.csv")
 
  # read in faunal data
  ktc11_fauna_nonmollusc_data <- read.csv("../data/ktc11_summary_faunal_nonmollusc_data.csv")
@@ -117,6 +117,11 @@ calibrate_the_dates <- function(dates) {
   # date 2 had a problem so let's do it by hand (from OxCal website)
   df_ <- rbind( df[1,], c(291, 0), df[ 2:nrow(df),] )
   dates_table <- cbind(dates_table, df_[,-1])
+
+  dates_table$`2.5%` <- round(dates_table$`2.5%`, 0)
+  dates_table$`97.5%`  <- round(dates_table$`97.5%`, 0)
+
+  row.names(dates_table) <- NULL
 
   # change column names
   names(dates_table) <- c("Sample code", "Age in years BP", "1 sd error", "Material dated", "Excavation unit", "Context", "Depth below surface (m)", "Calibrated upper 95%", "Calibrated lower 95%")
@@ -548,6 +553,9 @@ icp_aes_data_summary <- function(ktc11_raw_ICP_data){
   subset_elements <- c("Ca", "Sr", "Mn", "Fe", "Zn",  "Na", "K", "Mg", "Ti")
   KTCcast.strat.subset <- KTCcast.strat[ , names(KTCcast.strat) %in% subset_elements]
 
+  row.names(KTCcast.strat.subset) <-
+              c("B1", "A2", "A3", "A4", "A5", "A6", "A7U", "A8", "A7L")
+
 return(KTCcast.strat.subset)
 
 }
@@ -586,7 +594,7 @@ table_ceramics_lithics <- function(lithics, ceramics){
    names(ktc11_summary_ceramics_lithics) <- c('Context', "Lithic count (n)", "Lithic mass (g)", "Ceramic count (n)", "Ceramic mass (g)")
 
    # reorder so that it's in the correct order
-   ktc11_summary_ceramics_lithics_reordered <- ktc11_summary_ceramics_lithics[c(1,8,9,2,3,4,5,7,6), ]
+   ktc11_summary_ceramics_lithics_reordered <- ktc11_summary_ceramics_lithics[c(1,8,9,2,3,4,6,7,5), ]
 
    return(ktc11_summary_ceramics_lithics_reordered)
 
@@ -669,7 +677,7 @@ plot_ceramic_and_stone_artefact_mass <- function(the_data, calibrated_dates){
     geom_bar(stat = "identity") +
     xlab("years cal. BP") +
     ylab("mass (g)") +
-    theme_bw(base_size = 18) +
+    theme_bw(base_size = 14) +
     facet_grid(artefact ~ ., scales = "free_y")
 }
 
@@ -909,10 +917,22 @@ myLocation <-  c(lon = 98.883060, lat = 8.167072)
 myMap <- get_googlemap(center = myLocation,
                        zoom = 11,
                        scale = 2,
-                       maptype = "terrain",
-                       markers = data.frame(t(myLocation)))
+                       maptype = "terrain"
+                       )
 
-close_up <- ggmap(myMap)
+close_up <-
+  ggmap(myMap) +
+   geom_point(data = data.frame(t(myLocation)),
+              aes(lon,
+                  lat),
+              size = 10,
+              colour = "white") +
+  geom_point(data = data.frame(t(myLocation)),
+             aes(lon,
+                 lat),
+             size = 6,
+             colour = "black")
+
 
 close_up <- close_up +
   legendMap::scale_bar(lon = 98.68,
@@ -932,10 +952,22 @@ close_up <- close_up +
 myMap <- get_googlemap(center = myLocation,
                        zoom = 5,
                        scale = 2,
-                       maptype = "roadmap",
-                       markers = data.frame(t(myLocation)))
+                       maptype = "roadmap"
+                       )
 
-region <- ggmap(myMap)
+region <-
+  ggmap(myMap) +
+  geom_point(data = data.frame(t(myLocation)),
+             aes(lon,
+                 lat),
+             size = 10,
+             colour = "white") +
+  geom_point(data = data.frame(t(myLocation)),
+             aes(lon,
+                 lat),
+             size = 6,
+             colour = "black")
+
 
 region <- region +
   legendMap::scale_bar(lon = 87,
