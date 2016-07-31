@@ -1,31 +1,6 @@
-# Sample .travis.yml for R projects from https://docs.travis-ci.com/user/languages/r/
 
-language: r
-sudo: required
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-# System dependencies for HTTP calling
-apt_packages:
- - openjdk-7-jre
- - libcurl4-openssl-dev
-
-before_install:
-  - echo "options(repos = c(CRAN='http://cran.rstudio.com'))" >> ~/.Rprofile
-
-
-r_binary_packages:
- - rJava
- - dplyr
- - reshape2
- - tidyr
- - stringr
- - knitr
- - Hmisc
-
-r_packages:
- - G2Sd
- - Bchron
- - vegan
- - xlsx
- - xlsxjars
-
-
+language: R
+sudo: false
+cache: packages
