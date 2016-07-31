@@ -22,7 +22,7 @@ Imports:
 	  ggplot2,
 	  ggmap,
 	  gridExtra,
-	  maptools,
-	  legendMap
+	  maptools
+Remotes: 3wen/legendMap
 LazyData: TRUE
 RoxygenNote: 5.0.1
