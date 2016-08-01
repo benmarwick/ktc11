@@ -38,7 +38,8 @@ opts_chunk$set(fig.path='../figures/',
               echo=FALSE, 
               warning=FALSE, 
               message=FALSE, 
-              cache=TRUE)
+              cache=TRUE,
+              dpi=300)
 library(captioner)
 tab_n <- captioner(prefix = "Table")
 fig_n <- captioner(prefix = "Figure")
@@ -215,8 +216,6 @@ sediments_strat_plot$`%fd` <-
 # make column names informative
 names(sediments_strat_plot) <- c("Sample ID", "Depth (m)", "pH", "Conductivity \n(mS)", "Soil organic \nmatter (% mass)", "Carbonates \n(% mass)", "Magnetic \nsusceptibility", "Frequency \ndependency (%)", "\u03B413C \u2030 VPDB", "Mean particle \nsize (\u00B5m)", "sd particle size \n(\u00B5m)")
 
-# draw stratigraphic plot
-
 library(analogue)
 invisible(
 the_plot <- Stratiplot(sediments_strat_plot[,c(-1, -2)], 
@@ -229,6 +228,7 @@ the_plot <- Stratiplot(sediments_strat_plot[,c(-1, -2)],
            lwd = 0.5,
            lwd.h = 0.5,
            labelRot = 90))
+
 ```
 
 ```{r}
@@ -274,6 +274,7 @@ kable(lower, row.names = TRUE)
 `r tab_n(name = "geoarch_corr_tab", caption = "Correlations of geoarchaeological variablesat KTC. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")`
 
 ```{r stratiplot}
+# draw stratigraphic plot
 
 # manually change the limits of the panels
 # this auto updates ticks and labels
@@ -284,6 +285,8 @@ the_plot$x.limits[[6]] <- c(0,20)
 the_plot$x.limits[[8]] <- c(0,500)
 the_plot$x.limits[[9]] <- c(0,500)
 the_plot$x.scales$rot <-c(90,90)
+the_plot$x.scales$cex <- c(0.5, 0.5)
+the_plot$y.scales$cex <- c(0.5, 0.5)
 
 # draw the plot
 the_plot
