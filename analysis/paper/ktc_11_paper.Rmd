@@ -92,7 +92,7 @@ To investigate changes in the environment of deposition that might assist in int
 
 Bulk sediment samples collected from a column taken from the south wall of excavation trench A. A 1 g sub-sample was dried at 60°C for 24 hours for particle size analysis. The sub-sample was sieved to remove the >2 mm particles and carbonates were removed by washing the sample in 20 ml of 1 M HCl. Samples were then centrifuged and treated with 30 ml of 30% H~2~O~2~ for an hour to remove organics (Scott-Jackson and Walkington, 2005). Additional drying occurred for 30 hours in a 60°C oven. Each sample was added to a mixture of deionized water and surfactant Triton X 10 and agitated before being run in a Horiba LA-950 at the University of Washington Materials Science Department. A quartz refraction index of 1.458 was used during analysis and the R package G2Sd v2.1.5 was used to compute summary statistics (Fournier et al., 2014).  
 
-We measured pH and EC using a portable Oakton Waterproof Dual Parameter PCSTestr 35 on subsamples with a 1:1 ratio of sediment to deionized water. Soil organic material (SOM) and calcium carbonate content were measured by the Loss on Ignition method (after Gale and Hoare, 1991), as the percent of mass lost after heating samples to 600ºC for 4 hours and 1000ºC for 2 hours. Magnetic susceptibility was measured using a Bartington MS2 Magnetic Susceptibility Meter with 10 cm^3  of sediment analyzed in sample pots at low and high frequency following Dearing (1999). Three replicates for each sample measurement of low and high frequency susceptibility were taken following Gale and Hoare (1991). 
+We measured pH and EC using a portable Oakton Waterproof Dual Parameter PCSTestr 35 on subsamples with a 1:1 ratio of sediment to deionized water. Soil organic material (SOM) and calcium carbonate content were measured by the Loss on Ignition method (after Gale and Hoare, 1991), as the percent of mass lost after heating samples to 600ºC for 4 hours and 1000ºC for 2 hours. Magnetic susceptibility was measured using a Bartington MS2 Magnetic Susceptibility Meter with 10 cm^3^ of sediment analyzed in sample pots at low and high frequency following Dearing (1999). Three replicates for each sample measurement of low and high frequency susceptibility were taken following Gale and Hoare (1991). 
 
 Samples for organic Carbon isotope analysis consisted of a 2 g sub-sample dried at 60°C for 24 hours, sieved to remove the >2mm particle size fraction (Hartman, 2011), with organics were picked out and discarded before samples were ground for 5 minutes using a mortar and pestle. To remove mineral carbonates the samples were placed in 60 mL of 1 M HCl for 24 hours, stirring every 10 hours (Millwood and Boutton, 1998). The HCl was rinsed off three cycles of adding 60 mL of deionized water was stirred into the samples for 1 minute and then drying at 60°C for 48 h. Isotope measurements were conducted using a Costech Elemental Analyzer, Conflo III, MAT253 at the UW Earth and Space Sciences IsoLab.
 
@@ -212,10 +212,6 @@ sediments_strat_plot <- cbind(geoarch_summary_data, particle_size_data_summary$p
 sediments_strat_plot$`%fd` <- 
  abs(sediments_strat_plot$`%fd`) 
 
-# compute correlations
-corrs <- long_corr_matrix(sediments_strat_plot[,c(-1)])
-interesting_corrs <- corrs %>% filter(cor > 0.6 & p < 0.05)
-
 # make column names informative
 names(sediments_strat_plot) <- c("Sample ID", "Depth (m)", "pH", "Conductivity \n(mS)", "Soil organic \nmatter (% mass)", "Carbonates \n(% mass)", "Magnetic \nsusceptibility", "Frequency \ndependency (%)", "\u03B413C \u2030 VPDB", "Mean particle \nsize (\u00B5m)", "sd particle size \n(\u00B5m)")
 
@@ -235,6 +231,48 @@ the_plot <- Stratiplot(sediments_strat_plot[,c(-1, -2)],
            labelRot = 90))
 ```
 
+```{r}
+# compute correlations
+corrs <- long_corr_matrix(sediments_strat_plot[,c(-1)])
+interesting_corrs <- corrs %>% filter((cor > 0.6 | cor < -0.6) & p < 0.05)
+corr_mag_sus_and_som <- interesting_corrs[2, ]
+
+for_corr_table <- as.matrix(sediments_strat_plot[,-c(1:2)])
+# table of correlations
+geoarch_corr_for_table <- Hmisc::rcorr(for_corr_table)
+
+geoarch_two_tables_into_one <- 
+  as.data.frame(do.call(cbind, lapply(1:ncol(geoarch_corr_for_table$r), 
+  function(i) paste0(
+       ifelse(
+             (as.numeric(geoarch_corr_for_table$r[ , i]) > 0.7 |
+              as.numeric(geoarch_corr_for_table$r[ , i]) < -0.7) & 
+              as.numeric(geoarch_corr_for_table$P[ , i])  < 0.05,
+              paste0("**", round(geoarch_corr_for_table$r[ , i], 2)),
+              round(geoarch_corr_for_table$r[ , i], 2)
+              ),
+       ifelse(
+             (as.numeric(geoarch_corr_for_table$r[ , i]) > 0.7 |
+              as.numeric(geoarch_corr_for_table$r[ , i]) < -0.7) & 
+              as.numeric(geoarch_corr_for_table$P[ , i])  < 0.05,
+              paste0(" (", round(geoarch_corr_for_table$P[ , i], 2), ")**"),
+              paste0(" (", round(geoarch_corr_for_table$P[ , i], 2),")")
+              )
+  ))))
+       
+
+names(geoarch_two_tables_into_one) <- c("pH", "EC", "SOM", "CaCO3", "Xlf", "fd", "d13C", "mean_size", "sd_size")
+
+# get lower diag only 
+lower <- as.matrix(geoarch_two_tables_into_one)
+lower[lower.tri(geoarch_two_tables_into_one, diag=TRUE)] <- ""
+lower <- as.data.frame(lower)
+row.names(lower) <- names(geoarch_two_tables_into_one)
+kable(lower, row.names = TRUE)
+```
+
+`r tab_n(name = "geoarch_corr_tab", caption = "Correlations of geoarchaeological variablesat KTC. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")`
+
 ```{r stratiplot}
 
 # manually change the limits of the panels
@@ -252,17 +290,17 @@ the_plot
 
 ```
 
-`r fig_n(name = "stratplot", caption = "Summary of bulk sediment analysis of samples from Khao Toh Chong. Magnetic susceptibility is reported as low frequency mass specific units 10^8 m^3 kg^-1 ")`
+`r fig_n(name = "stratplot", caption = "Summary of bulk sediment analysis of samples from Khao Toh Chong. Magnetic susceptibility is reported as low frequency mass specific units 10^8^ m^3^ kg^-1^ ")`
 
 Analysis of sediments collected from the 2011 Khao Toh Chong excavations show a relatively constant depositional environment. The deposit is mostly sandy silt with occasional additions of coarser sands and gravels (for example in context A-4, 0.3 m below surface). Slight fluctuations in particle size distribution and carbonate percentage likely reflect minor variations in contributions from alluvial, fluvial and colluvial inputs (including limestone eroding from the karst tower) (Gale and Hoare 1991). Overall, the picture is of relatively constant and uninterrupted deposition. 
 
 #### Chemical analyses and magnetic susceptibility
 
-The results of the basic chemical, magnetic susceptibility and particle size analyses are depicted in `r fig_n("stratplot", display = "cite")`. pH values at KTC are strongly alkaline throughout, with a shift occurring from pH 9.1 to 7.6 between contexts A-5 and A-6 (0.4-0.53 m below surface). Electrical conductivity (as a proxy for soluble minerals) and soil organic matter decline sharply below the surface, probably due to natural decay of organics. Soil carbonates are steady between 8% and 12% throughout. Low frequency magnetic susceptibility peaks at 308 in context A-5 (0.40 m below surface), indicating an enrichment of magnetic minerals in the deposit. This context also has the highest proportion of carbonates (12%), which would reduce magnetic susceptibility, so the change in A-5 is not a simple dilution of magnetic minerals by diagmatic minerals. Frequency dependency tracks the particle size statistics more closely than it does magnetic susceptibility, indicating that soil formation and weathering processes control magnetic susceptibility more than burning processes such as cooking at the site (Dearing et al. 1996).
+The results of the chemical, magnetic susceptibility and particle size analyses are depicted in `r fig_n("stratplot", display = "cite")`. pH values at KTC are strongly alkaline throughout, with a shift occurring from pH 9.1 to 7.6 between contexts A-5 and A-6 (0.4-0.53 m below surface). Electrical conductivity (as a proxy for soluble minerals) and soil organic matter decline sharply below the surface, probably due to natural decay of organics. Soil carbonates are steady between 8% and 12% throughout, reflecting a continuous contribution from the limestone rock of the shelter. Low frequency magnetic susceptibility peaks in context A-5 (0.40 m below surface), indicating an enrichment of magnetic minerals in the deposit. This context also has the highest proportion of carbonates (12%), which would reduce magnetic susceptibility, so the change in A-5 is not a simple dilution of magnetic minerals by diagmatic minerals. 
 
 #### Carbon isotope analysis
 
-The δ13C values range between `r range_carbon_istope_data[1]` and `r range_carbon_istope_data[2]`, with values becoming increasingly negative in more recent times (`r fig_n("stratplot", display = "cite")`). This trend in δ13C values over time may be explained by isotopic fractionation and microbial activity (Lerch et al., 2011; Schweizer et al., 1999; Tieszen, 1991; Wynn, 2007), rather than major vegetation change throughout this period. This indicates an overall dominance of C3 plants, suggestive of forested-grassland vegetation, including evergreen trees and shrubs, surrounding the site (DeNiro, 1987; Yoneyama et al., 2010).
+The δ13C values at KTC range between `r range_carbon_istope_data[1]` and `r range_carbon_istope_data[2]`, with values becoming increasingly negative in more recent times (`r fig_n("stratplot", display = "cite")`).  The tissues of C3 plants have δ13C values ranging from −20‰ to −32‰, while those of C4 plants range from −9‰ to −17‰ (Deines, 1980). This indicates an overall dominance of C3 plants, suggestive of forested-grassland vegetation, including evergreen trees and shrubs, surrounding the site (DeNiro, 1987; Yoneyama et al., 2010).
 
 #### X-ray Diffraction
 
@@ -272,7 +310,7 @@ ktc11_summary_xrd_data <- the_data$ktc11_summary_xrd_data
 kable(ktc11_summary_xrd_data)
 ```
 
-`r tab_n(name = "xrd_tab", caption = "Summary of X-ray diffraction data from Khao Toh Chong")`
+`r tab_n(name = "xrd_tab", caption = "Summary of X-ray diffraction data from Khao Toh Chong. Units are percent mass.")`
 
 The XRD analysis showed quartz and calcite present in all samples, indicating a similar source of sediments throughout the depositional history of the site. Kaolinite was identified in samples from A-2, A-3, and A-6, suggesting a greater contribution of more intensely weathered sediment during the formation of those deposits (Alam et al., 2008). An alternative possibility is that the Kaolinite derives from ceramics found in those contexts. The proportions of Calcite in each sample support the loss on ignition results for carbonates, showing low variation throughout the sequence. Small amounts of Periclase were observed, indicating metamorphosis of the local limestone. 
 
@@ -287,11 +325,38 @@ kable(round(icp_aes_data,2))
 
 ```{r corr_elements}
 # correlation matrix of elements of interest
-icp_aes_data_subset_cor <- round(cor(icp_aes_data),2)
-kable(icp_aes_data_subset_cor)
+icp_corr_for_table <- Hmisc::rcorr(as.matrix(icp_aes_data))
+
+icp_two_tables_into_one <- 
+  as.data.frame(do.call(cbind, lapply(1:ncol(icp_corr_for_table$r), 
+  function(i) paste0(
+       ifelse(
+             (as.numeric(icp_corr_for_table$r[ , i]) > 0.7 |
+              as.numeric(icp_corr_for_table$r[ , i]) < -0.7) & 
+              as.numeric(icp_corr_for_table$P[ , i])  < 0.05,
+              paste0("**", round(icp_corr_for_table$r[ , i], 2)),
+              round(icp_corr_for_table$r[ , i], 2)
+              ),
+       ifelse(
+             (as.numeric(icp_corr_for_table$r[ , i]) > 0.7 |
+              as.numeric(icp_corr_for_table$r[ , i]) < -0.7) & 
+              as.numeric(icp_corr_for_table$P[ , i])  < 0.05,
+              paste0(" (", round(icp_corr_for_table$P[ , i], 2), ")**"),
+              paste0(" (", round(icp_corr_for_table$P[ , i], 2),")")
+              )
+  ))))
+
+names(icp_two_tables_into_one) <- names(icp_aes_data)
+
+# get lower diag only 
+lower <- as.matrix(icp_two_tables_into_one)
+lower[lower.tri(icp_two_tables_into_one, diag=TRUE)] <- ""
+lower <- as.data.frame(lower)
+row.names(lower) <- names(icp_two_tables_into_one)
+kable(lower, row.names = TRUE)
 ```
 
-`r tab_n(name = "tab_elements_corr", caption = "Correlation matrix of elements analysed by ICP-AES")`
+`r tab_n(name = "tab_elements_corr", caption = "Correlation matrix of elements analysed by ICP-AES. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")`
 
 ```{r denro_elements}
 # cluster analysis of contexts using elemental data
@@ -334,7 +399,7 @@ plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
 
 `r fig_n(name = "artefacts_plot", caption = "Distribution of ceramics and stone artefacts in each excavation unit over time at Khao Toh Chong. Ages older than 13,000 cal BP have been extrapolated using the age-depth model described above.")`
 
-The archaeological materials consist mostly of small broken pieces of ceramic and flaked stone artefacts (`r tab_n("table_of_lithics_and_ceramics", display = "cite")`, `r fig_n("artefact_photo", display = "cite")`, `r fig_n("artefacts_plot", display = "cite")`). The stone flakes are relatively small, unretouched and typically have little to no dorsal cortex. There are no unambiguous signs of Hoabinhian technology, such as unifacially flaked flat ovoid cobbles, or flakes that might have been removed from these cobbles. Two complete polished adzes were found in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacturing. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised and infilled lines (Rispoli 2007; Anderson 1990; Pookajorn 1994). There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termites. Disturbance is not a significant factor at KTC. However, episodes of seasonal wetting and drying may have contributed to small amounts of vertical displacement of the heavier ceramic sherds. We know that these wetting and drying episodes occurred due to the lack of preservation for fossil pollen. The mineralogical and sediment particle size data also support this interpretation of minimal disturbance. Radiocarbon dating of residues on ceramics at Spirit Cave obtained much younger dates (c. 3 k BP) than the stratigraphically associated charcoal samples (c. 7.6 k BP) (Lampert et al., 2003).This shows that there is probably some mixing in the stratigraphic layers at Spirit Cave. Comparatively, the KTC ceramics may have also shifted vertically over time due to the episodes of regional increases in precipitation from either the water table or seasonal monsoonal storms. We expect that future work on thermoluminescence dating of KTC ceramics may show a similar situation to that of Spirit Cave.  
+The archaeological materials consist mostly of small broken pieces of ceramic and flaked stone artefacts (`r tab_n("table_of_lithics_and_ceramics", display = "cite")`, `r fig_n("artefact_photo", display = "cite")`, `r fig_n("artefacts_plot", display = "cite")`). The stone flakes are relatively small, unretouched and typically have little to no dorsal cortex. There are no unambiguous signs of Hoabinhian technology, such as unifacially flaked flat ovoid cobbles, or flakes that might have been removed from these cobbles. Two complete polished adzes were found in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacturing. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised and infilled lines (Rispoli 2007; Anderson 1990; Pookajorn 1994). There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termites. Disturbance is not a significant factor at KTC. However, episodes of seasonal wetting and drying may have contributed to small amounts of vertical displacement of the heavier ceramic sherds. We know that these wetting and drying episodes occurred due to the lack of preservation for fossil pollen. The mineralogical and sediment particle size data also support this interpretation of minimal disturbance. Radiocarbon dating of residues on ceramics at Spirit Cave obtained much younger dates (c. 3 k BP) than the stratigraphically associated charcoal samples (c. 7.6 k BP) (Lampert et al., 2003). This shows that there is probably some mixing in the stratigraphic layers at Spirit Cave. Comparatively, the KTC ceramics may have also shifted vertically over time due to the episodes of regional increases in precipitation from either the water table or seasonal monsoonal storms. Future work on thermoluminescence dating of KTC ceramics may be useful to investigate this possibility.   
 
 The archaeological sequence at KTC shows signs of change over time, similar to the geoarchaeological sequence described above, indicating that any distubrance that might have occured has not been so extensive as to completely erase time-ordering of artefacts in the deposit. The stone artefact technology changes from to large flaked cores and flakes made from coarse-grain metamorphic rock in the lower levels to polished adze flakes made from finer-grained rock in the upper levels. The ceramic assemblage also changes from thick, red sherds with frequent incised decorations in the lower levels to predominantly black sherds in the upper levels. However, the small number of artefacts in the deposit overall limits the degree to which we can distinguish these changes as part of a major regional trend or idiosyncratic use of this site. 
 
@@ -382,7 +447,14 @@ For all identified fauna, MNI and log NISP values for each context are strongly 
 
 The general picture indicated by the geoarchaeoloical data is one of subtle, uncoordinated changes in the variables we measured. This could be interpreted as indicative of either relatively constant conditions of deposition, or resulting from a high degree of bioturbation that has averaged out any major changes in the deposit. The sediment texture suggests a mixture of aeolian, colluvial and fluvial inputs, typical of cave and rockshelter deposits in the tropics (Westaway et al., 2009). The composition of the sediments varies little over time, as indicated by the measurements of organic matter, carbonates and pH in the bulk samples, and the ICP-AES data. 
 
-The XRD data show variation in the proportion of Kaolinite throughout the deposit. The Kaolinite is probably derived from the weathering of feldspars and other silicate minerals, and may relate to changes in weathering on the landscape around the site (Nesbitt and Young 1989; Nesbitt et al., 1997). Substantial changes in surface geochemistry are unlikely, due to the uncoordinated changes in magnetic susceptibility, which, if coordinated, might suggest episodes of soil formation on the landscape surrounding the site. The Carbon isotope values indicate a consistent dominance of C3 plants in the site environment through time, similar to the present-day environment. The small monotonic decrease in Carbon isotope values towards the present suggests that the deposit has some stratigraphic integrity, despite the anomalously low finds of ceramics. Thus, we can credibly interpret the geoarchaeological data as indicating generally constant conditions over time, rather than resulting from massive large scale bioturbation.  
+Magnetic susceptibility values can be altered by fires, pedogenesis, and chemical weathering (Dalan and Banerjee 1998; Fassbinder et al. 1990; Le Borgne 1960; Linford et al. 2005; Maher and Taylor 1988). Visual inspection of the KTC data suggests that, frequency dependency values track mean particle size more closely than they track magnetic susceptibility, indicating that soil formation and weathering processes control magnetic susceptibility more than burning processes such as cooking at the site (Dearing et al. 1996).  Magnetic susceptibility is negatively correlated with soil organic matter in the deposit (`r tab_n("geoarch_corr_tab", display = "cite")`), which is the opposite of what would expected if pedogenesis was an important enriching process. This suggests that the enhancement of susceptibility may have occured off-site, rather than through in situ processes in the deposit. If the magnetic susceptibility signal is probably not coupled to anthropogenic burning at the site, the high values at 0.40 m below surface (c. 4 k cal. BP) may indicate warmer/wetter times. The mechanism linking higher sediment magnetic susceptibility values to warmer/wetter conditions has been described by Ellwood et al. (1997) as due to high production of maghemite from higher pedogenetic rates on the landscape, with these enriched sediments washed into the site to form the deposit. At KTC we may be seeing signals of increased use of the site (artefact discard is relatively high in context 4 and 5) as people shelter from rain during warmer/wetter conditions.
+
+Carbon isotope values indicate a consistent dominance of C3 plants in the site environment through time, similar to the present-day environment. The small monotonic decrease in Carbon isotope values towards the present suggests that the deposit has some stratigraphic integrity, despite the anomalously deep finds of ceramics. The decrease in carbon isotope values may be due to several factors, including changes in the ratio of C3 and C4 plants on the landscape, changes in the growing conditions of plants (such as canopy structure, and water or nutrient stress), changes in the ratios of isotopically distinct organic fractions in the sediment organic matter, and changes in organic inputs from microorganisms in soils (Tieszen, 1991). At KTC, Carbon isotope values are strongly negatively correlated with sediment organic matter, so that as SOM increases, carbon isotope values becomes increasingly negative. This is the opposite of what is usually expected when SOM is the primary mechanism controlling carbon isotope values, beause SOM often enriches 13C values with increasing depth (Ehleringer et al. 2000), even as the absolute SOM content decreases with depth (Jobbágy and Jackson 2000). While SOM directly may not be ... we cannot ...
+
+
+ This trend in δ13C values over time may be explained by isotopic fractionation and microbial activity (Lerch et al., 2011; Schweizer et al., 1999; Tieszen, 1991; Wynn, 2007), rather than major vegetation change throughout this period.
+
+The XRD data show variation in the proportion of Kaolinite throughout the deposit. The Kaolinite is probably derived from the weathering of feldspars and other silicate minerals, and may relate to changes in weathering on the landscape around the site (Nesbitt and Young 1989; Nesbitt et al., 1997). Substantial changes in surface geochemistry are unlikely, due to the absence of correlations between changes in magnetic susceptibility and minerals identified by XRD. If these were coordinated, it might suggest episodes of soil formation on the landscape surrounding the site. Thus, we can credibly interpret the geoarchaeological data as indicating generally constant conditions over time, rather than resulting from massive large scale bioturbation.  
 
 ### Faunal assemblage
 
@@ -447,15 +519,25 @@ Conrad, C., H. G. Van Vlack, B. Marwick, C. Thengcharoenchalklt, R. Shoocongdej 
 
 Cook, S. F. (1965). _Studies on the Chemical Analysis of Archaeological Sites_. University of California Press, Berkeley.
 
-Costa, M. L. and D. C. Kern, 1999. Geochemical signatures of tropical soils with archaeological black earth in the Amazon, Brazil. _Journal of Geochemical Exploration_, 66, 369–385
+Costa, M. L. and D. C. Kern, 1999. Geochemical signatures of tropical soils with archaeological black earth in the Amazon, Brazil. _Journal of Geochemical Exploration_, 66, 369–385.
+
+Dalan RA, Banerjee SK (1998) Solving archaeological problems using techniques of soil magnetism. Geoarchaeology 13:3–36
 
 Dearing, J. (1999). _Environmental Magnetic Susceptibility. Using the Bartington MS2 System_. Bartington Instruments Ltd.
 
 Dearing, J. A., Dann, R. J. L., Hay, K., Lees, J. A., Loveland, P. J., Maher, B. A., & O'grady, K. (1996). Frequency-dependent susceptibility measurements of environmental materials. _Geophysical Journal International_ 124(1), 228-240.
 
+Deines, P. (1980). Chapter 9 - THE ISOTOPIC COMPOSITION OF REDUCED ORGANIC CARBON A2 - FRITZ, P. _The Terrestrial Environment, A._ J. C. Fontes. Amsterdam, Elsevier: 329-406.
+
 DeNiro, M. J. (1987). Stable Isotopy and Archaeology. _American Scientist_, 75, 2.
 
 Eidt, R. C. (1985). Theoretical and practical considerations in the analysis of anthrosols. In (ed) G. Rapp Jr., _Archaeological Geology_, Yale University Press, New Haven, pp. 155–190
+
+Ellwood, B. B., K. M. Petruso, F. B. Harrold and J. Schuldenrein (1997). High-Resolution Paleoclimatic Trends for the Holocene Identified Using Magnetic Susceptibility Data from Archaeological Excavations in Caves. _Journal of Archaeological Science_ 24(6): 569-573.
+
+Ehleringer, J. R., N. Buchmann and L. B. Flanagan (2000). "CARBON ISOTOPE RATIOS IN BELOWGROUND CARBON CYCLE PROCESSES." _Ecological Applications_ 10(2): 412-422.
+
+Fassbinder JWE, Stanjekt H, Vali H (1990) Occurrence of magnetic bacteria in soil. Nature 343(6254):161–163
 
 Forestier, H., Sophady, H., Puaud, S., Celiberti, V., Frère, S., Zeitoun, V., ... & Billault, L. (2015). The Hoabinhian from Laang Spean Cave in its stratigraphic, chronological, typo-technological and environmental context (Cambodia, Battambang province). _Journal of Archaeological Science: Reports_, 3, 194-206.
 
@@ -499,6 +581,8 @@ Horton, B.P., P.L. Gibbard, G.M. Milne, R.J. Morley and C. Purintavaragul. (2005
 
 Hunt, C. O., & Rabett, R. J. (2014). Holocene landscape intervention and plant food production strategies in island and mainland Southeast Asia. _Journal of Archaeological Science_, 51, 22-33.
 
+Jobbágy, E. G. , and R. B. Jackson . 2000. The vertical distribution of soil organic carbon and its relation to climate and vegetation. _Ecological Applications_ 10: 423–436.
+
 Jones, E. (2013). Subsistence Change Among the 17th-Century Diné? A Reanalysis of the Faunas from the Fruitland Data Recovery Project. _Journal of Ethnobiology_ 33(1):148-166.
 
 Kamaludin, H. (2001) Holocene sea level changes in Kelang and Kuantan, Peninsula Malaysia. PhD thesis, University of Durham, 290 pp. 
@@ -506,16 +590,24 @@ Kamaludin, H. (2001) Holocene sea level changes in Kelang and Kuantan, Peninsula
 Kealhofer, L. (2003). Looking into the gap: land use and the tropical forests of southern Thailand. _Asian Perspectives_ 42(1): 72-95.
 
 Knudson, K.J. , L. Frink, B.W. Hoffman, T.D. Price (2004).
-Chemical characterization of Arctic soils: activity area analysis in contemporary Yup'ik fish camps using ICP-AES
-_Journal of Archaeological Science_, 31, 443–456.
+Chemical characterization of Arctic soils: activity area analysis in contemporary Yup'ik fish camps using ICP-AES _Journal of Archaeological Science_, 31, 443–456.
+
+Kohl, L., J. Laganière, K. A. Edwards, S. A. Billings, P. L. Morrill, G. Van Biesen and S. E. Ziegler (2015). "Distinct fungal and bacterial δ13C signatures as potential drivers of increasing δ13C of soil organic matter with depth." _Biogeochemistry _124(1): 13-26.
 
 Lampert, C., Glover, I., Hedges, R., Heron, C., Higham, T., Stern, B., Thompson, G. (2003). Dating resin coating on pottery: The Spirit Cave early ceramic dates revised. _Antiquity_, 77(295), 126-133. 
 
+Le Borgne E (1960) Influence de feu sur les proprietes magnetiques du sol et sur celles du schist et du grantie. Ann Geophys 16:159–195
+
 Lerch, T. Z., Nunan, N., Dignac, M.-F., Chenu, C., & Mariotti, A. (January 01, 2011). Variations in microbial isotopic fractionation during soil organic matter decomposition. _Biogeochemistry_, 106, 1, 5-21.
+
+Linford N, Linford P, Platzman E (2005) Dating environmental change using magnetic bacteria in archaeological soils from the upper Thames Valley, UK. _Journal of Archaeological Science_ 32(7):1037–1043
 
 Lyman, R. Lee (2008). _Quantitative Paleozoology_. Cambridge, Cambridge University Press.
 
 Magurran, A. E. (2004). _Measuring biological diversity_. Blackwells.
+
+Maher BA, Taylor RM (1988) Formation of ultrafine-grained magnetite
+in soils. _Nature_ 336:368–371
 
 Maloney, B. K. (1999). A 10,600-year pollen record from Nong Thale Song Hong, Trang Province, South Thailand. _Bulletin of the Indo-Pacific Prehistory Association (Melaka Papers, Volume 2)_ 18: 129-137.
 
