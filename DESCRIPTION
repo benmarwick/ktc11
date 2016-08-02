@@ -23,7 +23,8 @@ Imports:
 	  ggmap,
 	  gridExtra,
 	  maptools,
-	  legendMap
+	  legendMap,
+	  bookdown
 Remotes: 3wen/legendMap
 LazyData: TRUE
 RoxygenNote: 5.0.1
