@@ -12,7 +12,8 @@ date: '`r Sys.Date()`'
 output:
   #html_document:
   #  number_sections: yes
-  word_document:
+  bookdown::word_document2:
+  # word_document:
     reference_docx: templates/template.docx
 abstract: "Abstract  \\n\\n\\n \nThis study reports on an analysis of human adaptations
   to sea level changes\nin the tropical monsoonal environment of Peninsula Thailand.
@@ -30,6 +31,7 @@ abstract: "Abstract  \\n\\n\\n \nThis study reports on an analysis of human adap
   the importance\nof local contingencies in understanding the mechanisms
   of change from foragers to\nagriculturalists. \\\n"
 <!-- bibliography: ktc_11.bib -->
+tables: yes
 ---
 
 ```{r setup, include=FALSE, cache = FALSE}
@@ -40,9 +42,6 @@ opts_chunk$set(fig.path='../figures/',
               message=FALSE, 
               cache=TRUE,
               dpi=300)
-library(captioner)
-tab_n <- captioner(prefix = "Table")
-fig_n <- captioner(prefix = "Figure")
 
 library(dplyr)
 library(ktc11)
@@ -70,22 +69,24 @@ Previous research into archaeological correlates of these sea level changes in p
 
 These previous excavations demonstrate human occupation at several sites in peninsular Thailand during the critical time of sea level changes in the Holocene. However, the level of available detail does not give a clear picture of stratigraphic integrity or the subsistence strategies represented at the sites. The goal of our work at Khao Toh Chong was to build on this previous work, not only by collecting an assemblage spanning the Holocene, but also by conducting geoarchaeological analyses at the site to assess stratigraphic integrity and provide local environmental context to the human occupation. 
 
-```{r my_maps, include=FALSE}
+```{r locationmapmaker, include=FALSE, results = 'hide'}
 # get the regional and closup map
 my_maps()
 ```
 
-![](../figures/location_map.png)
 
-`r fig_n(name = "location_map", caption = "Maps of the region and local area of the Khao Toh Chong rockshelter. The majority of the landscape between the site and the coast is <30 m above the current sea level. ")`
+```{r locationmap, fig.cap="Maps of the region and local area of the Khao Toh Chong rockshelter. The majority of the landscape between the site and the coast is <30 m above the current sea level."}
+# get the regional and closup map
+knitr::include_graphics("../figures/location_map.png")
+```
 
 ## Methods
 
 ### Excavation methods
 
-In June-July 2011 we excavated two areas of 2x2 m to a depth of 1.6 m below the surface at Khao Toh Chong rockshelter (`r fig_n(name = "location_map", display = "cite")`). Our review of previous work in the region indicated that stragraphic units often exceed 0.2 m, so we used semi-arbitrary excavated units of 0.05 m to subdivide the stratigraphic units and improve the spatial and chronological control of our finds. Our excavation units are semi-arbitrary because if we encountered a change in the deposit or the archaeology in the middle of an arbirary excavation unit (ie before it was 0.05 m deep), then we stopped digging that unit immediately and began another unit to ensure that we captured the change in conditions as accurately as possible. After the excavation was complete, we grouped excavated units with similar depositional qualities were grouped contexts for comparison and analysis of the archaeological and geoarchaeological data. (this process is described in detail in Van Vlack 2014). Careful observations were made for traces of disturbance that might have mixed archaeological materials from different time periods. Excavated sediments were sieved using 5 mm and 10 mm screens. The site is a limestone overhang at the base of a 300 m high karst tower in Thap Prik Village. The rockshelter is about 30 m long with an average of about 10 m from the rear wall to the dripline. The dripline is about 40 m above the ground and a series of large boulders (3-4 m high) at the dripline give some protection from the wind and rain as well as trapping sediment in the shelter. The surface of the rockshelter is level fine sediment with no signs of disturbance and about 10 m above the surrounding ground, which is about 60 m above sea level. 
+In June-July 2011 we excavated two areas of 2x2 m to a depth of 1.6 m below the surface at Khao Toh Chong rockshelter (Figure \@ref(fig:locationmap)). Our review of previous work in the region indicated that stragraphic units often exceed 0.2 m, so we used semi-arbitrary excavated units of 0.05 m to subdivide the stratigraphic units and improve the spatial and chronological control of our finds. Our excavation units are semi-arbitrary because if we encountered a change in the deposit or the archaeology in the middle of an arbirary excavation unit (ie before it was 0.05 m deep), then we stopped digging that unit immediately and began another unit to ensure that we captured the change in conditions as accurately as possible. After the excavation was complete, we grouped excavated units with similar depositional qualities were grouped contexts for comparison and analysis of the archaeological and geoarchaeological data (this process is described in detail in Van Vlack 2014). Careful observations were made for traces of disturbance that might have mixed archaeological materials from different time periods. Excavated sediments were sieved using 5 mm and 10 mm screens. The site is a limestone overhang at the base of a 300 m high karst tower in Thap Prik Village. The rockshelter is about 30 m long with an average of about 10 m from the rear wall to the dripline. The dripline is about 40 m above the ground and a series of large boulders (3-4 m high) at the dripline give some protection from the wind and rain as well as trapping sediment in the shelter. The surface of the rockshelter is level fine sediment with no signs of disturbance and about 10 m above the surrounding ground, which is about 60 m above sea level. 
 
-In Trench A, the southernmost trench, excavations reached a depth of 1.3 meters below the surface.  In trench B, excavations were obstructed by bedrock in the northwest and southwest quadrants Subsequently, excavation depths in trench B extended to approximately 2.0 meters in the northeast and southeast parts of the trench. Charcoal and shells were collected from hearths encountered during excavation for radiocarbon dating. Charcoal and shell samples were dated using AMS methods by the Direct AMS laboratory in Seattle, WA, USA. Radiocarbon ages were calibrated to 95% ranges using Bchron 4.1.1 with the IntCal13 curve (Haslett and Parnell, 2008; Parnell et al., 2008; Reimer et al. 2011). Our archaeological and faunal analysis reported here is based on data from the southwest quadrant of trench A. All excavated materials are stored at the Faculty of Archaeology at the University of Silpakorn, Bangkok.  
+In Trench A, the southernmost trench, excavations reached a depth of 1.3 meters below the surface. In trench B, excavations were obstructed by bedrock in the northwest and southwest quadrants Subsequently, excavation depths in trench B extended to approximately 2.0 meters in the northeast and southeast parts of the trench. Charcoal and shells were collected from hearths encountered during excavation for radiocarbon dating. Charcoal and shell samples were dated using AMS methods by the Direct AMS laboratory in Seattle, WA, USA. Radiocarbon ages were calibrated to 95% ranges using Bchron 4.1.1 with the IntCal13 curve (Haslett and Parnell, 2008; Parnell et al., 2008; Reimer et al. 2011). Our archaeological and faunal analysis reported here is based on data from the southwest quadrant of trench A. All excavated materials are stored at the Faculty of Archaeology at the University of Silpakorn, Bangkok.  
 
 ### Geoarchaeological methods 
 
@@ -107,19 +108,24 @@ We were unable to extract quantifiable amounts of pollen or phytoliths from the 
 
 Methods for zooarchaeological analysis of the faunal remains from A-SW of KTC are reported in Conrad et al. (2013) and Van Vlack (2014). To summarise, we conducted faunal identification using comparative collections at the National Science Museum, Natural History Museum, National Science Museum, of Thailand. Comparative and reference literature included Auetrakulvit (2004), Brandt (1974), and Lekagul and McNeely (1977). Quantification of the assemblage followed Lyman (2008) for taxonomic abundance. Shannon’s index analysis was modeled after Magurran (2004), and Pielou’s index was modeled after McCune et al. (2002).
 
+
+```{r sitesection, fig.cap="South section of Khao Toh Chong rockshelter trench A. The radiocarbon ages are the midpoints of the 95% calibrated age intervals. (c) indicates charcoal and (s) indicates shell as the material dated."}
+knitr::include_graphics("../figures/maps/ktc11_trench_A_south_section.png")
+```
+
+
+```{r sitemap, fig.cap="Plan of Khao Toh Chong rockshelter. The top image shows a view looking North, with trench A in the foreground. The middle image shows the South section of trench B. The bottom image shows the South section of trench A"}
+knitr::include_graphics("../figures/maps/ktc11_site_map.png")
+```
+
+
 ## Results
 
-They key findings from the field observations of our excavations were a faunal assemblage in a deposit with relatively few macroscopic traces of post-depositional disturbance (`r fig_n(name = "site_map", display = "cite")`). We did not encounter any burials or animal burrows and there is very limited termite activity in the deposit. We did not reach bedrock due to time constraints. 
+They key findings from the field observations of our excavations were a faunal assemblage in a deposit with relatively few macroscopic traces of post-depositional disturbance (Figure \@ref(fig:sitemap)). We did not encounter any burials or animal burrows and there is very limited termite activity in the deposit. We did not reach bedrock due to time constraints. 
 
 All excavated materials are currently stored at the Silpakorn University Faculty of Archaeology's Phetchaburi campus. The raw data and code used to generate the results presented here have been organised into research compendium following the structure of an R package (Wickham, 2015) to enable reproducibility of the results (Marwick 2016). This compendium is archived online at https://dx.doi.org/10.6084/m9.figshare.2065602.v1  
 
-![](../figures/maps/ktc11_trench_A_south_section.png)
 
-`r fig_n(name = "site_section", caption = "South section of Khao Toh Chong rockshelter trench A. The radiocarbon ages are the midpoints of the 95% calibrated age intervals. (c) indicates charcoal and (s) indicates shell as the material dated.")`
-
-![](../figures/maps/ktc11_site_map.png)
-
-`r fig_n(name = "site_map", caption = "Plan of Khao Toh Chong rockshelter. The top image shows a view looking North, with trench A in the foreground. The middle image shows the South section of trench B. The bottom image shows the South section of trench A")`
 
 ```{r read_in_the_data, cache = FALSE}
 library(ktc11)
@@ -127,19 +133,19 @@ the_data <- read_in_the_data()
 # While the data was collected we stored it here: https://catalyst.uw.edu/gopost/conversation/bmarwick/628803/post/2229534#2229534 and https://docs.google.com/spreadsheets/d/1_a20envyJUBA69NfSyLu0JniVUxnyKzAePUwQFrkS64/edit?pref=2&pli=1#gid=0
 ```
 
-### Chronology
 
-```{r table_of_calibrated_dates}
+```{r tableofcalibrateddates}
 # get table of calibrated dates
 calibrated_dates <-  calibrate_the_dates(the_data$ktc11_radiocarbon_dates)
 
 # show the table
-kable(calibrated_dates$dates_table[, -ncol(calibrated_dates$dates_table) ], row.names = NA)
+kable(calibrated_dates$dates_table[, -ncol(calibrated_dates$dates_table) ], 
+      row.names = NA,
+      caption = "Summary of radiocarbon dates from Khao Toh Chong")
 ```
 
-`r tab_n(name = "dates_tab", caption = "Summary of radiocarbon dates from Khao Toh Chong")`
 
-```{r plot_of_calibrated_dates}
+```{r plotofcalibrateddates, fig.cap="Depth-age plot of calibrated radiocarbon dates from Khao Toh Chong"}
 # show the plot
 library(scales)
 library(ggplot2)
@@ -154,9 +160,8 @@ ggplot(calibrated_dates$dates_table, aes(midpoint, `Depth below surface (m)`, gr
   scale_x_continuous(labels = comma)
 ```
 
-`r fig_n(name = "dates_plot", caption = "Depth-age plot of calibrated radiocarbon dates from Khao Toh Chong")`
 
-```{r age_depth_model, results = 'hide'}
+```{r agedepthmodel, results = 'hide'}
 # compute age-depth model
 library(Bchron)
 c14_ages <- the_data$ktc11_radiocarbon_dates
@@ -173,7 +178,7 @@ predictAges = predict(Out, newPositions = c(160))
 lowest_age <- round(unname(quantile(predictAges)[3])/1000, 1)
 ```
 
-```{r}
+```{r agemodelplot, fig.cap="Depth-age model of calibrated radiocarbon dates on charcoal from Khao Toh Chong. The grey shaded area indicates the 95% confidence interval of the age at a given depth, computed by a non-parametric chronology model fitted to age/deoth data according to the Compound Poisson-Gamma model of Haslett and Parnell (2008). The black areas show the distribution of the calibrated ages."}
 # draw plot of model
 plot(Out, 
      main = "", 
@@ -183,21 +188,20 @@ plot(Out,
 
 ```
 
-`r fig_n(name = "age_model_plot", caption = "Depth-age model of calibrated radiocarbon dates on charcoal from Khao Toh Chong. The grey shaded area indicates the 95% confidence interval of the age at a given depth, computed by a non-parametric chronology model fitted to age/deoth data according to the Compound Poisson-Gamma model of Haslett and Parnell (2008). The black areas show the distribution of the calibrated ages.")`
-
 ```{r mean_difference_offset, results='hide', cache = TRUE}
 # compute mean difference in offset (rather slow)
 mean_difference_offset_output <- mean_difference_offset(the_data$ktc11_radiocarbon_dates)
 mean_difference_offset_value <- round(mean_difference_offset_output$mean_difference,0)
 ```
 
-Five charcoal samples and five shell samples returned radiocarbon age determinations. The shell's ages are offset from the charcoal ages by an average of `r mean_difference_offset_value` years, indicating a substantial reservoir effect. Considering only the charcoal dates, the excavated deposit spans from before 13.5 k cal. BP through to about 0.15 k cal. BP (`r fig_n("age_model_plot", display = "cite")`).
+### Chronology
 
-The depth-age relationship for the dated samples is strongly linear, suggesting a constant rate of sediment accumulation (`r fig_n("age_model_plot", display = "cite")`). Although there is nearly a meter between the lowest and second lowest charcoal samples, the linear tendency of the shell samples that span this gap suggest that the accumulation of sediment at the site has been constant through the Holocene. Using the ages of the charcoal samples, we computed a non-parametric chronology model to estimate the approximate ages of undated excavation units. Using this model, we estimate the date of the lowest excavation level to be approximately `r lowest_age` k cal. BP. 
+Five charcoal samples and five shell samples returned radiocarbon age determinations (Table \@ref(tab:tableofcalibrateddates)). The shell's ages are offset from the charcoal ages by an average of `r mean_difference_offset_value` years, indicating a substantial reservoir effect. Considering only the charcoal dates, the excavated deposit spans from before 13.5 k cal. BP through to about 0.15 k cal. BP (Figure \@ref(fig:agemodelplot)).
 
-### Geoarchaeology
+The depth-age relationship for the dated samples is strongly linear, suggesting a constant rate of sediment accumulation (Figure \@ref(fig:plotofcalibrateddates)). Although there is nearly a meter between the lowest and second lowest charcoal samples, the linear tendency of the shell samples that span this gap suggest that the accumulation of sediment at the site has been constant through the Holocene. Using the ages of the charcoal samples, we computed a non-parametric chronology model to estimate the approximate ages of undated excavation units. Using this model, we estimate the date of the lowest excavation level to be approximately `r lowest_age` k cal. BP. 
 
-```{r sediments_strat_plot, results = 'hide', fig.show = 'hide'}
+
+```{r sedimentsstratplot, results = 'hide', fig.show = 'hide'}
 
 # join with carbon isotope data
 geoarch_summary_data <- join_carbon_to_summary(the_data$ktc11_d13C_data, the_data$ktc11_summary_geoarch_data)
@@ -231,7 +235,7 @@ the_plot <- Stratiplot(sediments_strat_plot[,c(-1, -2)],
 
 ```
 
-```{r}
+```{r geoarchcorrtable}
 # compute correlations
 corrs <- long_corr_matrix(sediments_strat_plot[,c(-1)])
 interesting_corrs <- corrs %>% filter((cor > 0.6 | cor < -0.6) & p < 0.05)
@@ -268,12 +272,12 @@ lower <- as.matrix(geoarch_two_tables_into_one)
 lower[lower.tri(geoarch_two_tables_into_one, diag=TRUE)] <- ""
 lower <- as.data.frame(lower)
 row.names(lower) <- names(geoarch_two_tables_into_one)
-kable(lower, row.names = TRUE)
+kable(lower, row.names = TRUE,
+      caption = "Correlations of geoarchaeological variablesat KTC. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")
 ```
 
-`r tab_n(name = "geoarch_corr_tab", caption = "Correlations of geoarchaeological variablesat KTC. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")`
 
-```{r stratiplot}
+```{r stratiplot, fig.cap="Summary of bulk sediment analysis of samples from Khao Toh Chong. Magnetic susceptibility is reported as low frequency mass specific units 10^8^ m^3^ kg^-1^"}
 # draw stratigraphic plot
 
 # manually change the limits of the panels
@@ -293,40 +297,40 @@ the_plot
 
 ```
 
-`r fig_n(name = "stratplot", caption = "Summary of bulk sediment analysis of samples from Khao Toh Chong. Magnetic susceptibility is reported as low frequency mass specific units 10^8^ m^3^ kg^-1^ ")`
+
+
+### Geoarchaeology
 
 Analysis of sediments collected from the 2011 Khao Toh Chong excavations show a relatively constant depositional environment. The deposit is mostly sandy silt with occasional additions of coarser sands and gravels (for example in context A-4, 0.3 m below surface). Slight fluctuations in particle size distribution and carbonate percentage likely reflect minor variations in contributions from alluvial, fluvial and colluvial inputs (including limestone eroding from the karst tower) (Gale and Hoare 1991). Overall, the picture is of relatively constant and uninterrupted deposition. 
 
 #### Chemical analyses and magnetic susceptibility
 
-The results of the chemical, magnetic susceptibility and particle size analyses are depicted in `r fig_n("stratplot", display = "cite")`. pH values at KTC are strongly alkaline throughout, with a shift occurring from pH 9.1 to 7.6 between contexts A-5 and A-6 (0.4-0.53 m below surface). Electrical conductivity (as a proxy for soluble minerals) and soil organic matter decline sharply below the surface, probably due to natural decay of organics. Soil carbonates are steady between 8% and 12% throughout, reflecting a continuous contribution from the limestone rock of the shelter. Low frequency magnetic susceptibility peaks in context A-5 (0.40 m below surface), indicating an enrichment of magnetic minerals in the deposit. This context also has the highest proportion of carbonates (12%), which would reduce magnetic susceptibility, so the change in A-5 is not a simple dilution of magnetic minerals by diamagnetic minerals. 
+The results of the chemical, magnetic susceptibility and particle size analyses are depicted in Figure \@ref(fig:stratiplot). pH values at KTC are strongly alkaline throughout, with a shift occurring from pH 9.1 to 7.6 between contexts A-5 and A-6 (0.4-0.53 m below surface). Electrical conductivity (as a proxy for soluble minerals) and soil organic matter decline sharply below the surface, probably due to natural decay of organics. Soil carbonates are steady between 8% and 12% throughout, reflecting a continuous contribution from the limestone rock of the shelter. Low frequency magnetic susceptibility peaks in context A-5 (0.40 m below surface), indicating an enrichment of magnetic minerals in the deposit. This context also has the highest proportion of carbonates (12%), which would reduce magnetic susceptibility, so the change in A-5 is not a simple dilution of magnetic minerals by diamagnetic minerals. 
 
 #### Carbon isotope analysis
 
-The δ13C values at KTC range between `r range_carbon_istope_data[1]` and `r range_carbon_istope_data[2]`, with values becoming increasingly negative in more recent times (`r fig_n("stratplot", display = "cite")`).  The tissues of C3 plants have δ13C values ranging from −20‰ to −32‰, while those of C4 plants range from −9‰ to −17‰ (Deines, 1980). This indicates an overall dominance of C3 plants, suggestive of forested-grassland vegetation, including evergreen trees and shrubs, surrounding the site (DeNiro, 1987; Yoneyama et al., 2010).
+The δ^13^C values at KTC range between `r range_carbon_istope_data[1]` and `r range_carbon_istope_data[2]`, with values becoming increasingly negative in more recent times (Figure \@ref(fig:stratiplot)).  The tissues of C3 plants have δ^13^C values ranging from −20‰ to −32‰, while those of C4 plants range from −9‰ to −17‰ (Deines, 1980). This indicates an overall dominance of C3 plants, suggestive of forested-grassland vegetation, including evergreen trees and shrubs, surrounding the site (DeNiro, 1987; Yoneyama et al., 2010).
+
+```{r summaryxrddata}
+# show the table
+ktc11_summary_xrd_data <- the_data$ktc11_summary_xrd_data
+kable(ktc11_summary_xrd_data, caption = "Summary of X-ray diffraction data from Khao Toh Chong. Units are percent mass.")
+```
 
 #### X-ray Diffraction
 
-```{r summary_xrd_data}
-# show the table
-ktc11_summary_xrd_data <- the_data$ktc11_summary_xrd_data
-kable(ktc11_summary_xrd_data)
-```
-
-`r tab_n(name = "xrd_tab", caption = "Summary of X-ray diffraction data from Khao Toh Chong. Units are percent mass.")`
-
 The XRD analysis showed quartz and calcite present in all samples, indicating a similar source of sediments throughout the depositional history of the site. Kaolinite was identified in samples from A-2, A-3, and A-6, suggesting a greater contribution of more intensely weathered sediment during the formation of those deposits (Alam et al., 2008). An alternative possibility is that the Kaolinite derives from ceramics found in those contexts. The proportions of Calcite in each sample support the loss on ignition results for carbonates, showing low variation throughout the sequence. Small amounts of Periclase were observed, indicating metamorphosis of the local limestone. 
 
-#### Inductively coupled plasma-atomic emission spectrometry 
-```{r icp_aes_data_summary}
+```{r icpaesdatasummary}
 icp_aes_data <- icp_aes_data_summary(the_data$ktc11_raw_ICP_data)
 # table of elements
-kable(round(icp_aes_data,2))
+kable(round(icp_aes_data,2),
+      caption = "Elemental concentration by ICP-AES, all measurements are in ppm")
 ```
 
-`r tab_n(name = "tab_elements", caption = "Elemental concentration by ICP-AES, all measurements are in ppm")`
 
-```{r corr_elements}
+
+```{r correlements}
 # correlation matrix of elements of interest
 icp_corr_for_table <- Hmisc::rcorr(as.matrix(icp_aes_data))
 
@@ -356,32 +360,32 @@ lower <- as.matrix(icp_two_tables_into_one)
 lower[lower.tri(icp_two_tables_into_one, diag=TRUE)] <- ""
 lower <- as.data.frame(lower)
 row.names(lower) <- names(icp_two_tables_into_one)
-kable(lower, row.names = TRUE)
+kable(lower, row.names = TRUE,
+      caption="Correlation matrix of elements analysed by ICP-AES. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")
 ```
 
-`r tab_n(name = "tab_elements_corr", caption = "Correlation matrix of elements analysed by ICP-AES. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold.")`
-
-```{r denro_elements}
+```{r denroelements, fig.cap="Dendrogram of samples based on hierarchical cluster analysis of ICP-AES results"}
 # cluster analysis of contexts using elemental data
 d <- dist(icp_aes_data, method = "euclidean") # distance matrix
 # Then do the cluster analysis and plot dendrogram
 plot(as.dendrogram(hclust(d, method="ward.D2")))
 ```
 
-`r fig_n(name = "dendro_elements", caption = "Dendrogram of samples based on ICP-AES results")`
 
-Results from ICP-AES analyses are presented in `r tab_n("tab_elements", display = "cite")`, with the concentrations of elements of interest to geogenic and anthropogenic sources including Si, Ca, Sr, Mn, Fe, Zn, Na, K, Mg, and Ti (Araujo et al. 2008; Arroyo-Kalin et al. 2009; Cook, 1965, Costa and Kern, 1999, Eidt, 1985, Knudson et al., 2004, Middleton, 2004, Middleton and Price, 1996, Woods, 1984 and Woods and Glaser, 2004). The majority of these elements are strongly positively correlated (`r tab_n("tab_elements_corr", display = "cite")`), and there are no significant negative correlations. 
+#### Inductively coupled plasma-atomic emission spectrometry 
 
-### Archaeology
+Results from ICP-AES analyses are presented in Table \@ref(tab:icpaesdatasummary), with the concentrations of elements of interest to geogenic and anthropogenic sources including Si, Ca, Sr, Mn, Fe, Zn, Na, K, Mg, and Ti (Araujo et al. 2008; Arroyo-Kalin et al. 2009; Cook, 1965, Costa and Kern, 1999, Eidt, 1985, Knudson et al., 2004, Middleton, 2004, Middleton and Price, 1996, Woods, 1984 and Woods and Glaser, 2004). The majority of these elements are strongly positively correlated (Table \@ref(tab:correlements)), and there are no significant negative correlations. 
 
-![](../figures/ceramic_and_lithics/composite_lithic_ceramic.png)
+```{r artefactphoto, fig.cap="Examples of ceramics, ground and flaked stone artefacts from Khao Toh Chong.  a) chert flake (EU19), b) quartzite flake (EU18), c) quartzite polished adze (EU5), d) chert flake (EU18), e) quartzite polished adze (EU5), f & g) ceramic sherd with incised and infilled decoration (EU3), h) cord-marked ceramic (EU4)"}
+knitr::include_graphics("../figures/ceramic_and_lithics/composite_lithic_ceramic.png")
 
-`r fig_n(name = "artefact_photo", caption = "Examples of ceramics, ground and flaked stone artefacts from Khao Toh Chong.  a) chert flake (EU19), b) quartzite flake (EU18), c) quartzite polished adze (EU5), d) chert flake (EU18), e) quartzite polished adze (EU5), f & g) ceramic sherd with incised and infilled decoration (EU3), h) cord-marked ceramic (EU4)")`
+```
 
-```{r table_of_lithics_and_ceramics}
+```{r tableoflithicsandceramics}
 ktc11_summary_ceramics_lithics <- table_ceramics_lithics(the_data$ktc11_lithic_data, the_data$ktc11_ceramic_data)
 # show the table here
-kable(ktc11_summary_ceramics_lithics)
+kable(ktc11_summary_ceramics_lithics, caption = "Summary of ceramics and stone artefacts recovered from Khao Toh Chong.")
+
 # are the archaeological data correlated with the geo data?
 # combine datasets
 all_data <- cbind(ktc11_summary_ceramics_lithics, ktc11_summary_xrd_data, icp_aes_data)
@@ -393,37 +397,34 @@ all_data_corr <- long_corr_matrix(all_data)
 significant_correlations <- all_data_corr[all_data_corr$cor > 0.7 | all_data_corr$cor < -0.7 & all_data_corr$p < 0.05, ]
 ```
 
-`r tab_n(name = "table_of_lithics_and_ceramics", caption = "Summary of ceramics and stone artefacts recovered from Khao Toh Chong.")`
-
-```{r artefacts_plot}
+```{r artefactsplot, fig.cap="Distribution of ceramics and stone artefacts in each excavation unit over time at Khao Toh Chong. Ages older than 13,000 cal BP have been extrapolated using the age-depth model described above."}
 # plot ceramic and stone artefact mass together, by age
 plot_ceramic_and_stone_artefact_mass(the_data, calibrated_dates)
 ```
 
-`r fig_n(name = "artefacts_plot", caption = "Distribution of ceramics and stone artefacts in each excavation unit over time at Khao Toh Chong. Ages older than 13,000 cal BP have been extrapolated using the age-depth model described above.")`
 
-The archaeological materials consist mostly of small broken pieces of ceramic and flaked stone artefacts (`r tab_n("table_of_lithics_and_ceramics", display = "cite")`, `r fig_n("artefact_photo", display = "cite")`, `r fig_n("artefacts_plot", display = "cite")`). The stone flakes are relatively small, unretouched and typically have little to no dorsal cortex. There are no unambiguous signs of Hoabinhian technology, such as unifacially flaked flat ovoid cobbles, or flakes that might have been removed from these cobbles. Two complete polished adzes were found in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacturing. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised and infilled lines (Rispoli 2007; Anderson 1990; Pookajorn 1994). There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termites. Disturbance is not a significant factor at KTC. However, episodes of seasonal wetting and drying may have contributed to small amounts of vertical displacement of the heavier ceramic sherds. We know that these wetting and drying episodes occurred due to the lack of preservation for fossil pollen. The mineralogical and sediment particle size data also support this interpretation of minimal disturbance. Radiocarbon dating of residues on ceramics at Spirit Cave obtained much younger dates (c. 3 k BP) than the stratigraphically associated charcoal samples (c. 7.6 k BP) (Lampert et al., 2003). This shows that there is probably some mixing in the stratigraphic layers at Spirit Cave. Comparatively, the KTC ceramics may have also shifted vertically over time due to the episodes of regional increases in precipitation from either the water table or seasonal monsoonal storms. Future work on thermoluminescence dating of KTC ceramics may be useful to investigate this possibility.   
+### Archaeology
+
+The archaeological materials consist mostly of small broken pieces of ceramic and flaked stone artefacts (Table \@ref(tab:tableoflithicsandceramics), Figure \@ref(fig:artefactphoto), Figure \@ref(fig:artefactsplot)). The stone flakes are relatively small, unretouched and typically have little to no dorsal cortex. There are no unambiguous signs of Hoabinhian technology, such as unifacially flaked flat ovoid cobbles, or flakes that might have been removed from these cobbles. Two complete polished adzes were found in the upper layers, and several flakes with traces of abrasion on the platforms were also found, indicating adze manufacturing. Ceramic decorations at KTC are typical for the region, including cord-marked and parallel incised and infilled lines (Rispoli 2007; Anderson 1990; Pookajorn 1994). There are no significant correlations between the artefact counts and masses and any of the geoarchaeological variables. Artefacts were found in every excavation unit, but we suspect that ceramics in the lower part of the deposit may be post-depositional intrusions resulting from the activity of treeroots and termites. Disturbance is not a significant factor at KTC. However, episodes of seasonal wetting and drying may have contributed to small amounts of vertical displacement of the heavier ceramic sherds. We know that these wetting and drying episodes occurred due to the lack of preservation for fossil pollen. The mineralogical and sediment particle size data also support this interpretation of minimal disturbance. Radiocarbon dating of residues on ceramics at Spirit Cave obtained much younger dates (c. 3 k BP) than the stratigraphically associated charcoal samples (c. 7.6 k BP) (Lampert et al., 2003). This shows that there is probably some mixing in the stratigraphic layers at Spirit Cave. Comparatively, the KTC ceramics may have also shifted vertically over time due to the episodes of regional increases in precipitation from either the water table or seasonal monsoonal storms. Future work on thermoluminescence dating of KTC ceramics may be useful to investigate this possibility.   
 
 The archaeological sequence at KTC shows signs of change over time, similar to the geoarchaeological sequence described above, indicating that any distubrance that might have occured has not been so extensive as to completely erase time-ordering of artefacts in the deposit. The stone artefact technology changes from to large flaked cores and flakes made from coarse-grain metamorphic rock in the lower levels to polished adze flakes made from finer-grained rock in the upper levels. The ceramic assemblage also changes from thick, red sherds with frequent incised decorations in the lower levels to predominantly black sherds in the upper levels. However, the small number of artefacts in the deposit overall limits the degree to which we can distinguish these changes as part of a major regional trend or idiosyncratic use of this site. 
 
-### Faunal assemblage
 
-```{r faunal_table}
+
+```{r faunaltable}
 # Mammals, reptiles, etc.
 fauna_and_molluscs_table <- table_fauna_and_molluscs(the_data)
 # show the tables 
-kable(fauna_and_molluscs_table$bones_NISP_MNI_total)
+kable(fauna_and_molluscs_table$bones_NISP_MNI_total, 
+      caption="NISP of mammal, reptile and fish remains recovered from Khao Toh Chong (MNI values in parentheses, columns are depositional contexts formed by grouping consecutive spits with similar qualities).")
 ```
 
-`r tab_n(name = "table_of_fauna", caption = "NISP of mammal, reptile and fish remains recovered from Khao Toh Chong (MNI values in parentheses, columns are depositional contexts formed by grouping consecutive spits with similar qualities). ")`
-
-```{r shell_table}
-kable(fauna_and_molluscs_table$shells_NISP_MNI_total)
+```{r shelltable}
+kable(fauna_and_molluscs_table$shells_NISP_MNI_total,
+      caption = "NISP of mollusk remains recovered from Khao Toh Chong (MNI values in parentheses).")
 ```
 
-`r tab_n(name = "table_of_shells", caption = "NISP of mollusk remains recovered from Khao Toh Chong (MNI values in parentheses).")`
-
-```{r mni_log_nisp}
+```{r mnilognisp}
 mni_log_nisp_output <- mni_log_nisp(fauna_and_molluscs_table)
 r_value <- round(mni_log_nisp_output$corr_output$estimate, 3)
 df <- mni_log_nisp_output$corr_output$parameter
@@ -431,18 +432,20 @@ p_value <- round(mni_log_nisp_output$corr_output$p.value, 3)
 
 # ecological indices
 ecological_indices_table <- ecological_indices(fauna_and_molluscs_table)
-kable(ecological_indices_table)
+kable(ecological_indices_table,
+      caption = "Ecological indices of diversity and evenness for the faunal assemblage recovered from Khao Toh Chong. Pielou's index is also known as the Shannon index of evenness")
 ```
 
-`r tab_n(name = "ecological_indices_table", caption = "Ecological indices of diversity and evenness for the faunal assemblage recovered from Khao Toh Chong. Pielou's index is also known as the Shannon index of evenness")`
 
-Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (`r tab_n(name = "table_of_fauna", display = "cite")`). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008). 
+### Faunal assemblage
+
+Mammalian abundance and distribution at the rockshelter throughout the late-Pleistocene and Holocene describes a diverse array of taxa in the deposits (Table \@ref(tab:faunaltable)). Although the majority of identified mammalian taxa represent a small sample size, there are several important patterns in the KTC assemblage. For example, the identification of large-sized artiodactyl taxa, including the Sambar deer (_Cervus unicolor_) and Muntjak deer (_Muntiacus muntjak_) at the late-Pleistocene and early Holocene period suggests that a more open and drier forest habitat surrounded the rockshelter during that time (Francis, 2008). 
 
 The values for species richness per context, of the mammalian, reptilian, and piscean taxa appears to be driven primarily by the presence or absence of carapace elements belonging to the Order Testudines, likely representing species of the turtle Family Trionychidae and Emydidae, based upon comparable faunal analyses at Lang Rongrien Rockshelter (Mudar and Anderson, 2007). Identification of abundant _Varanus_ sp., and a moderate representation of _Macaca_ sp., occurred in abundance with Testundines elements. Overall the presence of vertebrate remains, in comparison with invertebrate remains, was low at the rockshelter. Artiodactyl remains are notably restricted to the terminal Pleistocene and early Holocene deposits.
 
-Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy (`r tab_n(name = "table_of_shells", display = "cite")`). Mollusk species richness varies between 0-11 species throughout the trench with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene. When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
+Of the identified mollusk remains, nine taxa were identified to the species level while an additional fourteen were identified to a broader degree of taxonomy (Table \@ref(tab:shelltable)). Mollusk species richness varies between 0-11 species throughout the trench with a mean of 4.21 per context. _Neoradina prasongi_ shells are of the most abundant species in the assemblage, specifically during the late-Pleistocene and early Holocene. When combined with shells from the Family Amblemidae and Cyclophoridae, these three taxa account for 97% of the identified mollusk taxa at KTC. 
 
-For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that the rate of fragmentation is constant (Jones, 2013; Lyman, 2008). Ecological indices of taxonomic diversity and evenness vary over time, suggesting complex variations in forager behaviour (`r tab_n(name = "ecological_indices_table", display = "cite")`). Generally, these indices have low values, indicating both low diversity and the dominance of a small number of taxa in the assemblage. This is largely controlled by the abundance of _Neoradina prasongi_, which dominate the assemblage in the lower levels, despite a greater number of other taxa also present. In the upper levels where _Neoradina prasongi_ is absent, the diversity and evenness indices increase, but overall counts are low suggesting the site was less frequently used for subsistence activities. 
+For all identified fauna, MNI and log NISP values for each context are strongly correlated (r = `r r_value`, df = `r df`, p = `r p_value`), indicating that the rate of fragmentation is constant (Jones, 2013; Lyman, 2008). Ecological indices of taxonomic diversity and evenness vary over time, suggesting complex variations in forager behaviour (Table \@ref(tab:mnilognisp)). Generally, these indices have low values, indicating both low diversity and the dominance of a small number of taxa in the assemblage. This is largely controlled by the abundance of _Neoradina prasongi_, which dominate the assemblage in the lower levels, despite a greater number of other taxa also present. In the upper levels where _Neoradina prasongi_ is absent, the diversity and evenness indices increase, but overall counts are low suggesting the site was less frequently used for subsistence activities. 
 
 ## Discussion
 
@@ -450,13 +453,13 @@ For all identified fauna, MNI and log NISP values for each context are strongly 
 
 The general picture indicated by the geoarchaeoloical data is one of subtle, mostly uncoordinated changes in the variables we measured, with some important correlations that aid the interpreation of the palaeoenvironmental context of the site. We interpret this as indicative of relatively constant conditions of deposition and an absense of massive homogenising processing that would have erased the trends we see in the geoarchaeological variables. The sediment texture suggests a mixture of aeolian, colluvial and fluvial inputs, typical of cave and rockshelter deposits in the tropics (cf. Westaway et al., 2009). The composition of the sediments varies little over time, as indicated by the measurements of organic matter, carbonates and pH in the bulk samples, and the ICP-AES data. 
 
-The relationships among the elements measured by ICP-AES suggest a single source for the sediments throughout the entire period of deposition. Cluster analysis of the contexts using the elemental data suggests low-level groupings resulting from minor variation (`r fig_n("dendro_elements", display = "cite")`). The cluster containing B1, A4, A7U and A7L is notable because they are relatively enriched with Ca and Mg, but this is not correlated with carbonates measured by loss on ignition. Overall, the element distributions suggest low variation over time. This homogeneity in the composition of the deposit is consistent with a single source of sediment throughout the history of sediment acculumation at KTC.
+The relationships among the elements measured by ICP-AES suggest a single source for the sediments throughout the entire period of deposition. Cluster analysis of the contexts using the elemental data suggests low-level groupings resulting from minor variation (Figure \@ref(fig:denroelements)). The cluster containing B1, A4, A7U and A7L is notable because they are relatively enriched with Ca and Mg, but this is not correlated with carbonates measured by loss on ignition. Overall, the element distributions suggest low variation over time. This homogeneity in the composition of the deposit is consistent with a single source of sediment throughout the history of sediment acculumation at KTC.
 
-Visual inspection of the KTC data suggests that, frequency dependency values track mean particle size more closely than they track magnetic susceptibility, indicating that soil formation and weathering processes control magnetic susceptibility more than burning processes such as cooking at the site (Dearing et al. 1996). Magnetic susceptibility values can be altered by fires, pedogenesis, and chemical weathering (Dalan and Banerjee 1998; Fassbinder et al. 1990; Le Borgne 1960; Linford et al. 2005; Maher and Taylor 1988).  Magnetic susceptibility is negatively correlated with soil organic matter in the deposit (`r tab_n("geoarch_corr_tab", display = "cite")`), which is the opposite of what would expected if pedogenesis was an important enriching process. This suggests that the enhancement of susceptibility may have occured off-site, rather than through in situ processes in the deposit. If the magnetic susceptibility signal is probably not coupled to anthropogenic burning at the site, the high values at 0.40 m below surface (c. 4-5 k cal. BP) may indicate warmer/wetter times. The mechanism linking higher sediment magnetic susceptibility values to warmer/wetter conditions has been described by Ellwood et al. (1997) as due to high production of maghemite from higher pedogenetic rates on the landscape, with these enriched sediments washed into the site to form the deposit. At KTC we may be seeing signals of increased use of the site (artefact discard is relatively high in context 4 and 5) as people shelter from rain during warmer/wetter conditions.
+Visual inspection of the KTC data suggests that, frequency dependency values track mean particle size more closely than they track magnetic susceptibility, indicating that soil formation and weathering processes control magnetic susceptibility more than burning processes such as cooking at the site (Dearing et al. 1996). Magnetic susceptibility values can be altered by fires, pedogenesis, and chemical weathering (Dalan and Banerjee 1998; Fassbinder et al. 1990; Le Borgne 1960; Linford et al. 2005; Maher and Taylor 1988).  Magnetic susceptibility is negatively correlated with soil organic matter in the deposit (Table \@ref(tab:geoarchcorrtable)), which is the opposite of what would expected if pedogenesis was an important enriching process. This suggests that the enhancement of susceptibility may have occured off-site, rather than through in situ processes in the deposit. If the magnetic susceptibility signal is probably not coupled to anthropogenic burning at the site, the high values at 0.40 m below surface (c. 4-5 k cal. BP) may indicate warmer/wetter times. The mechanism linking higher sediment magnetic susceptibility values to warmer/wetter conditions has been described by Ellwood et al. (1997) as due to high production of maghemite from higher pedogenetic rates on the landscape, with these enriched sediments washed into the site to form the deposit. At KTC we may be seeing signals of increased use of the site (artefact discard is relatively high in context 4 and 5) as people shelter from rain during warmer/wetter conditions.
 
-Carbon isotope values indicate a consistent dominance of C3 plants in the site environment through time, similar to the present-day environment. The small monotonic decrease in Carbon isotope values towards the present suggests that the deposit has some stratigraphic integrity, despite the anomalously deep finds of ceramics. The decrease in carbon isotope values may be due to several factors, including changes in the ratio of C3 and C4 plants on the landscape, changes in the growing conditions of plants (such as canopy structure, and water or nutrient stress), changes in the ratios of isotopically distinct organic fractions in the sediment organic matter, and changes in organic inputs from microorganisms in soils (Tieszen, 1991). At KTC, Carbon isotope values are strongly negatively correlated with sediment organic matter, so that as SOM increases, carbon isotope values becomes increasingly negative. This is the opposite of what is usually expected when SOM is the primary mechanism controlling carbon isotope values in shallow deposits such as KTC, beause SOM often enriches 13C values with increasing depth (Ehleringer et al. 2000), even as the absolute SOM content decreases with depth (Jobbágy and Jackson 2000). Since SOM is probably not the primary driver of δ~13~C values at KTC, then we may be observing a decrease in the relative ratios of C4/C3 plants over time. 
+Carbon isotope values indicate a consistent dominance of C3 plants in the site environment through time, similar to the present-day environment. The small monotonic decrease in Carbon isotope values towards the present suggests that the deposit has some stratigraphic integrity, despite the anomalously deep finds of ceramics. The decrease in carbon isotope values may be due to several factors, including changes in the ratio of C3 and C4 plants on the landscape, changes in the growing conditions of plants (such as canopy structure, and water or nutrient stress), changes in the ratios of isotopically distinct organic fractions in the sediment organic matter, and changes in organic inputs from microorganisms in soils (Tieszen, 1991). At KTC, Carbon isotope values are strongly negatively correlated with sediment organic matter, so that as SOM increases, carbon isotope values becomes increasingly negative. This is the opposite of what is usually expected when SOM is the primary mechanism controlling carbon isotope values in shallow deposits such as KTC, beause SOM often enriches 13C values with increasing depth (Ehleringer et al. 2000), even as the absolute SOM content decreases with depth (Jobbágy and Jackson 2000). Since SOM is probably not the primary driver of δ^13^C values at KTC, then we may be observing a decrease in the relative ratios of C4/C3 plants over time. 
 
-Aridity and temperature are important factors in controlling this ratio, but their exact relationships vary from region to region (Pagani et al., 1999, Huang et al., 2001, Schefuβ et al., 2003 and Zhang et al., 2003). C4 photosynthesis is often associated with warm-season precipitation, dry/hot environments, and high light intensities, because C4 plants are more efficient than C3 species in their use of water, light, and nitrogen (Sage, 1999; Pagani et al., 1999). This means that C3 plants are favored over C4 plants at times of lower temperature and winter precipitation or during periods of decreased East Asian summer monsoon strength. In the upper 0.2 m, around 2-3 k cal BP, at KTC we see increasingly negative δ~13~C values, suggesting a reduction in C4 plants, resulting from cooler and dryer conditions relative to the earlier Holocene. This is consistent with cooler/dryer conditions indicated by a decrease in magnetic susceptibility occuring at KTC at the same time. However, the trend in δ~13~C values at KTC is relatively low magnitude, and isotopic fractionation and microbial activity cannot be fully dismissed as contributing factors (Lerch et al., 2011; Schweizer et al., 1999; Tieszen, 1991; Wynn, 2007). Future work should investigate Carbon isotope values of leaf wax n-alkanes because these are more diagnostic than those from bulk sediments, which contains materials of both terrestrial and aquatic origin. 
+Aridity and temperature are important factors in controlling this ratio, but their exact relationships vary from region to region (Pagani et al., 1999, Huang et al., 2001, Schefuβ et al., 2003 and Zhang et al., 2003). C4 photosynthesis is often associated with warm-season precipitation, dry/hot environments, and high light intensities, because C4 plants are more efficient than C3 species in their use of water, light, and nitrogen (Sage, 1999; Pagani et al., 1999). This means that C3 plants are favored over C4 plants at times of lower temperature and winter precipitation or during periods of decreased East Asian summer monsoon strength. In the upper 0.2 m, around 2-3 k cal BP, at KTC we see increasingly negative δ^13^C values, suggesting a reduction in C4 plants, resulting from cooler and dryer conditions relative to the earlier Holocene. This is consistent with cooler/dryer conditions indicated by a decrease in magnetic susceptibility occuring at KTC at the same time. However, the trend in δ^13^C values at KTC is relatively low magnitude, and isotopic fractionation and microbial activity cannot be fully dismissed as contributing factors (Lerch et al., 2011; Schweizer et al., 1999; Tieszen, 1991; Wynn, 2007). Future work should investigate Carbon isotope values of leaf wax n-alkanes because these are more diagnostic than those from bulk sediments, which contains materials of both terrestrial and aquatic origin. 
 
 The XRD data show variation in the proportion of Kaolinite throughout the deposit. The Kaolinite is probably derived from the weathering of feldspars and other silicate minerals, and may relate to changes in weathering on the landscape around the site (Nesbitt and Young 1989; Nesbitt et al., 1997). Substantial changes in surface geochemistry are unlikely, due to the absence of correlations between changes in magnetic susceptibility and minerals identified by XRD. If these were coordinated, it might suggest episodes of soil formation on the landscape surrounding the site. Thus, we can credibly interpret the geoarchaeological data as indicating generally constant conditions over time, rather than resulting from massive large scale bioturbation.  
 
