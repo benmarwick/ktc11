@@ -1,17 +1,17 @@
 Taxon,1 (Surface),2,3,4,5,6,7H,8,7L
-Osteichthyes subclass indet.  ,1,-,-,-,-,-,1,-,-
-Testudines fam. indet.,1,1,1,1,1,2,1,1,1
-Varanus sp. ,1,-,1,1,1,1,1,1,1
-Pythonidae gen. indet. ,-,-,-,-,-,-,-,-,1
-Primates fam. indet.  ,1,-,1,-,-,1,-,-,1
-Macaca sp. ,-,-,1,-,-,-,1,1,1
+Osteichthyes,1,-,-,-,-,-,1,-,-
+Testudines,1,1,1,1,1,2,1,1,1
+Varanus sp.,1,-,1,1,1,1,1,1,1
+Pythonidae,-,-,-,-,-,-,-,-,1
+Primates,1,-,1,-,-,1,-,-,1
+Macaca sp.,-,-,1,-,-,-,1,1,1
 Trachypithecus obscurus,-,-,-,-,-,-,1,-,-
-Rodentia fam. indet. ,-,-,1,-,-,-,1,-,-
+Rodentia,-,-,1,-,-,-,1,-,-
 Rattus remotus,-,-,-,-,-,1,-,-,-
 Cannomys badius,-,-,-,-,-,-,-,-,1
 Atherurus macrourus,-,-,-,-,-,1,-,-,-
-Carnivora fam. indet. ,-,-,-,-,-,-,1,-,-
-Tragulidae gen. indet. ,-,-,-,-,-,-,1,-,-
+Carnivora,-,-,-,-,-,-,1,-,-
+Tragulidae,-,-,-,-,-,-,1,-,-
 Cervus unicolor,-,-,-,-,-,-,1,-,-
 Muntiacus muntjak,-,-,-,-,-,-,-,1,1
-Bovidae gen. indet. ,-,-,-,-,-,-,-,-,1
+Bovinae,-,-,-,-,-,-,-,-,1
