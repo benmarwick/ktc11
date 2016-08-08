@@ -705,12 +705,10 @@ table_fauna_and_molluscs <- function(the_data){
   # change NA to zero
   bones_num[is.na(bones_num)] <- 0
   bones_rowsums <- c(rowSums(bones_num))
-  bones_colsums <- c(0, colSums(bones_num))
+  bones_colsums <- colSums(bones_num)
   # get taxon names
   bones_num$taxon <- bones[,1]
-  # insert a col of zeros for context 1
-  bones_num$one <-  rep(0, nrow(bones_num))
-  bones_num <- bones_num[, c(ncol(bones_num)-1, ncol(bones_num), 3:ncol(bones_num)-2) ]
+  bones_num <- bones_num[, c(ncol(bones_num), 1:ncol(bones_num)-1) ]
   names(bones_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
   # now MNI
@@ -726,7 +724,12 @@ table_fauna_and_molluscs <- function(the_data){
   names(bones_MNI_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
   # now combine into compact table
-  bones_NISP_MNI <- as.data.frame(do.call(cbind, lapply(2:ncol(bones_num), function(i) paste0(bones_num[ , i], " (", bones_MNI_num[ , i], ")"  ) )))
+  bones_NISP_MNI <- as.data.frame(do.call(
+                                      cbind,
+                                        lapply(2:ncol(bones_num), function(i) paste0(bones_num[ , i],
+                                                                                     " (",
+                                                                                     bones_MNI_num[ , i],
+                                                                                     ")"  ) )))
   # put taxa back on
   bones_NISP_MNI <- cbind(bones_num$Taxon, bones_NISP_MNI)
   names(bones_NISP_MNI) <- names(bones_num)
@@ -739,7 +742,8 @@ table_fauna_and_molluscs <- function(the_data){
   bones_NISP_MNI_total <- cbind(bones_NISP_MNI, Total = row_totals)
   bones_NISP_MNI_total <- rbind(bones_NISP_MNI_total, c("Total", col_totals, ""))
   # fill in that last bottom corner cell
-  bones_NISP_MNI_total[nrow(bones_NISP_MNI_total), ncol(bones_NISP_MNI_total)] <- paste0(sum(bones_num[,-1]), " (", sum(bones_MNI_num[,-1]), ")")
+  bones_NISP_MNI_total[nrow(bones_NISP_MNI_total), ncol(bones_NISP_MNI_total)] <-
+    paste0(sum(bones_num[,-1]), " (", sum(bones_MNI_num[,-1]), ")")
 
 ############
   # Shells, NISP with MNI in parentheses
@@ -747,13 +751,11 @@ table_fauna_and_molluscs <- function(the_data){
   shells_num <-  data.frame(sapply(shells[,2:ncol(shells)], function(i) as.numeric(as.character(i))))
   # change NA to zero
   shells_num[is.na(shells_num)] <- 0
-  shells_rowsums <- c(rowSums(shells_num))
-  shells_colsums <- c(0, colSums(shells_num)) # because no context 1
+  shells_rowsums <- rowSums(shells_num)
+  shells_colsums <- colSums(shells_num)
   # get taxon names
   shells_num$taxon <- shells[,1]
-  # insert a col of zeros for context 1
-  shells_num$one <-  rep(0, nrow(shells_num))
-  shells_num <- shells_num[, c(ncol(shells_num)-1, ncol(shells_num), 3:ncol(shells_num)-2) ]
+  shells_num <- shells_num[, c(ncol(shells_num), 1:ncol(shells_num)-1) ]
   names(shells_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
   # now MNI
@@ -765,7 +767,7 @@ table_fauna_and_molluscs <- function(the_data){
   # get taxon names
   shells_MNI_num$taxon <- shells_MNI[,1]
   # reorder
-  shells_MNI_num <- shells_MNI_num[, c( (ncol(shells_MNI_num)), 1:(ncol(shells_MNI_num)-1) ) ]
+  shells_MNI_num <- shells_MNI_num[, c( (ncol(shells_MNI_num)), 1:(ncol(shells_MNI_num)-2))   ]
   names(shells_MNI_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
   # now combine into compact table
@@ -832,7 +834,7 @@ mni_log_nisp <- function(fauna_and_molluscs_table){
 ecological_indices <- function(fauna_and_molluscs_table){
 
   # combine bones and shell
-  fauna <- rbind(fauna_and_molluscs_table$bones_MNI_num, fauna_and_molluscs_table$shells_MNI_num[,-ncol(fauna_and_molluscs_table$shells_MNI_num)])
+  fauna <- rbind(fauna_and_molluscs_table$bones_MNI_num, fauna_and_molluscs_table$shells_MNI_num)
 
   mni <- t(fauna[, -1])
   # simpson's diversity per context
@@ -842,6 +844,7 @@ ecological_indices <- function(fauna_and_molluscs_table){
   ## Species richness (S) and Pielou's evenness (J):
   S <- specnumber(mni) ## rowSums(BCI > 0) does the same...
   J <- H/log(S)
+  J[is.nan(J)] <- 0
 
   ecological_indices <- data.frame(Context = row.names(mni),
              NTAXA = S,
