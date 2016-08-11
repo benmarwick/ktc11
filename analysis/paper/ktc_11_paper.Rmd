@@ -296,7 +296,7 @@ lower[lower.tri(geoarch_two_tables_into_one, diag=TRUE)] <- ""
 lower <- as.data.frame(lower)
 row.names(lower) <- names(geoarch_two_tables_into_one)
 kable(lower[-nrow(lower),-1], row.names = TRUE,
-      caption = "Correlations of geoarchaeological variablesat KTC. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold. EC = electrical conductivity, SOM = Sediment organic matter, fd = frequency dependency, mean size = mean sediment particle size, sd size = standard deviation of sediment particle size.")
+      caption = "Correlations of geoarchaeological variables at KTC. Cell values are Pearson's product-moment correlation coefficient and values in parentheses are p-values. Strong significant correlations are in bold. EC = electrical conductivity, SOM = Sediment organic matter, fd = frequency dependency, mean size = mean sediment particle size, sd size = standard deviation of sediment particle size.")
 ```
 
 
