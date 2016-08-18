@@ -13,14 +13,14 @@ RUN apt-get update \
     benmarwick/ktc11 \
 
 # make a directory to hold the github repo for my package
-  && mkdir /home/rstudio/ktc11 \
-  && cd /home/rstudio/ktc11 \
+  && sudo mkdir /home/rstudio/ktc11 \
+  && sudo cd /home/rstudio/ktc11 \
 
 # Get my package source files from github and download onto Docker. The built package that we already got above is no good because it doesn't have the analysis directory in the same structure as the package source
-  && git clone https://github.com/benmarwick/ktc11  . \
+  && sudo git clone https://github.com/benmarwick/ktc11  . \
 
 # build the package
-  && R CMD build ktc11
+  && sudo R CMD build ktc11
 
 #################### Notes to self ###############################
 # a suitable disposable test env:
