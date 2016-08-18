@@ -20,6 +20,9 @@ RUN apt-get update \
 # Set the working directory to where the main document is
   && cd /home/rstudio/ktc11/analysis
 
+#################### Notes to self ###############################
+# a suitable disposable test env:
+# docker run -dp 8787:8787 rocker/rstudio
 
 # to build this image:
 # docker build -t benmarwick/ktc11 https://raw.githubusercontent.com/benmarwick/ktc11/master/Dockerfile
