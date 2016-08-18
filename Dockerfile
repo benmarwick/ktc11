@@ -10,9 +10,11 @@ RUN apt-get update \
 # install a few packages from GitHub for the most recent versions (or if they're not on CRAN)
   && installGithub.r --deps TRUE \
     # install my package that is the focus of this image
-    benmarwick/ktc11 \
+    benmarwick/ktc11
 
-  && git clone https://github.com/benmarwick/ktc11.git 
+RUN git clone https://github.com/benmarwick/ktc11.git  \
+
+ $$ mkdir /home/rstudio/ktc11
 
 ## Copy the manuscripts/ dir ('.' is relative to Dockerfile location) onto the container.
 COPY ktc11/ /home/rstudio/ktc11
