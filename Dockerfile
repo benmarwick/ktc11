@@ -19,7 +19,10 @@ RUN apt-get update \
   && git clone https://github.com/benmarwick/ktc11  /home/rstudio/ktc11 \
 
 # Set the working directory to where the compendium is
-  && cd /home/rstudio/ktc11/
+  && cd /home/rstudio/ktc11/ \
+
+# build the package
+  && R CMD build ktc11
 
 #################### Notes to self ###############################
 # a suitable disposable test env:
