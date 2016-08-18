@@ -14,10 +14,10 @@ RUN apt-get update \
 
   && mkdir /home/rstudio/ktc11 \
 
-  && git clone https://github.com/benmarwick/ktc11.git
+  && git clone https://github.com/benmarwick/ktc11.git \
+  && cd /ktc11
 
-COPY ktc11/ /home/rstudio/ktc11
-WORKDIR /home/rstudio/ktc11
+
 
 #################### Notes to self ###############################
 # a suitable disposable test env:
