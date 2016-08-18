@@ -13,7 +13,7 @@ RUN apt-get update \
     benmarwick/ktc11 
 
 ## Copy the manuscripts/ dir ('.' is relative to Dockerfile location) onto the container.
-COPY ./ /home/rstudio/ktc11
+COPY .* /home/rstudio/ktc11
 WORKDIR /home/rstudio/ktc11
 
 #################### Notes to self ###############################
