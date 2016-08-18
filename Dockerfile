@@ -15,7 +15,8 @@ RUN apt-get update \
   && mkdir /home/rstudio/ktc11 \
 
   && git clone https://github.com/benmarwick/ktc11.git \
-  && cd /ktc11
+  && cd /ktc11 \
+  && cp -R . /home/rstudio/ktc11
 
 
 
