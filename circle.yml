@@ -15,6 +15,7 @@ test:
       # render main manuscript file in container...
     - sudo lxc-attach -n "$(docker inspect --format "{{.Id}}" ktc11)" -- ls -alf /home/
     - sudo lxc-attach -n "$(docker inspect --format "{{.Id}}" ktc11)" -- ls -alf /home/rstudio/
+    - sudo lxc-attach -n "$(docker inspect --format "{{.Id}}" ktc11)" -- ls -alf /ktc11
     - sudo lxc-attach -n "$(docker inspect --format "{{.Id}}" ktc11)" -- ls -alf /home/rstudio/ktc11
 
 
