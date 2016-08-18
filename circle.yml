@@ -19,6 +19,10 @@ deployment:
       - docker push benmarwick/ktc11
 
 
-
-
+# On https://circleci.com/gh/benmarwick/this_repo
+# I need to set BUILD_ENVIRONMENT to Ubuntu 12
+# I need to set Environment Variables:
+# DOCKER_EMAIL
+# DOCKER_PASS
+# DOCKER_USER
 

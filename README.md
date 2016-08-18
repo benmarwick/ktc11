@@ -30,7 +30,7 @@ This repository is organized as an R package. These functions are provided as a 
 
 To download the package source as you see it on GitHub, for offline browsing, use this line at the shell prompt:
 
-``` r
+``` shell
 git clone https://github.com/benmarwick/ktc11.git
 ```
 
@@ -44,6 +44,16 @@ devtools::install_github("benmarwick/ktc11")
 ```
 
 Then set the working directory to the `paper/` directory in this repository, and run `knitr::knit("ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses.
+
+### The Docker image [![Circle-CI Build Status](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield)](https://circleci.com/gh/benmarwick/ktc11)
+
+The Docker image is a self-contained computational enviornment that includes all the code, data and packages needed for this compendium. The purpose of providing a Docker image is to transcend differences between computers, operating systems, and R package versions so that the code in this compendium can work without struggling with dependencies. To run the Docker image by pulling the lastest version from the Docker hub (assuming Docker is already installed), run this line
+
+``` shell
+ docker run -dp 8787:8787 benmarwick/ktc11
+```
+
+Then open your web browser at localhost:8787 or or run `docker-machine ip default` in the shell to find the correct IP address, and log in with rstudio/rstudio.
 
 ### Licenses:
 
@@ -61,7 +71,7 @@ Identified using `sessionInfo()`:
 
 ``` r
 sessionInfo()
-#> R version 3.2.2 (2015-08-14)
+#> R version 3.3.1 (2016-06-21)
 #> Platform: x86_64-w64-mingw32/x64 (64-bit)
 #> Running under: Windows 7 x64 (build 7601) Service Pack 1
 #> 
@@ -74,9 +84,11 @@ sessionInfo()
 #> [1] stats     graphics  grDevices utils     datasets  methods   base     
 #> 
 #> loaded via a namespace (and not attached):
-#>  [1] magrittr_1.5    formatR_1.2.1   tools_3.2.2     htmltools_0.2.6
-#>  [5] yaml_2.1.13     stringi_1.0-1   rmarkdown_0.9.2 knitr_1.11     
-#>  [9] stringr_1.0.0   digest_0.6.9    evaluate_0.8
+#>  [1] magrittr_1.5       formatR_1.4        htmltools_0.3.5   
+#>  [4] tools_3.3.1        yaml_2.1.13        Rcpp_0.12.6       
+#>  [7] stringi_1.1.1      rmarkdown_1.0.9001 knitr_1.13.6      
+#> [10] stringr_1.0.0      digest_0.6.9       packrat_0.4.7-1   
+#> [13] evaluate_0.9
 ```
 
 ### Contact:

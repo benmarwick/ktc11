@@ -46,7 +46,7 @@ This repository is organized as an R package. These functions are provided as a 
 
 To download the package source as you see it on GitHub, for offline browsing, use this line at the shell prompt:
 
-```{r eval=FALSE}
+```{shell}
 git clone https://github.com/benmarwick/ktc11.git
 ```
 
@@ -60,6 +60,17 @@ devtools::install_github("benmarwick/ktc11")
 ```
 
 Then set the working directory to the `paper/` directory in this repository, and run `knitr::knit("ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses. 
+
+### The Docker image [![Circle-CI Build Status](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield)](https://circleci.com/gh/benmarwick/ktc11)
+
+The Docker image is a self-contained computational enviornment that includes all the code, data and packages needed for this compendium. The purpose of providing a Docker image is to transcend differences between computers, operating systems, and R package versions so that the code in this compendium can work without struggling with dependencies. To run the Docker image by pulling the lastest version from the Docker hub (assuming Docker is already installed), run this line
+
+```{shell}
+ docker run -dp 8787:8787 benmarwick/ktc11
+```
+
+Then open your web browser at localhost:8787 or or run `docker-machine ip default` in the shell to find the correct IP address, and log in with rstudio/rstudio.
+
 
 ### Licenses:
 
