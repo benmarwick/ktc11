@@ -59,7 +59,7 @@ If you want to re-run all the analyses in R, you can start by installing the com
 devtools::install_github("benmarwick/ktc11")
 ```
 
-Then set the working directory to the `paper/` directory in this repository, and run `knitr::knit("ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses. 
+Then set the working directory to the `paper/` directory in this repository, and run `rmarkdown::render("analysis/paper/ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses. 
 
 ### The Docker image [![Circle-CI Build Status](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield)](https://circleci.com/gh/benmarwick/ktc11)
 
