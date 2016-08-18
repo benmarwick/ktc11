@@ -14,12 +14,10 @@ RUN apt-get update \
 
 # make a directory to hold the github repo for my package
   && mkdir /home/rstudio/ktc11 \
+  && cd /home/rstudio/ktc11 \
 
 # Get my package source files from github and download onto Docker. The built package that we already got above is no good because it doesn't have the analysis directory in the same structure as the package source
-  && git clone https://github.com/benmarwick/ktc11  /home/rstudio/ktc11 \
-
-# Set the working directory to where the compendium is
-  && cd /home/rstudio/ktc11/ \
+  && git clone https://github.com/benmarwick/ktc11  . \
 
 # build the package
   && R CMD build ktc11
