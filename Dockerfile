@@ -14,7 +14,7 @@ RUN apt-get update \
 
 ENV PROJ /home/rstudio/ktc11
 RUN mkdir $PROJ
-RUN git clone https://github.com/benmarwick/ktc11 $PROJ
+RUN git clone https://github.com/benmarwick/ktc11.git $PROJ
 WORKDIR $PROJ
 
 # build the package
