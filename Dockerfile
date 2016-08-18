@@ -28,11 +28,23 @@ RUN apt-get update \
 # docker run -dp 8787:8787  -v /c/Users/bmarwick/docker:/home/rstudio/ -e ROOT=TRUE  benmarwick/ktc11
 # then open broswer at localhost:8787 or run `docker-machine ip default` in the shell to find the correct IP address
 
+# go to hub.docker.com
+# create empty repo for this repo, then
+
 # to add CI for the docker image
 # add .circle.yml file
 # - Pushes new image to hub on successful complete of test
 # - And gives a badge to indicate test status
 
+# On https://circleci.com/gh/benmarwick/this_repo
+# I need to set BUILD_ENVIRONMENT to Ubuntu 12
+# I need to set Environment Variables:
+# DOCKER_EMAIL
+# DOCKER_PASS
+# DOCKER_USER
+
+# Circle will push to docker hub automatically after each commit, but
 # to manually update the container at the end of a work session:
+# docker login # to authenticate with hub
 # docker push benmarwick/ktc11
 
