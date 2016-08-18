@@ -12,13 +12,9 @@ RUN apt-get update \
     # install my package that is the focus of this image
     benmarwick/ktc11 \
 
-ENV PROJ /home/rstudio/ktc11
-RUN mkdir $PROJ
-RUN git clone https://github.com/benmarwick/ktc11.git $PROJ
-WORKDIR $PROJ
-
-# build the package
-RUN R CMD build ktc11
+## Copy the manuscripts/ dir ('.' is relative to Dockerfile location) onto the container.
+COPY . /home/rstudio/ktc11
+WORKDIR /home/rstudio/ktc11
 
 #################### Notes to self ###############################
 # a suitable disposable test env:
