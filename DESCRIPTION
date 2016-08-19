@@ -17,6 +17,7 @@ Imports:
 	  stringr,
 	  G2Sd,
 	  reshape2,
+	  analogue,
 	  vegan,
 	  Hmisc,
 	  ggplot2,
