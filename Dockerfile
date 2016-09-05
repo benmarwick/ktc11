@@ -14,11 +14,11 @@ RUN apt-get update \
 
   && mkdir /home/rstudio/ktc11 \
 
+  && cd /home/rstudio/ktc11 \
+
   && git clone https://github.com/benmarwick/ktc11.git \
 
-  && chmod 777 -R ktc11 \
-
-  && cp -R /ktc11/* /home/rstudio/ktc11
+  && chmod 777 -R ktc11
 
 
 
