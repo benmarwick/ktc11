@@ -801,7 +801,7 @@ devtools::session_info()
 
 # what commit is this file at?
 library(git2r)
-repo <- repository(path = "../")
+repo <- repository(path = "../..")
 last_commit <- commits(repo)[[1]]
 ```
 
