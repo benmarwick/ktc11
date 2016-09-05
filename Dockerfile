@@ -12,10 +12,6 @@ RUN apt-get update \
     # install my package that is the focus of this image
     benmarwick/ktc11 \
 
-  && mkdir /home/rstudio/ktc11 \
-
-  && cd /home/rstudio/ktc11 \
-
   && git clone https://github.com/benmarwick/ktc11.git \
 
   && chmod 777 -R ktc11
