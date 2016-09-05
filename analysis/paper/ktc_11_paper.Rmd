@@ -792,6 +792,17 @@ Zhang, Z., M. Zhao, H. Lu and A. M. Faiia (2003). "Lower temperature as the main
 
 Zhao, Z. (2011). New archaeobotanic data for the study of the origins of agriculture in China. _Current Anthropology_ 52 (S4), S295–S306
 
-```{r}
+
+This report was generated on `r Sys.time()` using the following computational environment and dependencies: 
+
+```{r colophon, cache = FALSE}
+# which R packages and versions?
 devtools::session_info()
+
+# what commit is this file at?
+library(git2r)
+repo <- repository(path = "../")
+last_commit <- commits(repo)[[1]]
 ```
+
+The current git commit of this file is `r last_commit@sha`, which is on the `r branches(repo)[[1]]@name` branch and was made by `r last_commit@committer@name` on `r when(last_commit)`. The current commit message is "`r last_commit@summary`". 
