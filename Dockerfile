@@ -16,6 +16,8 @@ RUN apt-get update \
 
   && git clone https://github.com/benmarwick/ktc11.git \
 
+  && sudo chmod 777 -R ktc11
+
   && cp -R /ktc11/* /home/rstudio/ktc11
 
 
@@ -50,4 +52,7 @@ RUN apt-get update \
 # to manually update the container at the end of a work session:
 # docker login # to authenticate with hub
 # docker push benmarwick/ktc11
+
+# When running this container, the ktc11 dir is not writable, so we need to
+# sudo chmod 777 -R ktc11
 
