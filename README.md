@@ -24,7 +24,7 @@ This repository is our research compendium for our analysis of archaeological ex
 
 The `analysis/` directory contains all the data files (in CSV format, in the `data/` directory), the manuscript as submitted (in MS Word format, in the `paper/` directory), a source file for the submitted paper (in R markdown format in the `paper/` directory), an executed version of the supplementary file (in HTML format, in the `paper/` directory) and all the figures that are included in the paper (in the `figures/` directory).
 
-### The R package [![Travis-CI Build Status](https://travis-ci.org/benmarwick/ktc11.svg?branch=master)](https://travis-ci.org/benmarwick/ktc11)
+### The R package [![Travis-CI Build Status](https://travis-ci.org/benmarwick/ktc11.svg?branch=master)](https://travis-ci.org/benmarwick/ktc11) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/benmarwick/ktc11?branch=master&svg=true)](https://ci.appveyor.com/project/benmarwick/ktc11)
 
 This repository is organized as an R package. These functions are provided as a package because this makes it simpler to resue the functions many times in the paper. It also makes it easier for others to use and adapt these fucntions on their own data. Nevertheless, this package has been written explicitly for this project and may not yet be suitable for more general purpose use.
 
@@ -86,7 +86,7 @@ sessionInfo()
 #> loaded via a namespace (and not attached):
 #>  [1] magrittr_1.5       formatR_1.4        htmltools_0.3.5   
 #>  [4] tools_3.3.1        yaml_2.1.13        Rcpp_0.12.6       
-#>  [7] stringi_1.1.1      rmarkdown_1.0.9001 knitr_1.13.6      
+#>  [7] stringi_1.1.1      rmarkdown_1.0.9001 knitr_1.14        
 #> [10] stringr_1.0.0      digest_0.6.9       packrat_0.4.7-1   
 #> [13] evaluate_0.9
 ```
