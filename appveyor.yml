@@ -12,12 +12,17 @@ install:
 
 # Adapt as necessary starting from here
 
+
+environment:
+  global:
+    WARNINGS_ARE_ERRORS: 0
+    USE_RTOOLS: true
+
 cache:
   - packrat
   - packages
 
 build_script:
-  - USE_RTOOLS: true
   - R -e "0" --args --bootstrap-packrat
   - travis-tool.sh install_deps
 
