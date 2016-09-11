@@ -17,9 +17,9 @@ cache:
   - packages
 
 build_script:
+  - USE_RTOOLS: true
   - R -e "0" --args --bootstrap-packrat
   - travis-tool.sh install_deps
- 
 
 test_script:
   - travis-tool.sh run_tests
