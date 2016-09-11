@@ -12,6 +12,10 @@ install:
 
 # Adapt as necessary starting from here
 
+cache:
+  directories: $APPVEYOR_BUILD_FOLDER/packrat/
+  packages: true
+
 build_script:
   - R -e "0" --args --bootstrap-packrat
   - travis-tool.sh install_deps
