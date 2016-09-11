@@ -17,7 +17,7 @@ cache:
   - packages
 
 build_script:
-  - R -e "0" --args --bootstrap-packrat
+  - R --vanilla -f packrat/init.R --args --bootstrap-packrat
   - travis-tool.sh install_deps
 
 test_script:
