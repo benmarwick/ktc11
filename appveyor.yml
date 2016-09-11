@@ -13,12 +13,13 @@ install:
 # Adapt as necessary starting from here
 
 cache:
-  - $APPVEYOR_BUILD_FOLDER/packrat/
+  - packrat
   - packages
 
 build_script:
+  - R "0" --args --bootstrap-packrat
   - travis-tool.sh install_deps
-  - R --vanilla -f packrat/init.R --args --bootstrap-packrat
+ 
 
 test_script:
   - travis-tool.sh run_tests
