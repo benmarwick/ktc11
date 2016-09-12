@@ -156,12 +156,12 @@ local({
       peq("pkgs", surround(packratSrcPath, with = "'")),
       peq("lib", surround(lib, with = "'")),
       peq("repos", "NULL"),
-      peq("type", surround("source", with = "'"))
+      peq("type", surround("source", with = "'")),
+      peq("INSTALL_opts", surround("--no-multiarch", with = "'"))
     )
     installCmd <- paste(sep = "",
                         "utils::install.packages(",
                         paste(installArgs, collapse = ", "),
-                              ", INSTALL_opts = '--no-multiarch'",
                         ")")
 
     fullCmd <- paste(
