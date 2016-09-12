@@ -17,14 +17,14 @@ environment:
   global:
    WARNINGS_ARE_ERRORS: 0
    USE_RTOOLS: true
-   JAVA_HOME: C:\Program Files\Java\jdk1.8.0
+   JAVA_HOME: C:\Program Files\Java\jre7
 
 cache:
   - packrat
   - packages
 
 build_script:
-  - R -e 'Sys.setenv(JAVA_HOME="C:\Program Files\Java\jre7\")'
+  - R -e 'Sys.getenv("JAVA_HOME")'
   - R -e "0" --args --bootstrap-packrat
  
 
