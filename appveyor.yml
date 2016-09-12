@@ -24,7 +24,6 @@ cache:
   - packages
 
 build_script:
-  - sudo apt-get update -qq
   - travis-tool.sh install_r_binary rjava
   - R -e "0" --args --bootstrap-packrat
  
