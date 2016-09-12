@@ -24,7 +24,8 @@ cache:
   - packages
 
 build_script:
-  - R -e "options(java.home='C:\\Program Files (x86)\\Java\\jre7')"
+  - sudo apt-get update -qq
+  - travis-tool.sh install_r_binary rjava
   - R -e "0" --args --bootstrap-packrat
  
 
