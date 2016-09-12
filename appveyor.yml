@@ -24,7 +24,7 @@ cache:
   - packages
 
 build_script:
-  - R -e "install.packages('devtools');devtools::install_github('rstudio/packrat')"
+  - R -e "install.packages('devtools', repos = 'http://cran.us.r-project.org');devtools::install_github('rstudio/packrat')"
   - R -e "0" --args --bootstrap-packrat
  
 test_script:
