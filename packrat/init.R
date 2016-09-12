@@ -161,7 +161,7 @@ local({
     installCmd <- paste(sep = "",
                         "utils::install.packages(",
                         paste(installArgs, collapse = ", "),
-                              INSTALL_opts = '--no-multiarch',
+                              INSTALL_opts = "--no-multiarch",
                         ")")
 
     fullCmd <- paste(
