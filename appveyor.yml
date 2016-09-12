@@ -24,7 +24,7 @@ cache:
   - packages
 
 build_script:
-  - R -e if (Sys.getenv("JAVA_HOME")!=""); Sys.setenv(JAVA_HOME="")
+  - R -e if(Sys.getenv("JAVA_HOME")!="");Sys.setenv(JAVA_HOME="")
   - R -e "0" --args --bootstrap-packrat
  
 
