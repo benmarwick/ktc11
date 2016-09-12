@@ -167,8 +167,8 @@ local({
       surround(file.path(R.home("bin"), "R"), with = "\""),
       "--vanilla",
       "--slave",
-      "-e", 
       "--no-multiarch",
+      "-e", 
       surround(installCmd, with = "\"")
     )
     system(fullCmd)
