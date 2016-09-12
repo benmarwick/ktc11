@@ -161,13 +161,13 @@ local({
     installCmd <- paste(sep = "",
                         "utils::install.packages(",
                         paste(installArgs, collapse = ", "),
+                              "--no-multiarch",
                         ")")
 
     fullCmd <- paste(
       surround(file.path(R.home("bin"), "R"), with = "\""),
       "--vanilla",
       "--slave",
-      "--no-multiarch",
       "-e", 
       surround(installCmd, with = "\"")
     )
