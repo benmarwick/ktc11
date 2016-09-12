@@ -24,7 +24,7 @@ cache:
   - packages
 
 build_script:
-  - R -e 'Sys.getenv("JAVA_HOME")'
+  - R -e Sys.getenv("JAVA_HOME")
   - R -e "0" --args --bootstrap-packrat
  
 
