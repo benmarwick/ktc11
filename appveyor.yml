@@ -24,7 +24,6 @@ cache:
   - packages
 
 build_script:
-  - R -e "install.packages('rJava', repos = 'http://cran.us.r-project.org', INSTALL_opts='--no-multiarch')"
   - R -e "0" --args --bootstrap-packrat
  
 
