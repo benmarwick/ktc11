@@ -20,7 +20,7 @@ environment:
   
 
 cache:
-  - packrat
+  - $APPVEYOR_BUILD_FOLDER/packrat
   - packages
 
 build_script:
