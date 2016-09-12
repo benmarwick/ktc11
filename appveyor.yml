@@ -24,7 +24,7 @@ cache:
   - packages
 
 build_script:
-  - R -e 'Sys.setenv(JAVA_HOME="C:\\Program Files\\Java\\jre7\\")'
+  - R -e 'Sys.setenv(JAVA_HOME="C:\Program Files\Java\jre7\")'
   - R -e "0" --args --bootstrap-packrat
  
 
