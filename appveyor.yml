@@ -15,8 +15,9 @@ install:
 
 environment:
   global:
-    WARNINGS_ARE_ERRORS: 0
-    USE_RTOOLS: true
+   - WARNINGS_ARE_ERRORS: 0
+   - USE_RTOOLS: true
+   - JAVA_HOME: C:\Program Files\Java\jdk1.8.0
 
 cache:
   - packrat
