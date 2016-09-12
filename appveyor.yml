@@ -27,8 +27,7 @@ build_script:
   - R -e  "install.packages('devtools', repos = 'http://cran.us.r-project.org')
   - R -e  "dir.create('C:/projects/ktc11/packrat/lib/i386-w64-mingw32/3.3.1', mode = '777')"
   - R -e  "install.packages('rJava', repos = 'http://cran.us.r-project.org', lib = 'C:/projects/ktc11/packrat/lib/i386-w64-mingw32/3.3.1')
-  - R -e  "devtools::install_github('rstudio/packrat', lib = 'C:/projects/ktc11/packrat/lib/i386-w64-mingw32/3.3.1')"
-  - R -e "0" --args --bootstrap-packrat
+  - R -e "devtools::install_github('rstudio/packrat', lib = 'C:/projects/ktc11/packrat/lib/i386-w64-mingw32/3.3.1')" --args --bootstrap-packrat
  
 test_script:
   - travis-tool.sh run_tests
