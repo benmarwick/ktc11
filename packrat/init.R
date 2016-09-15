@@ -156,7 +156,8 @@ local({
       peq("pkgs", surround(packratSrcPath, with = "'")),
       peq("lib", surround(lib, with = "'")),
       peq("repos", "NULL"),
-      peq("type", surround("source", with = "'"))
+      peq("type", surround("source", with = "'")),
+      peq("INSTALL_opts", surround("--no-multiarch", with = "'"))
     )
     installCmd <- paste(sep = "",
                         "utils::install.packages(",
@@ -167,7 +168,7 @@ local({
       surround(file.path(R.home("bin"), "R"), with = "\""),
       "--vanilla",
       "--slave",
-      "-e",
+      "-e", 
       surround(installCmd, with = "\"")
     )
     system(fullCmd)
