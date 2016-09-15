@@ -25,7 +25,8 @@ Imports:
 	  gridExtra,
 	  maptools,
 	  legendMap,
-	  bookdown
+	  bookdown,
+	  rJava
 Remotes: 3wen/legendMap
 LazyData: TRUE
 RoxygenNote: 5.0.1
