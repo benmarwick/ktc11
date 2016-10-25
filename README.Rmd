@@ -14,7 +14,12 @@ knitr::opts_chunk$set(
   fig.path = "README-"
 )
 ```
-
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-brightgreen.svg)](https://github.com/benmarwick/ktc11/commits/master) 
+[![minimal R version](https://img.shields.io/badge/R%3E%3D-`r as.character(getRversion())`-brightgreen.svg)](https://cran.r-project.org/)
+[![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) 
+[![Travis-CI Build Status](https://travis-ci.org/benmarwick/ktc11.png?branch=master)](https://travis-ci.org/benmarwick/ktc11) 
+[![Circle CI](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/benmarwick/ktc11)
+[![codecov.io](https://codecov.io/github/benmarwick/ktc11/coverage.svg?branch=master)](https://codecov.io/github/benmarwick/ktc11?branch=master) [![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531) 
 
 ## Research compendium for a report on archaeological excavations at Khao Toh Chong, Krabi, Thailand
 
@@ -40,7 +45,7 @@ This repository is our research compendium for our analysis of archaeological ex
 
 The `analysis/` directory contains all the data files (in CSV format, in the `data/` directory), the manuscript as submitted (in MS Word format, in the `paper/` directory), a source file for the submitted paper (in R markdown format in the `paper/` directory), an executed version of the supplementary file (in HTML format, in the `paper/` directory) and all the figures that are included in the paper (in the `figures/` directory). 
 
-### The R package [![Travis-CI Build Status](https://travis-ci.org/benmarwick/ktc11.svg?branch=master)](https://travis-ci.org/benmarwick/ktc11) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/benmarwick/ktc11?branch=master&svg=true)](https://ci.appveyor.com/project/benmarwick/ktc11)
+### The R package 
 
 This repository is organized as an R package. These functions are provided as a package because this makes it simpler to resue the functions many times in the paper. It also makes it easier for others to use and adapt these fucntions on their own data. Nevertheless, this package has been written explicitly for this project and may not yet be suitable for more general purpose use. 
 
@@ -61,35 +66,33 @@ devtools::install_github("benmarwick/ktc11")
 
 Then set the working directory to the `paper/` directory in this repository, and run `rmarkdown::render("analysis/paper/ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses. 
 
-### The Docker image [![Circle-CI Build Status](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield)](https://circleci.com/gh/benmarwick/ktc11)
 
-The Docker image is a self-contained computational enviornment that includes all the code, data and packages needed for this compendium. The purpose of providing a Docker image is to transcend differences between computers, operating systems, and R package versions so that the code in this compendium can work without struggling with dependencies. To run the Docker image by pulling the lastest version from the Docker hub (assuming Docker is already installed), run this line
+The package has a number of dependencies on other R packages, and programs outside of R.  Installing these can be time-consuming and complicated, so we've done two things to simpify access to the compendium. First is the packrat directory, which contains the source code for all the packages we depend on. If all works well, these will be installed on your computer when you open `researchcompendium.Rproj` in RStudio. Second is our Docker image that includes all the necessary software, code and data to run our analysis. The Docker image may give a quicker entry point to the project, and is more self-contained, so might save some fiddling with installing things.   
 
-```{shell}
- docker run -dp 8787:8787 benmarwick/ktc11
-```
+### The Docker image 
 
-Then open your web browser at localhost:8787 or or run `docker-machine ip default` in the shell to find the correct IP address, and log in with rstudio/rstudio.
+A Docker image is a lightweight GNU/Linux virtual computer that can be run as a piece of software on Windows and OSX (and other Linux systems). To capture the complete computational environment used for this project we have a Dockerfile that specifies how to make the Docker image that we developed this project in. The Docker image includes all of the software dependencies needed to run the code in this project, as well as the R package and other compendium files. To launch the Docker image for this project, first, [install Docker](https://docs.docker.com/installation/) on your computer. At the Docker prompt, enter:
+
+    docker run -dp 8787:8787 benmarwick/ktc11
+
+This will start a server instance of RStudio. Then open your web browser at localhost:8787 or or run `docker-machine ip default` in the shell to find the correct IP address, and log in with rstudio/rstudio.
+
+Once logged in, use the Files pane (bottom right) to navigate to `/` (the root directory), then open the folder for this project, and open the `.Rproj` file for this project. Once that's open, you'll see the `analysis/paper` directory in the Files pane where you can find the R markdown document, and knit them to produce the results in the paper. More information about using RStudio in Docker is avaiable at the [Rocker](https://github.com/rocker-org) [wiki](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image) pages.
+ 
+We developed and tested the package on this Docker container, so this is the only platform that We're confident it works on, and so recommend to anyone wanting to use this package to generate the vignette, etc. 
 
 
 ### Licenses:
 
 Manuscript:  CC-BY-4.0 http://creativecommons.org/licenses/by/4.0/
 
-Code: MIT http://opensource.org/licenses/MIT year: 2015, copyright holder: Ben Marwick
+Code: MIT http://opensource.org/licenses/MIT year: 2016, copyright holder: Ben Marwick
 
 Data: CC0 http://creativecommons.org/publicdomain/zero/1.0/ attribution requested in reuse
 
 ### Dependencies:
 
-I used [RStudio](http://www.rstudio.com/products/rstudio/) (version 0.98.953) on Ubuntu 14.04 and these packages:
-
-Identified using `sessionInfo()`:
-
-```{r}
-sessionInfo()
-```
-
+I used [RStudio](http://www.rstudio.com/products/rstudio/) on Ubuntu 16.04 and Windows 7. See the colophon section of the docx file in `analysis/paper` for a full list of the packages that this project depends on. 
 
 ### Contact: 
 
