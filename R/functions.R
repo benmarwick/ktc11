@@ -764,16 +764,16 @@ table_fauna_and_molluscs <- function(the_data){
   shells_MNI_num[is.na(shells_MNI_num)] <- 0
   shells_MNI_rowsums <- rowSums(shells_MNI_num)
   shells_MNI_colsums <- colSums(shells_MNI_num)
-  # get taxon names
-  shells_MNI_num$taxon <- shells_MNI[,1]
+  # get taxon names, remove errant space at end
+  shells_MNI_num$taxon <- gsub(" $", "", shells_MNI[,1])
   # reorder
   shells_MNI_num <- shells_MNI_num[, c( (ncol(shells_MNI_num)), 1:(ncol(shells_MNI_num)-2))   ]
   names(shells_MNI_num) <- c("Taxon", "1", "2", "3", "4", "5", "6", "7U", "8", "7L")
 
   # now combine into compact table
   # they don't have the same taxa in both tables
-  shells_num <- shells_num[order(shells_num$Taxon),]
-  shells_MNI_num <- shells_MNI_num[order(shells_MNI_num$Taxon),]
+ #  shells_num <- shells_num[order(shells_num$Taxon),]
+  # shells_MNI_num <- shells_MNI_num[order(shells_MNI_num$Taxon),]
 
   shells_NISP_MNI <- as.data.frame(do.call(cbind, lapply(2:ncol(shells_num), function(i) paste0(shells_num[ , i], " (", shells_MNI_num[ , i], ")"  ) )))
   # put taxa back on
