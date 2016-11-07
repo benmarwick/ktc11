@@ -1,7 +1,7 @@
 Package: ktc11
 Type: Package
 Title: Research Compendium for Archaeological Excavations at KTC
-Version: 0.2
+Version: 0.3
 Date: 2015-11-19
 Authors@R: person('Ben', 'Marwick', email='benmarwick@gmail.com', role = c('aut', 'cre'))
 Description: Contains code and data for the publication.
