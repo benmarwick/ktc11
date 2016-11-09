@@ -36,7 +36,7 @@ Source: CRAN
 Version: 3.17-4
 Hash: cc7076b8d20cee30cef888cb4392f5bf
 Requires: Formula, acepack, data.table, ggplot2, gridExtra, gtable,
-    lattice, latticeExtra
+    lattice, latticeExtra, survival
 
 Package: PKI
 Source: CRAN
@@ -539,6 +539,11 @@ Source: CRAN
 Version: 1.1.0
 Hash: 4d21d0063b37a17ea18eaec6acd29bf3
 Requires: magrittr, stringi
+
+Package: survival
+Source: CRAN
+Version: 2.40-1
+Hash: 6c0779308f30f29df842fe8dfa725593
 
 Package: tibble
 Source: CRAN
