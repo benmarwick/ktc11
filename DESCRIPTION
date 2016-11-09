@@ -24,7 +24,6 @@ Imports:
 	  ggmap,
 	  gridExtra,
 	  maptools,
-	  legendMap,
 	  bookdown,
 	  rJava
 Remotes: 3wen/legendMap
