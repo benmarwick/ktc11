@@ -108,14 +108,10 @@ Version: 1.0-6
 Hash: 67d0775189fd0041d95abca618c5c07e
 
 Package: bookdown
-Source: github
-Version: 0.1.1
-Hash: 1095b4509d63f0397734362923f6e486
+Source: CRAN
+Version: 0.1
+Hash: a33434234ee3d4ab826ab129be8b9bc7
 Requires: htmltools, knitr, miniUI, rmarkdown, rsconnect, yaml
-GithubRepo: bookdown
-GithubUsername: rstudio
-GithubRef: master
-GithubSha1: 902a670c60fa503be100f21746d45252fda8d9ae
 
 Package: brglm
 Source: CRAN
@@ -129,10 +125,20 @@ Version: 1.17.1
 Hash: 97cb6f6293cd18d17df77a6383cc6763
 Requires: bitops
 
+Package: callr
+Source: CRAN
+Version: 1.0.0
+Hash: f4152aceab8fa4f45b5bbde0dc118559
+
 Package: chron
 Source: CRAN
 Version: 2.3-47
 Hash: d25d96d908cd21080f24c89eed4c80a0
+
+Package: clisymbols
+Source: CRAN
+Version: 1.0.0
+Hash: 95c17ba26678f20ab4bf371775756960
 
 Package: coda
 Source: CRAN
@@ -145,6 +151,11 @@ Source: CRAN
 Version: 1.2-7
 Hash: a5cf9920b36c0a171e1b04ffed1ace5a
 
+Package: crayon
+Source: CRAN
+Version: 1.3.2
+Hash: 576a9d297a567d6a5ebd164ca5221590
+
 Package: curl
 Source: CRAN
 Version: 2.2
@@ -155,6 +166,12 @@ Source: CRAN
 Version: 1.9.6
 Hash: f92ef1f73afa43bf6fd69a22f3794abd
 Requires: chron
+
+Package: desc
+Source: CRAN
+Version: 1.0.1
+Hash: 38429eb7014359664557ecaf338a5163
+Requires: R6, crayon
 
 Package: devtools
 Source: CRAN
@@ -424,6 +441,11 @@ Source: CRAN
 Version: 0.4.8-1
 Hash: 6ad605ba7b4b476d84be6632393f5765
 
+Package: parsedate
+Source: CRAN
+Version: 1.1.1
+Hash: 60597f9bc17ecc2831952cace5e960a5
+
 Package: permute
 Source: CRAN
 Version: 0.9-4
@@ -439,6 +461,12 @@ Package: png
 Source: CRAN
 Version: 0.1-7
 Hash: 421d7d6e0fb4bd885ecbd909b6456b8b
+
+Package: prettyunits
+Source: CRAN
+Version: 1.0.2
+Hash: 49286102a855640daaa38eafe8b1ec30
+Requires: assertthat, magrittr
 
 Package: princurve
 Source: CRAN
@@ -460,11 +488,27 @@ Source: CRAN
 Version: 0.9-8
 Hash: 3e8627a2a5bd45c9bad6112acfc231d9
 
+Package: rappdirs
+Source: CRAN
+Version: 0.3.1
+Hash: 7340cfebc77ad7b107a549a8635e64dd
+
+Package: rcmdcheck
+Source: CRAN
+Version: 1.2.1
+Hash: da1c52267493c0bbbaae7dfe5b2dd842
+Requires: callr, clisymbols, crayon, digest, withr
+
 Package: readr
 Source: CRAN
 Version: 1.0.0
 Hash: d7cf8e4bfe7f5fa25d908362735bc9ae
 Requires: BH, R6, Rcpp, curl, hms, tibble
+
+Package: rematch
+Source: CRAN
+Version: 1.0.1
+Hash: ad4faf59e7611117ff165817074c50c7
 
 Package: reshape2
 Source: CRAN
@@ -477,6 +521,18 @@ Source: CRAN
 Version: 0.96.0
 Hash: 68d88cb2031223e2081d272d53bc32de
 Requires: htmltools, htmlwidgets, jsonlite, knitr, magrittr, shiny
+
+Package: rhub
+Source: github
+Version: 1.0.1
+Hash: 856a9e3d9cc2e06129ef2637cbf77bb8
+Requires: R6, assertthat, callr, clisymbols, crayon, desc, httr,
+    jsonlite, parsedate, prettyunits, rappdirs, rcmdcheck, rematch,
+    whoami, withr
+GithubRepo: rhub
+GithubUsername: r-hub
+GithubRef: master
+GithubSha1: 44447a06a9460a268a6505c7850835debe8defe5
 
 Package: rjson
 Source: CRAN
@@ -567,6 +623,12 @@ Package: whisker
 Source: CRAN
 Version: 0.3-2
 Hash: 803d662762e532705c2c066a82d066e7
+
+Package: whoami
+Source: CRAN
+Version: 1.1.1
+Hash: d6a42b76a7cb3724cfa1e625056d84b0
+Requires: httr, jsonlite
 
 Package: withr
 Source: CRAN
