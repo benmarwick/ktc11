@@ -11,7 +11,6 @@ cache:
   packages: true
 
 
-
 install:
   - R -e "0" --args --bootstrap-packrat
 
