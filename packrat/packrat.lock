@@ -85,7 +85,7 @@ Package: analogue
 Source: CRAN
 Version: 0.17-0
 Hash: 63d225cbd4aafa2d36b8ecaab1382370
-Requires: brglm, lattice, princurve, vegan
+Requires: brglm, lattice, mgcv, princurve, vegan
 
 Package: ash
 Source: CRAN
@@ -398,6 +398,11 @@ Version: 1.0.0
 Hash: 56e7087c3559eb7ba72a9afb349bf896
 Requires: digest
 
+Package: mgcv
+Source: CRAN
+Version: 1.8-16
+Hash: 29f01afb1c7c3efaa3a7933eb6e57b69
+
 Package: mime
 Source: CRAN
 Version: 0.5
@@ -546,9 +551,6 @@ Hash: d0e9f583d85019c99a171b094979fcb3
 Requires: base64enc, caTools, evaluate, htmltools, jsonlite, knitr,
     tibble, yaml
 
-
-
-
 Package: rsconnect
 Source: CRAN
 Version: 0.5
@@ -620,7 +622,7 @@ Package: vegan
 Source: CRAN
 Version: 2.4-1
 Hash: 7c03c75f2de38379de8cdc6b83419924
-Requires: lattice, permute
+Requires: lattice, mgcv, permute
 
 Package: whisker
 Source: CRAN
