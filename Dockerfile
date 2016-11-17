@@ -6,7 +6,7 @@ MAINTAINER Ben Marwick <benmarwick@gmail.com>
 
 # install some packages that not in the base image, these have to be manually identified from my package's Description -> Imports list
 RUN apt-get update \
-  && sudo apt-get install libjpeg-dev -y \
+  && sudo apt-get install libjpeg-dev  libpng-dev -y \
 
 
   # install a few packages from GitHub for the most recent versions (or if they're not on CRAN)
