@@ -13,7 +13,7 @@ RUN apt-get update \
   #  && installGithub.r --deps TRUE \
 
   # install my package that is the focus of this image
-  benmarwick/ktc11 \
+  ## benmarwick/ktc11 \
 
   && git clone https://github.com/benmarwick/ktc11.git \
 
