@@ -21,8 +21,6 @@ RUN apt-get update \
 
   && chmod 777 -R ktc11
 
-
-
 #################### Notes to self ###############################
 # a suitable disposable test env:
 # docker run -dp 8787:8787 rocker/rstudio
