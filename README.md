@@ -1,5 +1,5 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Last-changedate](https://img.shields.io/badge/last%20change-2016--11--07-brightgreen.svg)](https://github.com/benmarwick/ktc11/commits/master) [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.3.1-brightgreen.svg)](https://cran.r-project.org/) [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) [![Travis-CI Build Status](https://travis-ci.org/benmarwick/ktc11.png?branch=master)](https://travis-ci.org/benmarwick/ktc11) [![Circle CI](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/benmarwick/ktc11) [![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2016--11--16-brightgreen.svg)](https://github.com/benmarwick/ktc11/commits/master) [![minimal R version](https://img.shields.io/badge/R%3E%3D-3.3.1-brightgreen.svg)](https://cran.r-project.org/) [![Licence](https://img.shields.io/github/license/mashape/apistatus.svg)](http://choosealicense.com/licenses/mit/) [![Travis-CI Build Status](https://travis-ci.org/benmarwick/ktc11.png?branch=master)](https://travis-ci.org/benmarwick/ktc11) [![Circle CI](https://circleci.com/gh/benmarwick/ktc11.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/benmarwick/ktc11) [![ORCiD](https://img.shields.io/badge/ORCiD-0000--0001--7879--4531-green.svg)](http://orcid.org/0000-0001-7879-4531)
 
 Research compendium for a report on archaeological excavations at Khao Toh Chong, Krabi, Thailand
 -------------------------------------------------------------------------------------------------
@@ -16,7 +16,7 @@ Ben Marwick (<benmarwick@gmail.com>)
 
 ### Published in:
 
-...
+Marwick, B., Van Vlack, H.G., Conrad, C., Shoocongdej, R., Thongcharoenchaikit, C., Kwak, S. 2016 Adaptations to sea level change and transitions to agriculture at Khao Toh Chong rockshelter, Peninsular Thailand, *Journal of Archaeological Science* <http://dx.doi.org/10.1016/j.jas.2016.10.010>
 
 ### Overview of contents
 
