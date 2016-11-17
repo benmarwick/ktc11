@@ -36,7 +36,7 @@ Source: CRAN
 Version: 3.17-4
 Hash: cc7076b8d20cee30cef888cb4392f5bf
 Requires: Formula, acepack, data.table, ggplot2, gridExtra, gtable,
-    lattice, latticeExtra, survival
+    lattice, latticeExtra, nnet, rpart, survival
 
 Package: PKI
 Source: CRAN
@@ -436,6 +436,11 @@ Source: CRAN
 Version: 1.0-5
 Hash: 55a3581188e15f13f5ba19c18e151ac2
 
+Package: nnet
+Source: CRAN
+Version: 7.3-12
+Hash: 42c83a1f063b40fd8bb6ad68ed528aa5
+
 Package: openssl
 Source: CRAN
 Version: 0.9.4
@@ -550,6 +555,11 @@ Version: 1.1
 Hash: d0e9f583d85019c99a171b094979fcb3
 Requires: base64enc, caTools, evaluate, htmltools, jsonlite, knitr,
     tibble, yaml
+
+Package: rpart
+Source: CRAN
+Version: 4.1-10
+Hash: 1eeecd328c5297c43e9d139944bb0775
 
 Package: rsconnect
 Source: CRAN
