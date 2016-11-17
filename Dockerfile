@@ -4,24 +4,23 @@ FROM rocker/verse:3.3.2
 # required
 MAINTAINER Ben Marwick <benmarwick@gmail.com>
 
-# install some packages that not in the base image, these have to be manually identified from my package's Description -> Imports list
+# install some things...
+
 RUN apt-get update \
   && sudo apt-get install libjpeg-dev  libpng-dev openjdk-7-jdk  libglu1-mesa-dev freeglut3-dev mesa-common-dev -y \
 
-
-  # install a few packages from GitHub for the most recent versions (or if they're not on CRAN)
-  #  && installGithub.r --deps TRUE \
-
-  # install my package that is the focus of this image
-  ## benmarwick/ktc11 \
-
+  # get repo from GH...
   && git clone https://github.com/benmarwick/ktc11.git \
 
+  # make it writable and cd...
   && chmod 777 -R ktc11 \
   && cd /ktc11 \
 
-  # start R and build pkgs that we depend on from local sources that we have collected with packrat
+  # start R and build pkgs that we depend on from local sources that we have collected with packrat...
   && R -e "0" --args --bootstrap-packrat \
+
+  # install the compendium package...
+  && R -e "devtools::install('.', dep=TRUE)"
 
 
 #################### Notes to self ###############################
