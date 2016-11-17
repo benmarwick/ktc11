@@ -18,7 +18,7 @@ RUN apt-get update \
   && git clone https://github.com/benmarwick/ktc11.git \
 
   && chmod 777 -R ktc11 \
-  && cd /ktc11
+  && cd /ktc11 \
 
   # start R and build pkgs that we depend on from local sources that we have collected with packrat
   && R -e "0" --args --bootstrap-packrat \
