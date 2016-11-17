@@ -8,8 +8,6 @@ MAINTAINER Ben Marwick <benmarwick@gmail.com>
 RUN apt-get update \
   #  && sudo apt-get install r-cran-rjava -y \
 
-  # start R and build pkgs that we depend on from local sources that we have collected with packrat
-  && R -e "0" --args --bootstrap-packrat \
 
   # install a few packages from GitHub for the most recent versions (or if they're not on CRAN)
   #  && installGithub.r --deps TRUE \
@@ -18,6 +16,9 @@ RUN apt-get update \
   benmarwick/ktc11 \
 
   && git clone https://github.com/benmarwick/ktc11.git \
+
+  # start R and build pkgs that we depend on from local sources that we have collected with packrat
+  && R -e "0" --args --bootstrap-packrat \
 
   && chmod 777 -R ktc11
 
