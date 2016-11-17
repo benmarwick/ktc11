@@ -1,16 +1,21 @@
 # get the base image, this one has R, RStudio, pandoc, and a bunch of R packages that I use often
-FROM rocker/tidyverse:3.3.2
+FROM rocker/rstudio:3.3.2
 
 # required
 MAINTAINER Ben Marwick <benmarwick@gmail.com>
 
 # install some packages that not in the base image, these have to be manually identified from my package's Description -> Imports list
 RUN apt-get update \
-  && sudo apt-get install r-cran-rjava -y \
-# install a few packages from GitHub for the most recent versions (or if they're not on CRAN)
-  && installGithub.r --deps TRUE \
-    # install my package that is the focus of this image
-    benmarwick/ktc11 \
+  #  && sudo apt-get install r-cran-rjava -y \
+
+  # start R and build pkgs that we depend on from local sources that we have collected with packrat
+  && R -e "0" --args --bootstrap-packrat \
+
+  # install a few packages from GitHub for the most recent versions (or if they're not on CRAN)
+  #  && installGithub.r --deps TRUE \
+
+  # install my package that is the focus of this image
+  benmarwick/ktc11 \
 
   && git clone https://github.com/benmarwick/ktc11.git \
 
