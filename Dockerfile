@@ -1,5 +1,5 @@
 # get the base image, this one has R, RStudio, pandoc, and a bunch of R packages that I use often
-FROM rocker/hadleyverse
+FROM rocker/tidyverse:3.3.2
 
 # required
 MAINTAINER Ben Marwick <benmarwick@gmail.com>
