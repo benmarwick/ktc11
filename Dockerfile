@@ -16,11 +16,10 @@ RUN apt-get update \
   && chmod 777 -R ktc11 \
   && cd /ktc11 \
 
-  # start R and build pkgs that we depend on from local sources that we have collected with packrat...
-  && R -e "0" --args --bootstrap-packrat \
-
-  # install the compendium package...
-  && R -e "devtools::install_github('benmarwick/ktc11')"
+  # start R and build pkgs that we depend on from MRAN
+  && . /etc/environment \
+  # build this compendium package
+  && R -e "devtools::install('.', dep=TRUE, repo='$MRAN')" \
 
 
 #################### Notes to self ###############################
