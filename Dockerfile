@@ -20,7 +20,7 @@ RUN apt-get update \
   && R -e "0" --args --bootstrap-packrat \
 
   # install the compendium package...
-  # && R -e "devtools::install_github('benmarwick/ktc11')"
+  && R -e "devtools::install_github('benmarwick/ktc11')"
 
 
 #################### Notes to self ###############################
