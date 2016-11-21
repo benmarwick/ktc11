@@ -5,6 +5,9 @@ sudo: false
 
 cache:
   packages: true
+  
+r_github_packages:
+  - cran/survival
 
 repos:
   MRAN: "https://mran.microsoft.com/snapshot/2016-11-08"
