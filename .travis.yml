@@ -8,7 +8,7 @@ cache:
   packages: true
 
 repos:
-  MRAN: '$MRAN'
+  MRAN: "https://mran.microsoft.com/snapshot/2016-11-08"
   
 #install:
 #   - R -e "0" --args --bootstrap-packrat
