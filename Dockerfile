@@ -19,7 +19,7 @@ RUN apt-get update \
   # start R and build pkgs that we depend on from MRAN
   && . /etc/environment \
   # build this compendium package
-  && R -e "devtools::install('.', dep=TRUE, repo='$MRAN')" \
+  && R -e "options(repos = '$MRAN'); devtools::install('.', dep=TRUE)" \
 
 
 #################### Notes to self ###############################
