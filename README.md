@@ -6,7 +6,7 @@ Research compendium for a report on archaeological excavations at Khao Toh Chong
 
 ### Compendium DOI:
 
-<https://dx.doi.org/10.6084/m9.figshare.2065602>
+<https://doi.org/10.6084/m9.figshare.2065602>
 
 The files at the URL above will generate the results as found in the publication. The files hosted at <https://github.com/benmarwick/ktc11> are the development versions and may have changed since the report was published
 
@@ -16,7 +16,7 @@ Ben Marwick (<benmarwick@gmail.com>)
 
 ### Published in:
 
-Marwick, B., Van Vlack, H.G., Conrad, C., Shoocongdej, R., Thongcharoenchaikit, C., Kwak, S. 2016 Adaptations to sea level change and transitions to agriculture at Khao Toh Chong rockshelter, Peninsular Thailand, *Journal of Archaeological Science* <http://dx.doi.org/10.1016/j.jas.2016.10.010>
+Marwick, B., Van Vlack, H.G., Conrad, C., Shoocongdej, R., Thongcharoenchaikit, C., Kwak, S. 2016 Adaptations to sea level change and transitions to agriculture at Khao Toh Chong rockshelter, Peninsular Thailand, *Journal of Archaeological Science* <https://doi.org/10.1016/j.jas.2016.10.010>
 
 ### Overview of contents
 
