@@ -6,7 +6,7 @@ Research compendium for a report on archaeological excavations at Khao Toh Chong
 
 ### Compendium DOI:
 
-<https://dx.doi.org/10.6084/m9.figshare.2065602>
+<https://doi.org/10.6084/m9.figshare.2065602>
 
 The files at the URL above will generate the results as found in the publication. The files hosted at <https://github.com/benmarwick/ktc11> are the development versions and may have changed since the report was published
 
@@ -16,7 +16,7 @@ Ben Marwick (<benmarwick@gmail.com>)
 
 ### Published in:
 
-Marwick, B., Van Vlack, H.G., Conrad, C., Shoocongdej, R., Thongcharoenchaikit, C., Kwak, S. 2016 Adaptations to sea level change and transitions to agriculture at Khao Toh Chong rockshelter, Peninsular Thailand, *Journal of Archaeological Science* <http://dx.doi.org/10.1016/j.jas.2016.10.010>
+Marwick, B., Van Vlack, H.G., Conrad, C., Shoocongdej, R., Thongcharoenchaikit, C., Kwak, S. 2016 Adaptations to sea level change and transitions to agriculture at Khao Toh Chong rockshelter, Peninsular Thailand, *Journal of Archaeological Science* <https://doi.org/10.1016/j.jas.2016.10.010>
 
 ### Overview of contents
 
@@ -28,7 +28,7 @@ The `analysis/` directory contains all the data files (in CSV format, in the `da
 
 ### The R package
 
-This repository is organized as an R package. These functions are provided as a package because this makes it simpler to resue the functions many times in the paper. It also makes it easier for others to use and adapt these fucntions on their own data. Nevertheless, this package has been written explicitly for this project and may not yet be suitable for more general purpose use.
+This repository is organized as an R package. These functions are provided as a package because this makes it simpler to reuse the functions many times in the paper. It also makes it easier for others to use and adapt these functions on their own data. Nevertheless, this package has been written explicitly for this project and may not yet be suitable for more general purpose use.
 
 To download the package source as you see it on GitHub, for offline browsing, use this line at the shell prompt:
 
@@ -47,7 +47,7 @@ devtools::install_github("benmarwick/ktc11")
 
 Then set the working directory to the `paper/` directory in this repository, and run `rmarkdown::render("analysis/paper/ktc_11_paper.Rmd")` file to generate the rendered copy (HTML or Word) and re-compute all the analyses.
 
-The package has a number of dependencies on other R packages, and programs outside of R. Installing these can be time-consuming and complicated, so we've done two things to simpify access to the compendium. First is the packrat directory, which contains the source code for all the packages we depend on. If all works well, these will be installed on your computer when you open `researchcompendium.Rproj` in RStudio. Second is our Docker image that includes all the necessary software, code and data to run our analysis. The Docker image may give a quicker entry point to the project, and is more self-contained, so might save some fiddling with installing things.
+The package has a number of dependencies on other R packages, and programs outside of R. Installing these can be time-consuming and complicated, so we've done two things to simplify access to the compendium. First is the packrat directory, which contains the source code for all the packages we depend on. If all works well, these will be installed on your computer when you open `researchcompendium.Rproj` in RStudio. Second is our Docker image that includes all the necessary software, code and data to run our analysis. The Docker image may give a quicker entry point to the project, and is more self-contained, so might save some fiddling with installing things.
 
 ### The Docker image
 
@@ -57,7 +57,7 @@ A Docker image is a lightweight GNU/Linux virtual computer that can be run as a 
 
 This will start a server instance of RStudio. Then open your web browser at localhost:8787 or or run `docker-machine ip default` in the shell to find the correct IP address, and log in with rstudio/rstudio.
 
-Once logged in, use the Files pane (bottom right) to navigate to `/` (the root directory), then open the folder for this project, and open the `.Rproj` file for this project. Once that's open, you'll see the `analysis/paper` directory in the Files pane where you can find the R markdown document, and knit them to produce the results in the paper. More information about using RStudio in Docker is avaiable at the [Rocker](https://github.com/rocker-org) [wiki](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image) pages.
+Once logged in, use the Files pane (bottom right) to navigate to `/` (the root directory), then open the folder for this project, and open the `.Rproj` file for this project. Once that's open, you'll see the `analysis/paper` directory in the Files pane where you can find the R markdown document, and knit them to produce the results in the paper. More information about using RStudio in Docker is available at the [Rocker](https://github.com/rocker-org) [wiki](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image) pages.
 
 We developed and tested the package on this Docker container, so this is the only platform that We're confident it works on, and so recommend to anyone wanting to use this package to generate the vignette, etc.
 
