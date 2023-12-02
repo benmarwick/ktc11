@@ -41,7 +41,18 @@ Once the download is complete, open the `ktc11.Rproj` in RStudio to begin workin
 If you want to re-run all the analyses in R, you can start by installing the compendium package with this line at the R prompt:
 
 ``` r
-# install.packages("devtools") # which in turn requires Rtools (if Windows) or Xcode (if OSX)
+install.packages("devtools") # which in turn requires Rtools (if Windows) or Xcode (if OSX)
+
+# outside of R, install Java using the lastest JDK from
+# https://www.oracle.com/java/technologies/downloads/, then:
+install.packages("rJava")
+
+# this pkg has been removed from CRAN since the paper was published,
+# so it wont install with the rest of the dependencies, and
+# we need to get it from the archive:
+devtools::install_version("maptools", "1.1-8")
+
+# finally, install the package for this compendium:
 devtools::install_github("benmarwick/ktc11")
 ```
 
