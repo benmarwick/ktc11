@@ -20,7 +20,7 @@ Marwick, B., Van Vlack, H.G., Conrad, C., Shoocongdej, R., Thongcharoenchaikit, 
 
 ### Overview of contents
 
-This repository is our research compendium for our analysis of archaeological excavations at Khao Toh Chong, Krabi, Thailand. The compendium contains all data, code, and text associated with the publication (which is currently under review). The `ktc_11_paper.Rmd` file in the `analysis/paper/` directory contains details of how all the analyses reported in the paper were conducted, as well as instructions on how to rerun the analysis to reproduce the results. The `data/` directory in the `analysis/` directory contains all the raw data.
+This repository is our research compendium for our analysis of archaeological excavations at Khao Toh Chong, Krabi, Thailand. The compendium contains all data, code, and text associated with the publication (which is currently under review). The `ktc_11_paper.Rmd` file in the `analysis/paper/` directory contains details of how all the analyses reported in the paper were conducted, as well as instructions on how to rerun the analysis to reproduce the results. The `data/` directory in the `analysis/` directory contains all the raw data. You can download the contents as a zip file from https://github.com/benmarwick/ktc11/archive/refs/heads/master.zip
 
 ### The supplementary files
 
